@@ -1,7 +1,7 @@
 # 🎓 Google Classroom – Zoperacjonalizowany Pakiet Dydaktyczny (Miesiąc 1)
 ## Kompletne Szablony Wpisów, Materiałów, Zadań i Formularzy dla Uczniów
 **Autor:** Przemysław Żarnecki • Program Edukacyjny INFOTECH 2026  
-**Struktura:** Liceum (1h/tydz.) oraz Technikum (2h/tydz. - profil rozszerzony/zawodowy)
+**Struktura:** Liceum Ogólnokształcące oraz Technikum Informatyczne (profil rozszerzony/zawodowy)
 
 ---
 
@@ -13,7 +13,7 @@ Każdy tydzień zawiera dwa gotowe bloki tekstowe:
 ---
 
 # ==============================================================================
-# 📘 ŚCIEŻKA LICEUM OGÓLNOKSZTAŁCĄCE (1 godzina tygodniowo)
+# 📘 ŚCIEŻKA LICEUM OGÓLNOKSZTAŁCĄCE
 # ==============================================================================
 
 ## 🗓️ TYDZIEŃ 1: Twoje Pierwsze Środowisko IT w Chmurze (Google Colab)
@@ -189,11 +189,11 @@ Imię i Nazwisko: [WPISZ TUTAJ]
 ---
 
 # ==============================================================================
-# 📙 ŚCIEŻKA TECHNIKUM INFORMATYCZNE (2 godziny tygodniowo)
+# 📙 ŚCIEŻKA TECHNIKUM INFORMATYCZNE
 # ==============================================================================
 
 ## 🗓️ TYDZIEŃ 1: Architektura Chmurowa & Wprowadzenie do Kryptografii (SHA-256)
-* **Typ wpisu:** Projekt Laboratoryjny (90 min)
+* **Typ wpisu:** Projekt Laboratoryjny
 * **Cel operacyjny:** Uczeń rozumie różnicę między szyfrowaniem symetrycznym a jednokierunkową funkcją skrótu, potrafi zaimportować moduł `hashlib` i wygenerować skrót SHA-256 w Pythonie.
 
 ### 📝 Treść posta do wklejenia w Classroom:
@@ -211,7 +211,7 @@ ZARYS TABLICY / PREZENTACJI:
 ### 📋 Zadanie w Classroom (Polecenie + Formularz):
 ```markdown
 # PROJEKT 01: Pierwszy Silnik Hashujący SHA-256 w Pythonie
-Termin: Do końca zajęć blokowych (90 min)
+Termin: Zakończenie zajęć projektowych
 Forma: Link do Google Colab z kodem
 
 INSTRUKCJA KROK PO KROKU:
@@ -239,7 +239,7 @@ Klasa: [NP. 1TI / 2TI]
 ---
 
 ## 🗓️ TYDZIEŃ 2: Tęczowe Tablice i Sól Kryptograficzna (Salt)
-* **Typ wpisu:** Projekt Laboratoryjny (90 min)
+* **Typ wpisu:** Projekt Laboratoryjny
 * **Cel operacyjny:** Uczeń potrafi zaimplementować bezpieczne solenie haseł za pomocą modułu `secrets`, rozumie zasadę działania Rainbow Tables i potrafi wyjaśnić dlaczego SHA-256 wymaga wolnych KDF (bcrypt/Argon2id).
 
 ### 📋 Zadanie w Classroom (Polecenie + Formularz):
@@ -272,7 +272,7 @@ Imię i Nazwisko: [WPISZ TUTAJ]
 ---
 
 ## 🗓️ TYDZIEŃ 3: Biały Wywiad (OSINT) & Raport z Afery Medycznej ALAB
-* **Typ wpisu:** Raport Audytorski Red Team (90 min)
+* **Typ wpisu:** Raport Audytorski Red Team
 * **Cel operacyjny:** Uczeń stosuje techniki Google Dorking w celach audytowych, bada publiczne bazy wyciekowe i sporządza analizę podatności na bazie incydentu ALAB / Morele.
 
 ### 📋 Zadanie w Classroom (Polecenie + Formularz):
@@ -299,7 +299,7 @@ Imię i Nazwisko: [WPISZ TUTAJ]
 ---
 
 ## 🗓️ TYDZIEŃ 4: Bezpieczeństwo Webowe (OWASP Top 10: SQL Injection)
-* **Typ wpisu:** Audyt Kodu i Refaktoryzacja (90 min)
+* **Typ wpisu:** Audyt Kodu i Refaktoryzacja
 * **Cel operacyjny:** Uczeń potrafi rozpoznać podatność SQL Injection w kodzie backendu, wyjaśnia ładunek `admin' OR '1'='1 --` oraz pisze bezpieczne zapytanie z Prepared Statements.
 
 ### 📋 Zadanie w Classroom (Polecenie + Formularz):

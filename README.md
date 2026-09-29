@@ -57,14 +57,14 @@ Pod zadaniami Classroom znajduje się 8-etapowa interaktywna checklista samodzie
 
 W górnym menu znajduje się natychmiastowy przełącznik dostosowujący treści, spis modułów, slajdy i zadania:
 
-### 📘 1. Ścieżka Liceum Ogólnokształcące (1h / tydz.)
+### 📘 1. Ścieżka Liceum Ogólnokształcące
 *„Rozpoznanie z lotu ptaka & Higiena Cyfrowa”*
 * **Moduł 1:** Anatomia haseł, bazy danych serwera i zjawisko *Credential Stuffing* (studium wycieku Morele.net).
 * **Moduł 2:** Trzy złote zasady higieny (zasada 1:1, menedżer Bitwarden, hierarchia 2FA: SMS vs TOTP vs klucze FIDO2 YubiKey).
 * **Moduł 3:** Phishing i 4 filary manipulacji socjotechnicznej (pośpiech, autorytet, lęk, chciwość), demaskowanie fałszywych domen i numer 8080.
 * **Moduł 4:** Prawo w IT: licencje Open Source (permisywna MIT vs wirusowa GNU GPL copyleft) oraz status prawny kodu wygenerowanego przez AI (art. 1 pr. aut.).
 
-### ⚡ 2. Ścieżka Technikum Informatyczne (2h / tydz.)
+### ⚡ 2. Ścieżka Technikum Informatyczne
 *„Profil Audytor / Red Team / Pentester / Kod”*
 * **Moduł 1:** Kryptografia w praktyce: architektura SHA-256 (64 rundy bitowe, rejestry, padding), efekt lawinowy i paradoks urodzin.
 * **Moduł 2:** Sól kryptograficzna (Salt), unieszkodliwianie Tęczowych Tablic (Rainbow Tables) oraz nowoczesne funkcje KDF (bcrypt, Argon2id, PBKDF2).
@@ -105,7 +105,7 @@ Wszystkie pliki źródłowe, rozkłady oraz zoperacjonalizowane karty zadań z k
 * [`rozklad_dla_nauczyciela.pdf`](materialy/rozklad_dla_nauczyciela.pdf) – Praktyczny przewodnik metodyczny dla nauczyciela prowadzącego.
 
 ### 📋 2. Zoperacjonalizowane Pakiety Google Classroom (Miesiąc 1):
-* [`materialy_classroom_m1.md`](materialy/materialy_classroom_m1.md) – **Główny Master-Dokument:** Zestawienie 4 tygodni zajęć dla Liceum (1h) i Technikum (2h) z gotowymi postami nauczyciela, zarysami tablicy, instrukcjami krok po kroku, rubrykami oceniania 3-6 i szablonami odpowiedzi.
+* [`materialy_classroom_m1.md`](materialy/materialy_classroom_m1.md) – **Główny Master-Dokument:** Zestawienie 4 tygodni zajęć dla Liceum i Technikum z gotowymi postami nauczyciela, zarysami tablicy, instrukcjami krok po kroku, rubrykami oceniania 3-6 i szablonami odpowiedzi.
 * [`LO_Lekcja_2_do_4_Cyber.md`](materialy/LO_Lekcja_2_do_4_Cyber.md) – Pogłębiony pakiet dydaktyczny dla Liceum: hasła, menedżery Zero-Knowledge, wycieki HaveIBeenPwned, socjotechnika SMS InPost, procedura CERT 8080.
 * [`Tech_Lekcja_2_3_OSINT.md`](materialy/Tech_Lekcja_2_3_OSINT.md) – Profesjonalny pakiet dla Technikum: skryptowanie SHA-256 w Pythonie z soleniem (`hashlib`, `secrets`), obrona przed Rainbow Tables, analiza wycieku ALAB / Morele (OSINT).
 

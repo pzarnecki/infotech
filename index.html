@@ -199,11 +199,11 @@
       <div class="flex items-center bg-cyber-card border border-cyber-border p-1 rounded-xl shadow-inner shrink-0">
         <button id="track-btn-lo" onclick="setTrack('lo')" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all flex items-center gap-1.5 bg-cyber-neon/15 text-cyber-neon border border-cyber-neon/40 shadow">
           <span>📘</span>
-          <span class="hidden md:inline">Ścieżka</span> <span>Liceum (1h)</span>
+          <span class="hidden md:inline">Ścieżka</span> <span>Liceum</span>
         </button>
         <button id="track-btn-tech" onclick="setTrack('tech')" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all flex items-center gap-1.5 text-slate-400 hover:text-white">
           <span>⚡</span>
-          <span class="hidden md:inline">Ścieżka</span> <span>Technikum (2h)</span>
+          <span class="hidden md:inline">Ścieżka</span> <span>Technikum</span>
         </button>
       </div>
 
@@ -288,7 +288,7 @@
           <div>
             <div class="flex items-center gap-2">
               <h3 id="hub-track-title" class="font-mono text-sm font-bold text-white uppercase tracking-wide">
-                Aktywny Profil: Liceum Ogólnokształcące (1h / tydz.)
+                Aktywny Profil: Liceum Ogólnokształcące
               </h3>
               <span id="hub-track-badge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">HIGIENA & OBRONA</span>
             </div>
@@ -372,7 +372,7 @@
             </div>
 
             <div class="pt-4 border-t border-cyber-border flex justify-between items-center">
-              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; 45-90 min</span>
+              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; Warsztat Praktyczny</span>
               <button onclick="openLesson('mod-cyber')" class="px-4 py-2 rounded-lg bg-cyber-neon/20 hover:bg-cyber-neon/30 text-cyber-neon border border-cyber-neon/50 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
                 <span>🚀 Otwórz Moduł 01</span>
                 <span>&rarr;</span>
@@ -416,7 +416,7 @@
             </div>
 
             <div class="pt-4 border-t border-cyber-border flex justify-between items-center">
-              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; 45-90 min</span>
+              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; Warsztat Praktyczny</span>
               <button onclick="openLesson('mod-privacy')" class="px-4 py-2 rounded-lg bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
                 <span>🕵️ Otwórz Moduł 02</span>
                 <span>&rarr;</span>
@@ -460,7 +460,7 @@
             </div>
 
             <div class="pt-4 border-t border-cyber-border flex justify-between items-center">
-              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; 45-90 min</span>
+              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; Warsztat Praktyczny</span>
               <button onclick="openLesson('mod-law')" class="px-4 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
                 <span>⚖️ Otwórz Moduł 03</span>
                 <span>&rarr;</span>
@@ -504,7 +504,7 @@
             </div>
 
             <div class="pt-4 border-t border-cyber-border flex justify-between items-center">
-              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; 45-90 min</span>
+              <span class="text-[11px] font-mono text-slate-400">+50 XP &bull; Warsztat Praktyczny</span>
               <button onclick="openLesson('mod-code')" class="px-4 py-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
                 <span>💻 Otwórz Moduł 04</span>
                 <span>&rarr;</span>
@@ -575,7 +575,7 @@
                 MODUŁ 01
               </span>
               <span id="lesson-duration" class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/40 text-slate-400 border border-slate-800">
-                45 min
+                Moduł Praktyczny
               </span>
               <span id="lesson-xp" class="text-[10px] font-mono px-2 py-0.5 rounded bg-black/40 theme-accent-text border border-slate-800 font-bold">
                 +50 XP
@@ -1101,7 +1101,7 @@
       "title": "Cyberbezpieczeństwo & Higiena Cyfrowa",
       "subtitle": "Anatomia Haseł, Menedżery Zero-Knowledge i Socjotechnika SMS",
       "tag": "LICEUM • MODUŁ 01",
-      "duration": "45 min (1h)",
+      "duration": "Moduł Praktyczny",
       "xp": 50,
       "desc": "Zrozum dlaczego hasła wyciekają, jak działa menedżer Bitwarden, jak skonfigurować bezpieczne 2FA i zdemaskuj oszustwo na dopłatę do paczki InPost.",
       "blackboard": "1. Jedno hasło wszędzie = katastrofa (Credential Stuffing).\\n2. Szyfrowanie Zero-Knowledge w Bitwarden.\\n3. Hierarchia 2FA: Kody SMS < Aplikacja TOTP < Klucz U2F.\\n4. Phishing manipuluje emocjami: pośpiech, lęk, mała kwota (1,50 zł).\\n5. Podejrzany SMS przekaż na numer 8080.",
@@ -1214,7 +1214,7 @@
       "title": "Prywatność, Anonimowość & Ślad Cyfrowy",
       "subtitle": "Prawda o Trybie Incognito, Ciasteczka Śledzące & Sieć Tor",
       "tag": "LICEUM • MODUŁ 02",
-      "duration": "45 min (1h)",
+      "duration": "Moduł Praktyczny",
       "xp": 50,
       "desc": "Poznaj prawdę o trybie prywatnym w przeglądarce, zbadaj swój cyfrowy odcisk palca, dowiedz się komu ufasz używając VPN i jak sieć cebulowa Tor chroni aktywistów.",
       "blackboard": "1. Tryb Incognito kasuje tylko pliki lokalne (historia, cookies).\\n2. Dostawca Internetu, szkoła i strony www nadal widzą Twój adres IP.\\n3. Cyfrowy Odcisk Palca (Browser Fingerprinting) identyfikuje sprzęt bez cookies.\\n4. Darmowy VPN często sprzedaje Twój ruch telekomunikacyjny.\\n5. Tor (The Onion Router) stosuje 3 warstwy szyfrowania i 3 niezależne węzły.",
@@ -1328,7 +1328,7 @@
       "title": "Prawo w IT, Licencje Open Source & Etyka AI",
       "subtitle": "Permisywna Licencja MIT vs Wirusowy Copyleft GPL & Prawa Autorskie w Epoce GenAI",
       "tag": "LICEUM • MODUŁ 03",
-      "duration": "45 min (1h)",
+      "duration": "Moduł Praktyczny",
       "xp": 50,
       "desc": "Poznaj reguły gry w świecie oprogramowania: czy wolno sprzedawać darmowy kod, na czym polega wirusowa licencja GPL, komu przysługują prawa do kodu wygenerowanego przez AI i jak uniknąć plagiatu.",
       "blackboard": "1. Kod źródłowy jest utworem w rozumieniu Ustawy o prawie autorskim.\\n2. Open Source to nie 'brak praw' – to licencja prawna.\\n3. Licencja MIT: rób co chcesz, podaj autora, brak gwarancji.\\n4. Licencja GNU GPL v3: Copyleft (każdy program z kodem GPL musi sam stać się GPL!).\\n5. Polski art. 1 pr. aut.: AI nie jest człowiekiem – czysty prompt nie tworzy praw autorskich.",
@@ -1441,7 +1441,7 @@
       "title": "Bezpieczeństwo Kodu, Bazy & Chmura",
       "subtitle": "Środowisko Chmurowe Google Colab, Podatności Webowe & Higiena Pracy Programisty",
       "tag": "LICEUM • MODUŁ 04",
-      "duration": "45 min (1h)",
+      "duration": "Moduł Praktyczny",
       "xp": 50,
       "desc": "Odkryj potęgę chmury obliczeniowej: uruchamiaj kod bez instalacji na dysku, naucz się bezpiecznie udostępniać notatniki w zespole i zrozum jak chronić formularze przed manipulacją.",
       "blackboard": "1. Chmura Obliczeniowa (Cloud Computing): dostęp do zasobów przez sieć.\\n2. Google Colab: wirtualny Linux + Python w przeglądarce.\\n3. Struktura notatnika: komórki tekstu (Markdown) + komórki kodu (Python).\\n4. Uprawnienia chmurowe: Przeglądający vs Komentujący vs Edytor.\\n5. Zasada najmniejszych uprawnień (Least Privilege) w pracy zespołowej.",
@@ -1557,7 +1557,7 @@
       "title": "Kryptografia w Pythonie & Analiza Wycieków",
       "subtitle": "Architektura SHA-256, Sól, Rainbow Tables & Studium Afer ALAB / Morele",
       "tag": "TECH • PROJEKT 01 & 02",
-      "duration": "90 min (2h)",
+      "duration": "Projekt Zaawansowany",
       "xp": 75,
       "desc": "Zbadaj matematyczny fundament baz danych: zaimplementuj hashowanie SHA-256 i solenie w Pythonie, zrozum dlaczego RTX 4090 wymusza wolne KDF i przeprowadź audyt OSINT.",
       "blackboard": "1. Hash (jednokierunkowy skrót) vs Szyfr (dwukierunkowy z kluczem).\\n2. SHA-256: dopełnienie (padding), 8 rejestrów A-H, 64 rundy bitowe.\\n3. Sól kryptograficzna (secrets.token_hex) niszczy Tęczowe Tablice (Rainbow Tables).\\n4. RTX 4090 liczy 8 mld sha256/s -> wymagane wolne KDF (bcrypt, Argon2id).\\n5. OSINT: analiza wycieku Morele/ALAB i ochrona danych wrażliwych.",
@@ -1670,7 +1670,7 @@
       "title": "Inżynieria Anonimowości & Architektura Sieci",
       "subtitle": "Węzły Wyjściowe Tor, DNS Sinkhole (Pi-Hole) & Izolacja Hiperwizora Xen w Qubes OS",
       "tag": "TECH • ARCHITEKTURA PRYWATNOŚCI",
-      "duration": "90 min (2h)",
+      "duration": "Projekt Zaawansowany",
       "xp": 75,
       "desc": "Zbadaj inżynieryjne aspekty prywatności: przeprowadź symulację podsłuchu węzła wyjściowego Tor, zaprojektuj DNS Sinkhole filtrujący pakiety UDP 53 i poznaj architekturę izolacji domenowej w Qubes OS.",
       "blackboard": "1. Tor Onion Routing: szyfrowanie asymetryczne w 3 warstwach.\\n2. Exit Node Sniffing: węzeł wyjściowy widzi nieszyfrowany ruch HTTP (port 80).\\n3. HTTPS w Torze: ochrona End-to-End przed złośliwym operatorem węzła wyjściowego.\\n4. DNS Sinkhole: zwracanie 0.0.0.0 dla domen trackingowych na porcie UDP 53.\\n5. Qubes OS: hiperwizor typu 1 (Xen), jednorazowe maszyny Disposable AppVM.",
@@ -1784,7 +1784,7 @@
       "title": "Audyt Prawny Kodu & Compliance",
       "subtitle": "Wirusowy Copyleft GPL, License Laundering w LLM & Specyfikacja SBOM (NIS-2)",
       "tag": "TECH • COMPLIANCE & LEGAL TECH",
-      "duration": "90 min (2h)",
+      "duration": "Projekt Zaawansowany",
       "xp": 75,
       "desc": "Poznaj reguły prawne inżynierii oprogramowania: przeprowadź audyt drzewa zależności, zneutralizuj skażenie wirusowym copyleftem w kodzie komercyjnym, przeanalizuj problem prania licencji przez asystentów AI i wygeneruj SBOM.",
       "blackboard": "1. Wirusowy Copyleft (GPL v3): skażenie całego repozytorium komercyjnego.\\n2. Permisywne alternatywy: MIT, Apache 2.0 (zawiera klauzulę patentową), BSD.\\n3. License Laundering: modele LLM trenowane na kodzie GPL emitujące fragmenty bez atrybucji.\\n4. SBOM (Software Bill of Materials): maszynowy spis komponentów (CycloneDX/SPDX).\\n5. Dyrektywa NIS-2 i Cyber Resilience Act: obowiązek znajomości łańcucha dostaw oprogramowania.",
@@ -1897,7 +1897,7 @@
       "title": "Bezpieczeństwo Webowe & Architektura Pamięci",
       "subtitle": "OWASP Top 10: SQL Injection, Prepared Statements & Memory Safety w C vs Rust",
       "tag": "TECH • WEB SECURITY & MEMORY",
-      "duration": "90 min (2h)",
+      "duration": "Projekt Zaawansowany",
       "xp": 75,
       "desc": "Zbadaj kluczowe podatności systemów: przeprowadź atak SQL Injection na żywo, zneutralizuj podatność mechanizmem Prepared Statements, zrozum kradzież ciasteczek sesyjnych w XSS i zbadaj przepełnienie bufora pamięci w C++ a Borrow Checker w Rust.",
       "blackboard": "1. SQL Injection: błąd łączenia danych z kodem (konkatenacja stringów).\\n2. Ładunek: admin' OR '1'='1 -- niszczy logikę warunku WHERE.\\n3. Ochrona wzorcowa: Prepared Statements (parametryzacja zapytań w bazie).\\n4. Cross-Site Scripting (XSS): wstrzyknięcie złośliwego JavaScriptu kradnącego cookies.\\n5. Memory Safety: 70% CVE to błędy pamięci w C/C++ (Buffer Overflow) -> rewolucja Borrow Checkera w Rust.",
@@ -2008,7 +2008,7 @@
 
     /* ================= APP STATE ================= */
     const state = {
-      track: 'lo', // 'lo' (Liceum 1h) or 'tech' (Technikum 2h)
+      track: 'lo', // 'lo' (Liceum) or 'tech' (Technikum)
       currentView: 'hub', // 'hub', 'lesson', 'games', 'quiz', 'toolbox', 'sos'
       currentModule: 'mod-cyber',
       lessonTab: 'slides', // 'slides', 'lab', 'classroom', 'checklist'
@@ -2154,7 +2154,7 @@
         techBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all flex items-center gap-1.5 text-slate-400 hover:text-white";
         
         document.getElementById('hub-track-icon').textContent = '📘';
-        document.getElementById('hub-track-title').textContent = 'Aktywny Profil: Liceum Ogólnokształcące (1h / tydz.)';
+        document.getElementById('hub-track-title').textContent = 'Aktywny Profil: Liceum Ogólnokształcące';
         document.getElementById('hub-track-badge').textContent = 'HIGIENA & OBRONA';
         document.getElementById('hub-track-badge').className = 'text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400';
         document.getElementById('hub-track-desc').textContent = 'Skupienie na higienie cyfrowej, menedżerach haseł, 2FA, phishingu, prawie w IT i Colab bez instalacji lokalnej.';
@@ -2163,7 +2163,7 @@
         loBtn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all flex items-center gap-1.5 text-slate-400 hover:text-white";
 
         document.getElementById('hub-track-icon').textContent = '⚡';
-        document.getElementById('hub-track-title').textContent = 'Aktywny Profil: Technikum Informatyczne (2h / tydz.)';
+        document.getElementById('hub-track-title').textContent = 'Aktywny Profil: Technikum Informatyczne';
         document.getElementById('hub-track-badge').textContent = 'RED TEAM & AUDYT';
         document.getElementById('hub-track-badge').className = 'text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-purple/15 border border-cyber-purple/30 text-cyber-purple';
         document.getElementById('hub-track-desc').textContent = 'Profil inżynierski: kryptografia w Pythonie (SHA-256, sól), OSINT (Morele/ALAB), SQLi, XSS oraz Rust Memory Safety.';

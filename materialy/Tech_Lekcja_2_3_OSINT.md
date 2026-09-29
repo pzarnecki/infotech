@@ -1,7 +1,7 @@
 # ⚡ MODUŁ PROJEKTOWY: KRYPTOGRAFIA & BIAŁY WYWIAD (OSINT)
 ## Materiały Edukacyjne do Google Classroom: Zblokowane Lekcje 2-3 (Technikum)
 **Autor:** Przemysław Żarnecki • Program Edukacyjny INFOTECH 2026  
-**Profil:** Technikum Informatyczne / Programistyczne (2 godziny tygodniowo)  
+**Profil:** Technikum Informatyczne / Programistyczne (Ścieżka Zawodowa)  
 **Środowisko:** Google Colab (Python 3.10+) / Przeglądarka internetowa / DevTools
 
 ---
@@ -101,7 +101,7 @@ print("Wniosek: To samo hasło dało dwa całkowicie odmienne hashe dzięki unik
 
 # 🎯 ZADANIE PROJEKTOWE DO ODDANIA (Google Classroom)
 **Temat zadania w Classroomie:** *Projekt Red Team: Silnik Hashujący z Pętlą & Raport Wywiadowczy OSINT*  
-**Czas:** 90 min (Praca projektowa) • **Forma:** Notatnik Colab + Raport analityczny
+**Forma:** Notatnik Colab + Raport analityczny
 
 ---
 

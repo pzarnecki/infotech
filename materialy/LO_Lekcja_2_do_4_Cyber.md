@@ -1,7 +1,7 @@
 # 🛡️ CYBERBEZPIECZEŃSTWO OD PODSTAW (Liceum Ogólnokształcące)
 ## Pakiet Dydaktyczny do Google Classroom: Lekcje 2, 3 oraz Wyzwanie Podsumowujące (Lekcja 4)
 **Autor:** Przemysław Żarnecki • Program Edukacyjny INFOTECH 2026  
-**Poziom:** Podstawowy (1 godzina tygodniowo) • **Środowisko:** Przeglądarka / Google Colab (brak instalacji lokalnej)
+**Poziom:** Ścieżka Liceum Ogólnokształcące • **Środowisko:** Przeglądarka / Google Colab (brak instalacji lokalnej)
 
 ---
 
@@ -85,7 +85,7 @@ Niestety, jeśli hasło jest słabe i popularne (np. `123456`, `qwerty`, `admin`
 
 # 🏆 LEKCJA 4: WYZWANIE PODSUMOWUJĄCE (ZADANIE DO ODDANIA)
 **Temat zadania w Google Classroom:** *Operacja „Tarcza Osobista” – Zostań Audytorem Bezpieczeństwa IT*  
-**Typ wpisu:** Projekt Indywidualny • **Czas wykonania:** 45 min
+**Typ wpisu:** Projekt Indywidualny
 
 ---
 

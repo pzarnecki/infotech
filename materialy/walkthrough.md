@@ -9,7 +9,7 @@ Techninikum_Liceum/
 ├── Rozklady_Materialu/
 │   └── rozklad_dla_dyrekcji.pdf
 │
-├── Liceum/  (8 lekcji = ~2 miesiące przy 1h/tyg)
+├── Liceum/  (8 lekcji)
 │   ├── Lekcja_01_Wstep_Cloud/
 │   │   ├── LO_L01_Prezentacja.pptx    ← rzutnik
 │   │   ├── LO_L01_Tutorial.pdf        ← do czytania
@@ -32,7 +32,7 @@ Techninikum_Liceum/
 │       ├── LO_L07_08_Tutorial.pdf
 │       └── LO_L07_08_Zadania.docx
 │
-├── Technikum/  (8 bloków 2h = ~2 miesiące przy 2h/tyg)
+├── Technikum/  (8 projektów modułowych)
 │   ├── Lekcja_01_Wstep_Cloud/
 │   │   ├── Tech_L01_Prezentacja.pptx
 │   │   ├── Tech_L01_Tutorial.pdf
