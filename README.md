@@ -92,3 +92,32 @@ W górnym menu znajduje się natychmiastowy przełącznik dostosowujący treści
 * **Dźwięk:** Wbudowany syntezator dźwięków cybernetycznych bazujący na natywnym **Web Audio API** (laserowy sweep zakładek, dźwięki terminala, fanfary sukcesu).
 * **Prezentacja:** Pełnoekranowy tryb slajdów z paskiem miniatur (Thumbnails) i notatkami metodycznymi.
 * **Certyfikat:** Generator personalizowanego Certyfikatu Ukończenia z datą i nazwiskiem ucznia.
+
+---
+
+## 📁 Kompletne Repozytorium Materiałów Dydaktycznych (`materialy/`)
+
+Wszystkie pliki źródłowe, rozkłady oraz zoperacjonalizowane karty zadań z konwersacji zostały przeniesione do repozytorium i rozbudowane o pełne opisy merytoryczne, rubryki NaCoBeZu oraz szablony dla uczniów:
+
+### 🎓 1. Rozkłady Materiału & Dokumentacja Szkolna:
+* [`rozklad_materialu_infotech.md`](materialy/rozklad_materialu_infotech.md) – Pełny, 30-godzinny autorski rozkład materiału dla klas 1 i 2 (podstawa programowa w nowoczesnym ujęciu rynkowym).
+* [`rozklad_dla_dyrekcji.md`](materialy/rozklad_dla_dyrekcji.md) oraz [`rozklad_dla_dyrekcji.pdf`](materialy/rozklad_dla_dyrekcji.pdf) – Wersja oficjalna dla dyrekcji szkoły i kuratorium.
+* [`rozklad_dla_nauczyciela.pdf`](materialy/rozklad_dla_nauczyciela.pdf) – Praktyczny przewodnik metodyczny dla nauczyciela prowadzącego.
+
+### 📋 2. Zoperacjonalizowane Pakiety Google Classroom (Miesiąc 1):
+* [`materialy_classroom_m1.md`](materialy/materialy_classroom_m1.md) – **Główny Master-Dokument:** Zestawienie 4 tygodni zajęć dla Liceum (1h) i Technikum (2h) z gotowymi postami nauczyciela, zarysami tablicy, instrukcjami krok po kroku, rubrykami oceniania 3-6 i szablonami odpowiedzi.
+* [`LO_Lekcja_2_do_4_Cyber.md`](materialy/LO_Lekcja_2_do_4_Cyber.md) – Pogłębiony pakiet dydaktyczny dla Liceum: hasła, menedżery Zero-Knowledge, wycieki HaveIBeenPwned, socjotechnika SMS InPost, procedura CERT 8080.
+* [`Tech_Lekcja_2_3_OSINT.md`](materialy/Tech_Lekcja_2_3_OSINT.md) – Profesjonalny pakiet dla Technikum: skryptowanie SHA-256 w Pythonie z soleniem (`hashlib`, `secrets`), obrona przed Rainbow Tables, analiza wycieku ALAB / Morele (OSINT).
+
+### ⚖️ 3. Prawo w IT, Licencje i Etyka AI:
+* [`LO_Lekcja_4_5_Prawo_Teoria.md`](materialy/LO_Lekcja_4_5_Prawo_Teoria.md) & [`LO_Lekcja_4_5_Prawo_Zadania.md`](materialy/LO_Lekcja_4_5_Prawo_Zadania.md) – Analiza licencji MIT vs GPL oraz praw autorskich do wytworów generatywnej sztucznej inteligencji (Liceum).
+* [`Tech_Lekcja_4_5_Prawo_Teoria.md`](materialy/Tech_Lekcja_4_5_Prawo_Teoria.md) & [`Tech_Lekcja_4_5_Prawo_Zadania.md`](materialy/Tech_Lekcja_4_5_Prawo_Zadania.md) – Zaawansowany audyt licencyjny, efekt wirusowy Copyleft, License Laundering w modelach LLM oraz specyfikacja SBOM (Technikum).
+
+### 🕵️ 4. Prywatność w Sieci, Sieci Cebulowe i Bezpieczeństwo Systemów:
+* [`LO_Prezentacja_Prywatnosc.md`](materialy/LO_Prezentacja_Prywatnosc.md) & [`LO_Zadania_Prywatnosc.md`](materialy/LO_Zadania_Prywatnosc.md) – Przegląd narzędzi: Tryb Incognito vs VPN vs Tor, ochrona przed profilowaniem reklamowym (Liceum).
+* [`Tech_Prezentacja_Prywatnosc.md`](materialy/Tech_Prezentacja_Prywatnosc.md) & [`Tech_Zadania_Prywatnosc.md`](materialy/Tech_Zadania_Prywatnosc.md) – Inżynieria prywatności: analiza Exit Node w sieci Tor, DNS Sinkhole (Pi-Hole) oraz izolacja hiperwizora Xen w systemie Qubes OS (Technikum).
+
+### 💻 5. Pierwsze Środowisko i Wprowadzenie do Chmury:
+* [`LO_L01_Tutorial.md`](materialy/LO_L01_Tutorial.md) & [`LO_L01_Prezentacja.md`](materialy/LO_L01_Prezentacja.md) – Pierwsze kroki w chmurze Google Colab bez instalacji lokalnej.
+* [`LO_L07_Zadanie_Podsumowujace.md`](materialy/LO_L07_Zadanie_Podsumowujace.md) – Projekt integracyjny.
+
