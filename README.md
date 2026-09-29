@@ -4,90 +4,91 @@ Nowoczesny, interaktywny portal edukacyjny z zakresu cyberbezpieczeństwa stworz
 
 Zaprojektowany na bazie autorskich rozkładów materiału i scenariuszy lekcji **Przemysława Żarneckiego (INFOTECH)**, w pełnej zgodności z polską podstawą programową nauczania informatyki w szkole średniej.
 
+🌐 **Wersja online (GitHub Pages):** [https://pzarnecki.github.io/infotech/](https://pzarnecki.github.io/infotech/)
+
 ---
 
-## 🚀 Jak uruchomić?
+## 🚀 Jak uruchomić lokalnie?
 
 Strona została zbudowana jako w 100% samodzielna aplikacja **Single Page Application (SPA)**:
-1. **Opcja 1 (Bezpośrednia):** Po prostu kliknij dwukrotnie w plik `index.html` w dowolnej nowoczesnej przeglądarce (Chrome, Firefox, Edge, Safari). Nie wymaga żadnych instalacji ani kompilacji.
-2. **Opcja 2 (Lokalny serwer):**
+1. **Opcja 1 (Bezpośrednia):** Po prostu kliknij dwukrotnie w plik `index.html` w dowolnej przeglądarce (Chrome, Firefox, Edge, Safari). Nie wymaga żadnych instalacji, baz danych ani kompilacji.
+2. **Opcja 2 (Lokalny serwer deweloperski):**
    ```bash
    cd /home/przemek/Dokumenty/Cyber_Uczniowie
    python3 -m http.server 8080
-   # Wejdź w przeglądarce na: http://localhost:8080
+   # Otwórz w przeglądarce: http://localhost:8080
    ```
 
 ---
 
-## 🎯 Dwie Dedykowane Ścieżki Kształcenia
+## 📋 Zoperacjonalizowany Model Zadań (Google Classroom)
 
-Portal posiada wbudowany **przełącznik profili (Track Switcher)** w górnym menu, który w ułamku sekundy dostosowuje poziom merytoryczny, spis treści, slajdy oraz zadania:
+Wszystkie zadania w zakładce **„Zadania Classroom”** zostały zaprojektowane według nowoczesnego modelu operacyjnego **Zrób &rarr; Przetestuj &rarr; Wklej do Classroom**:
+
+### Każda misja zawiera:
+1. **Jasny cel operacyjny:** Co uczeń potrafi po wykonaniu zadania.
+2. **Instrukcję wykonawczą krok po kroku:** Precyzyjne kroki, adresy zaufanych narzędzi i zadania analityczne.
+3. **Kryteria sukcesu NaCoBeZu (od 3 do 6):**
+   * *Ocena 3 (Dostateczny):* Poziom podstawowy (minimalny).
+   * *Ocena 4 (Dobry):* Poprawne wykonanie z uzasadnieniem.
+   * *Ocena 5 (Bardzo Dobry):* Rozszerzona analiza techniczna i wnioski.
+   * *Ocena 6 (Celujący):* Wyzwanie z gwiazdką (np. konfiguracja Bitwarden z 2FA, skrypt brute-force w Colabie, analiza Blind SQLi).
+4. **Dwa dedykowane przyciski kopiowania jednym kliknięciem:**
+   * 📋 **„Treść dla Nauczyciela”** – gotowa treść polecenia do wklejenia w Google Classroom jako nowe zadanie.
+   * ✍️ **„Formularz dla Ucznia”** – ustrukturyzowany szablon odpowiedzi z polami `[WPISZ TUTAJ]`, który uczeń wkleja do pola odpowiedzi i wypełnia.
+
+### 4 Pełne Misje Projektowe:
+* **Misja LO-01:** *Operacja „Tarcza Osobista” – Audyt Wycieków w HaveIBeenPwned & Dekonstrukcja Phishingu SMS*
+* **Misja LO-02:** *Operacja „Licencyjny Detektyw” – Legalność Kodu z GitHuba (MIT vs GPL) & Prawa Autorskie w Erze GenAI*
+* **Misja TECH-01:** *Operacja „Hash & Salt” – Implementacja Funkcji SHA-256 w Pythonie (Google Colab) & Analiza Efektu Lawinowego*
+* **Misja TECH-02:** *Operacja „Web Auditor” – Audyt Podatności SQL Injection (' OR '1'='1) & Studium Przypadku Wycieku ALAB (OSINT)*
+
+---
+
+## 📝 Interaktywne Karty Samodzielnej Pracy (Self-Study Labs)
+
+Pod zadaniami Classroom znajduje się 8-etapowa interaktywna checklista samodzielnych ćwiczeń uczniowskich (zapisująca stan w pamięci `localStorage` przeglądarki):
+* **Karta A (Osobista Cyber-Twierdza):** Sprawdzenie e-maila w HIBP, silne hasło 16+ znaków, konfiguracja 2FA (TOTP) i bezpieczne zapisanie kodów zapasowych offline.
+* **Karta B (Laboratorium Audytora & Kod):** Uruchomienie skryptu w Colabie, zrozumienie podatności konkatenacji w SQL, zapisanie w telefonie numeru CERT 8080 oraz zdanie testu na min. 80%.
+
+---
+
+## 🎯 Dwie Ścieżki Kształcenia (Dynamic Track Switcher)
+
+W górnym menu znajduje się natychmiastowy przełącznik dostosowujący treści, spis modułów, slajdy i zadania:
 
 ### 📘 1. Ścieżka Liceum Ogólnokształcące (1h / tydz.)
 *„Rozpoznanie z lotu ptaka & Higiena Cyfrowa”*
-* **Cel:** Natychmiastowa ochrona tożsamości młodego człowieka w sieci, bez konieczności lokalnej instalacji środowisk programistycznych (praca w przeglądarce i Google Colab).
-* **Kluczowe moduły:**
-  * **Syndrom jednego hasła:** Dlaczego `Piesek123` użyty w 20 serwisach to zaproszenie dla hakera.
-  * **Wycieki danych (Data Breaches) & Credential Stuffing:** Jak hakerzy zdobywają bazy i weryfikacja w serwisie `HaveIBeenPwned`.
-  * **Trzy Złote Zasady:** Zasada 1:1, Menedżer haseł (Bitwarden) oraz weryfikacja dwuetapowa 2FA/MFA.
-  * **Anatomia Phishingu:** Analiza złośliwych wiadomości SMS („na dopłatę do paczki InPost 1,50 PLN”) i 4 czerwone flagi.
-  * **Prawo i Etyka:** Licencje Open Source (MIT vs GPL copyleft) oraz odpowiedzialne korzystanie ze sztucznej inteligencji.
+* **Moduł 1:** Anatomia haseł, bazy danych serwera i zjawisko *Credential Stuffing* (studium wycieku Morele.net).
+* **Moduł 2:** Trzy złote zasady higieny (zasada 1:1, menedżer Bitwarden, hierarchia 2FA: SMS vs TOTP vs klucze FIDO2 YubiKey).
+* **Moduł 3:** Phishing i 4 filary manipulacji socjotechnicznej (pośpiech, autorytet, lęk, chciwość), demaskowanie fałszywych domen i numer 8080.
+* **Moduł 4:** Prawo w IT: licencje Open Source (permisywna MIT vs wirusowa GNU GPL copyleft) oraz status prawny kodu wygenerowanego przez AI (art. 1 pr. aut.).
 
 ### ⚡ 2. Ścieżka Technikum Informatyczne (2h / tydz.)
 *„Profil Audytor / Red Team / Pentester / Kod”*
-* **Cel:** Praktyczne uzupełnienie przedmiotów zawodowych (INF.03 / INF.04) bez nudnego powtarzania podstawowych pętli.
-* **Kluczowe moduły:**
-  * **Kryptografia w Pythonie:** Moduł `hashlib`, funkcja skrótu SHA-256 jako jednokierunkowy cyfrowy odcisk palca.
-  * **Efekt Lawinowy & Tęczowe Tablice (Rainbow Tables):** Dlaczego dodajemy sól kryptograficzną (`salt`) i jak zapobiegać atakom słownikowym.
-  * **Biały Wywiad (OSINT):** Badanie wektorów ataku, profilowanie organizacji, studium głośnych afer wyciekowych (Morele.net, ALAB laboratoria).
-  * **Bezpieczeństwo Webowe (OWASP Top 10):** Podatność SQL Injection (`admin' OR '1'='1 --`) oraz ochrona poprzez *Prepared Statements*.
-  * **Ataki po stronie przeglądarki:** Cross-Site Scripting (XSS) i kradzież sesji użytkownika.
-  * **Memory Safety:** Dlaczego kod C/C++ generuje błędy *Buffer Overflow* i dlaczego nowoczesna branża stawia na język Rust.
+* **Moduł 1:** Kryptografia w praktyce: architektura SHA-256 (64 rundy bitowe, rejestry, padding), efekt lawinowy i paradoks urodzin.
+* **Moduł 2:** Sól kryptograficzna (Salt), unieszkodliwianie Tęczowych Tablic (Rainbow Tables) oraz nowoczesne funkcje KDF (bcrypt, Argon2id, PBKDF2).
+* **Moduł 3:** Biały Wywiad (OSINT), zaawansowany Google Dorking oraz studium wycieku medycznego ALAB Laboratoria (ransomware RA World).
+* **Moduł 4:** Bezpieczeństwo Webowe OWASP Top 10: SQL Injection (`admin' OR '1'='1 --`), bindowanie parametrów *Prepared Statements* oraz Cross-Site Scripting (XSS).
+* **Moduł 5:** Memory Safety: przepełnienie bufora stosu (*Stack Buffer Overflow*) w C/C++ oraz rewolucja Borrow Checkera w języku Rust.
 
 ---
 
-## 🧪 Interaktywne Laboratorium na Żywo (CTF Lab)
+## 🧪 Interaktywne Laboratoria na Żywo (CTF)
 
-1. **Kalkulator SHA-256 & Efekt Lawinowy:**
-   * Dynamiczne hashowanie dowolnego tekstu w czasie rzeczywistym z użyciem `SubtleCrypto`.
-   * Przełącznik dołączania soli kryptograficznej.
-   * Porównanie hashów przy zmianie tylko 1 znaku (`Piesek123` vs `Piesek124`).
-   * Gotowy snippet kodu Python do uruchomienia w Google Colab.
-2. **Inspektor SMS Phishing (Makieta Smartfona):**
-   * Interaktywny telefon z symulacją fałszywego SMS-a od InPost.
-   * Uczeń musi kliknąć i zidentyfikować 4 czerwone flagi (presja czasu, mikrodopłata 1,50 zł, fałszywa domena, brak znaków diakrytycznych).
-3. **Symulator SQL Injection:**
-   * Formularz logowania ze spreparowanym payloadem `' OR '1'='1 --`.
-   * Wizualizacja budowy zapytania SQL w locie i ominięcia logowania.
-   * Przełącznik *Prepared Statements* pokazujący poprawne zabezpieczenie aplikacji przez programistę.
-4. **Wyzwanie AI Red Teaming (Prompt Injection Guard):**
-   * Wirtualny strażnik serwera INFOTECH pilnujący tajnej flagi `FLAG{INFOTECH_CYBER_2026}`.
-   * Uczeń testuje techniki jailbreakowania promptu (wcielenie w rolę, tryb debugowania, poetycka ekstrakcja), aby przełamać instrukcje nadrzędne.
+1. **Kalkulator SHA-256 z Efektem Lawinowym:** hashowanie w locie (`SubtleCrypto`), test zmiany 1 znaku, dodanie kryptograficznej soli i gotowy kod Python.
+2. **Inspektor SMS Phishing (Makieta Smartfona):** klikalne „czerwone flagi” (presja czasu, mikrodopłata 1,50 zł, podmieniona domena, brak HTTPS).
+3. **Symulator SQL Injection:** formularz logowania z podglądem generowanego zapytania w bazie oraz przełącznikiem na *Prepared Statements*.
+4. **Wyzwanie AI Red Teaming:** mini-chatbot strażnik pilnujący flagi `FLAG{INFOTECH_CYBER_2026}` – testowanie socjotechniki na LLM.
+5. **Gra Decyzyjna: Atak Ransomware w Szkole:** symulator podejmowania decyzji w pierwszych sekundach po zainfekowaniu komputera pendrivem.
+6. **Miernik Siły Hasła RTX 4090 & Generator Passphrase XKCD:** obliczanie czasu łamania hasła oraz losowanie 4-słownych haseł słownikowych.
+7. **Egzamin & Quiz Adepta:** dynamiczny test z oceną szkolną (1-6) i natychmiastowym feedbackiem.
 
 ---
 
-## 📋 Integracja z Google Classroom
+## 🎨 Oprawa Techniczna
 
-W zakładce **„Zadania Classroom”** umieszczono gotowe treści zadań domowych i projektowych z opcją **kopiowania do schowka jednym kliknięciem**:
-* **Zadanie LO (Lekcja 4):** *Zostań Audytorem Bezpieczeństwa* (weryfikacja maila w HaveIBeenPwned + wyjaśnienie fałszywego SMS-a dla babci).
-* **Zadanie Tech (Moduł 2-3):** *Biały Wywiad (OSINT) & Skrypt Pętli Hashującej w Google Colab*.
-* **Zadanie Web (Klasa 2):** *Audyt podatności SQL Injection i XSS*.
-
----
-
-## 🚨 Moduł SOS & Zgłaszanie Incydentów
-
-Dedykowany moduł bezpieczeństwa młodzieży w sieci:
-* Bezpłatny numer SMS **8080** do natychmiastowego zgłaszania fałszywych SMS-ów do zespołu **CERT Polska**.
-* Telefon Zaufania dla Dzieci i Młodzieży **116 111**.
-* Procedura ratunkowa krok po kroku: *„Co zrobić, gdy ktoś włamał się na moje konto (Instagram / Discord / Gmail / BLIK)”*.
-
----
-
-## 🎨 Design i Technologie
-
-* **Stylistyka:** Cyberpunk Hacker Lab / Dark Neon (Glassmorphism, scanlines, glow).
-* **Audio:** Wbudowany syntezator dźwięków cybernetycznych bazujący na natywnym **Web Audio API** (z opcją wyciszenia SFX).
-* **Tryb Prezentacji:** Pełnoekranowe slajdy z obsługą klawiszy strzałek i notatkami dla nauczyciela.
-* **Certyfikat:** Generator personalizowanego Certyfikatu Ukończenia Szkolenia do druku / PDF.
-* **Technologie:** Semantyczny HTML5, nowoczesny Tailwind CSS, JavaScript ES6+. Zero zależności Node.js.
+* **Stylistyka:** Dark Cyberpunk / Neon Green & Cyan & Magenta (Glassmorphism, glow, scanlines).
+* **Dźwięk:** Wbudowany syntezator dźwięków cybernetycznych bazujący na natywnym **Web Audio API** (laserowy sweep zakładek, dźwięki terminala, fanfary sukcesu).
+* **Prezentacja:** Pełnoekranowy tryb slajdów z paskiem miniatur (Thumbnails) i notatkami metodycznymi.
+* **Certyfikat:** Generator personalizowanego Certyfikatu Ukończenia z datą i nazwiskiem ucznia.

