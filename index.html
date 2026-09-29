@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBER ACADEMY • Laboratorium Cyberbezpieczeństwa | Liceum & Technikum</title>
+  <meta name="description" content="Nowoczesna interaktywna platforma edukacyjna z cyberbezpieczeństwa dla uczniów szkół średnich. Program zgodny z wytycznymi INFOTECH i podstawą programową.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,15 +39,17 @@
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'glow': 'glow 2s ease-in-out infinite alternate',
             'scanline': 'scanline 8s linear infinite',
+            'supernova': 'supernova 0.6s ease-out forwards',
           },
           keyframes: {
             glow: {
               '0%': { boxShadow: '0 0 5px rgba(0, 255, 157, 0.2), inset 0 0 5px rgba(0, 255, 157, 0.1)' },
               '100%': { boxShadow: '0 0 20px rgba(0, 255, 157, 0.6), inset 0 0 10px rgba(0, 255, 157, 0.3)' }
             },
-            scanline: {
-              '0%': { transform: 'translateY(-100%)' },
-              '100%': { transform: 'translateY(1000%)' }
+            supernova: {
+              '0%': { opacity: '0.9', transform: 'scale(0.98)' },
+              '50%': { opacity: '1', transform: 'scale(1.01)' },
+              '100%': { opacity: '1', transform: 'scale(1)' }
             }
           }
         }
@@ -48,15 +57,13 @@
     }
   </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
-
     /* Custom Scrollbars */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: #07090e; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; border: 1px solid #00ff9d33; }
     ::-webkit-scrollbar-thumb:hover { background: #00ff9d66; }
 
-    /* Scanline effect overlay */
+    /* Scanlines effect overlay */
     .scanlines::before {
       content: " ";
       display: block;
@@ -102,7 +109,7 @@
 </head>
 <body class="bg-cyber-black text-slate-100 font-sans min-h-screen selection:bg-cyber-neon selection:text-black overflow-x-hidden">
 
-  <!-- ==================== PRELOADER / CYBER INITIALIZATION ==================== -->
+  <!-- ==================== PRELOADER / CYBER BOOT SEQUENCE ==================== -->
   <div id="preloader" class="fixed inset-0 z-50 bg-[#05070a] flex flex-col items-center justify-center p-6 transition-opacity duration-700">
     <div class="relative w-full max-w-lg bg-cyber-card border border-cyber-border rounded-xl p-6 shadow-2xl overflow-hidden cyber-border-glow">
       <div class="flex items-center justify-between pb-3 border-b border-cyber-border/60 text-xs font-mono text-slate-400">
@@ -114,7 +121,7 @@
       </div>
 
       <div id="terminal-boot-logs" class="font-mono text-xs text-cyber-neon/90 my-4 space-y-1.5 h-44 overflow-y-auto leading-relaxed">
-        <p>> [KERNEL] Inicjalizacja protokołów dydaktycznych...</p>
+        <p>> [KERNEL] Inicjalizacja protokołów dydaktycznych INFOTECH...</p>
       </div>
 
       <div class="space-y-2">
@@ -136,7 +143,7 @@
   </div>
 
   <!-- ==================== TOP NAVIGATION BAR ==================== -->
-  <header class="sticky top-0 z-30 backdrop-blur-md bg-cyber-dark/80 border-b border-cyber-border/80 transition-all">
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-cyber-dark/85 border-b border-cyber-border/80 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Logo & Branding -->
@@ -149,7 +156,7 @@
         <div>
           <div class="flex items-center gap-2">
             <span class="font-black tracking-wider text-base sm:text-lg text-white font-mono">CYBER<span class="text-cyber-neon">.ACADEMY</span></span>
-            <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon font-semibold">EDYCJA EDUKACYJNA</span>
+            <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon font-semibold">INFOTECH 2026</span>
           </div>
           <p class="text-[11px] text-slate-400 font-mono hidden sm:block">Laboratorium Cyberbezpieczeństwa &bull; Liceum i Technikum</p>
         </div>
@@ -167,9 +174,9 @@
         </button>
       </div>
 
-      <!-- Right: Sound Toggle & XP Badge -->
+      <!-- Right: Sound Toggle, XP Badge & Certificate -->
       <div class="flex items-center gap-2 sm:gap-4">
-        <!-- Sound Synthesizer Toggle -->
+        <!-- Sound SFX Toggle -->
         <button id="sound-btn" onclick="toggleSound()" class="p-2 rounded-lg bg-cyber-card border border-cyber-border text-slate-400 hover:text-cyber-cyan transition text-xs font-mono flex items-center gap-1.5" title="Włącz/Wyłącz dźwięki SFX">
           <svg id="sound-icon-on" class="w-4 h-4 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
@@ -187,8 +194,14 @@
             <span class="text-slate-400">XP:</span>
             <span id="user-xp" class="text-cyber-neon font-bold">120</span>
           </div>
-          <span id="user-rank" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30 uppercase">Rekrut</span>
+          <span id="user-rank" class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30 uppercase font-bold">Rekrut</span>
         </div>
+
+        <!-- Quick Certificate Button -->
+        <button onclick="openCertificateModal()" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-cyber-purple/15 text-cyber-purple border border-cyber-purple/40 hover:bg-cyber-purple/25 text-xs font-mono font-medium transition" title="Otwórz Certyfikat">
+          <span>🎖️</span>
+          <span>Certyfikat</span>
+        </button>
       </div>
     </div>
 
@@ -198,27 +211,33 @@
         <span>🚀</span> <span>Odprawa</span>
       </button>
       <button onclick="switchTab('materials')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="materials">
-        <span>📖</span> <span>Szkolenie & Prezentacja</span>
+        <span>📖</span> <span>Szkolenie & Slajdy</span>
       </button>
       <button onclick="switchTab('labs')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="labs">
-        <span>🧪</span> <span>Interaktywne Laboratorium</span>
+        <span>🧪</span> <span>Laboratorium CTF (4)</span>
+      </button>
+      <button onclick="switchTab('games')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="games">
+        <span>🎮</span> <span>Gra Decyzyjna & Hasła</span>
+      </button>
+      <button onclick="switchTab('quiz')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="quiz">
+        <span>📝</span> <span>Egzamin & Quiz</span>
       </button>
       <button onclick="switchTab('classroom')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="classroom">
         <span>📋</span> <span>Zadania Classroom</span>
       </button>
       <button onclick="switchTab('toolbox')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="toolbox">
-        <span>🧰</span> <span>Narzędziownik & OSINT</span>
+        <span>🧰</span> <span>Narzędziownik</span>
       </button>
       <button onclick="switchTab('sos')" class="nav-tab px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white" data-tab="sos">
-        <span>🚨</span> <span>SOS & Zgłoszenia</span>
+        <span>🚨</span> <span>SOS (CERT 8080)</span>
       </button>
     </nav>
   </header>
 
-  <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+  <!-- ==================== MAIN APPLICATION CONTAINER ==================== -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative bg-grid">
 
-    <!-- Active Track Banner -->
+    <!-- Active Track Indicator Banner -->
     <div id="track-indicator-banner" class="mb-6 p-4 rounded-xl border border-cyber-border bg-gradient-to-r from-cyber-card via-[#111927] to-cyber-card flex flex-col md:flex-row md:items-center justify-between gap-4 cyber-border-glow">
       <div class="flex items-start md:items-center gap-3">
         <div id="track-indicator-icon" class="w-10 h-10 rounded-lg bg-cyber-neon/10 border border-cyber-neon/30 flex items-center justify-center text-cyber-neon text-lg shrink-0">
@@ -232,7 +251,7 @@
             <span id="track-badge-diff" class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">HIGIENA & OBRONA</span>
           </div>
           <p id="track-indicator-desc" class="text-xs text-slate-400 mt-0.5">
-            Skupienie na rozpoznawaniu zagrożeń, menedżerach haseł, 2FA, phishingu, Open Source i Colab bez konfiguracji lokalnej.
+            Skupienie na higienie cyfrowej, menedżerach haseł, 2FA, phishingu, Open Source i Colab bez instalacji lokalnej.
           </p>
         </div>
       </div>
@@ -262,18 +281,18 @@
             <span class="cyber-gradient-text">Zostań Architektem Bezpieczeństwa.</span>
           </h1>
           <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Interaktywne środowisko edukacyjne zaprojektowane z myślą o uczniach szkół średnich. Łączymy twarde wymagania polskiej podstawy programowej z realnymi atakami, laboratoriami na żywo oraz symulatorami OSINT i kryptografii.
+            Interaktywne środowisko edukacyjne zaprojektowane z myślą o uczniach szkół średnich. Łączymy twarde wymagania polskiej podstawy programowej z realnymi atakami, laboratoriami na żywo, grami decyzyjnymi oraz symulatorami OSINT i kryptografii.
           </p>
 
           <div class="pt-2 flex flex-wrap gap-3">
             <button onclick="switchTab('labs')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyber-neon to-cyber-cyan text-cyber-black font-bold font-mono text-xs sm:text-sm hover:opacity-90 shadow-lg shadow-cyber-neon/20 transition flex items-center gap-2">
               <span>🚀 Uruchom Laboratorium CTF</span>
             </button>
-            <button onclick="switchTab('materials')" class="px-5 py-2.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-white font-mono text-xs sm:text-sm transition flex items-center gap-2">
-              <span>📖 Zobacz Materiały i Slajdy</span>
+            <button onclick="switchTab('games')" class="px-5 py-2.5 rounded-xl bg-cyber-card border border-cyber-purple/50 hover:border-cyber-purple text-cyber-purple font-mono text-xs sm:text-sm transition flex items-center gap-2">
+              <span>🎮 Gra Decyzyjna: Incydent</span>
             </button>
-            <button onclick="openCertificateModal()" class="px-5 py-2.5 rounded-xl bg-cyber-dark/80 border border-slate-700 hover:border-cyber-purple text-cyber-purple font-mono text-xs sm:text-sm transition flex items-center gap-2">
-              <span>🎖️ Certyfikat Adepta</span>
+            <button onclick="switchTab('quiz')" class="px-5 py-2.5 rounded-xl bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-white font-mono text-xs sm:text-sm transition flex items-center gap-2">
+              <span>📝 Egzamin Adepta</span>
             </button>
           </div>
         </div>
@@ -282,8 +301,8 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-cyber-border/60">
           <div class="p-3 bg-cyber-card/60 rounded-xl border border-cyber-border/40">
             <div class="text-xs font-mono text-slate-400">LABORATORIA LIVE</div>
-            <div class="text-2xl font-bold font-mono text-cyber-neon mt-1">4 Aktywne</div>
-            <div class="text-[11px] text-slate-500">SHA-256, SMS, SQLi, AI</div>
+            <div class="text-2xl font-bold font-mono text-cyber-neon mt-1">4 Moduły</div>
+            <div class="text-[11px] text-slate-500">SHA-256, Phishing, SQLi, AI</div>
           </div>
           <div class="p-3 bg-cyber-card/60 rounded-xl border border-cyber-border/40">
             <div class="text-xs font-mono text-slate-400">ŚCIEŻKI DYDAKTYCZNE</div>
@@ -291,14 +310,14 @@
             <div class="text-[11px] text-slate-500">1h vs 2h tygodniowo</div>
           </div>
           <div class="p-3 bg-cyber-card/60 rounded-xl border border-cyber-border/40">
-            <div class="text-xs font-mono text-slate-400">ZADANIA CLASSROOM</div>
-            <div class="text-2xl font-bold font-mono text-cyber-purple mt-1">1-Click</div>
-            <div class="text-[11px] text-slate-500">Gotowe do wklejenia</div>
+            <div class="text-xs font-mono text-slate-400">SYMULATOR INCYDENTU</div>
+            <div class="text-2xl font-bold font-mono text-cyber-purple mt-1">Ransomware</div>
+            <div class="text-[11px] text-slate-500">Gra z konsekwencjami</div>
           </div>
           <div class="p-3 bg-cyber-card/60 rounded-xl border border-cyber-border/40">
             <div class="text-xs font-mono text-slate-400">BEZPIECZEŃSTWO</div>
             <div class="text-2xl font-bold font-mono text-cyber-warning mt-1">CERT / 8080</div>
-            <div class="text-[11px] text-slate-500">Weryfikowane procedury</div>
+            <div class="text-[11px] text-slate-500">Procedury ratunkowe</div>
           </div>
         </div>
       </div>
@@ -406,7 +425,7 @@
           <h3 class="font-mono text-sm font-bold text-white flex items-center gap-2">
             <span>🎖️</span> Twoje Osiągnięcia i Odznaki w Laboratorium
           </h3>
-          <span class="text-xs font-mono text-slate-400">Rozwiązuj laboratoria, aby odblokować kolejne</span>
+          <span class="text-xs font-mono text-slate-400">Rozwiązuj laboratoria i quizy, aby odblokować kolejne odznaki</span>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -475,7 +494,7 @@
           <div class="sticky top-24 rounded-xl border border-cyber-border bg-cyber-card p-4 space-y-2">
             <div class="text-xs font-mono text-cyber-neon uppercase font-bold tracking-wider mb-2">Spis Modułów</div>
             <nav id="toc-list" class="space-y-1 text-xs font-mono">
-              <!-- Dynamically populated or rendered based on active track -->
+              <!-- Dynamically populated via JS -->
             </nav>
             <div class="pt-4 border-t border-cyber-border/60">
               <span class="text-[11px] text-slate-400 block mb-2 font-mono">Pobierz materiały:</span>
@@ -514,8 +533,13 @@
             <!-- Injected by JS -->
           </div>
 
+          <!-- Slide Thumbnails Bar -->
+          <div id="slide-thumbnails-bar" class="flex gap-2 overflow-x-auto py-2 border-t border-slate-800">
+            <!-- Injected by JS -->
+          </div>
+
           <!-- Slide Footer & Controls -->
-          <div class="flex items-center justify-between pt-6 border-t border-cyber-border/60">
+          <div class="flex items-center justify-between pt-4 border-t border-cyber-border/60">
             <button onclick="prevSlide()" class="px-4 py-2 rounded-lg bg-cyber-card border border-cyber-border hover:border-cyber-cyan text-xs font-mono text-slate-300 hover:text-white transition flex items-center gap-2">
               <span>&larr;</span> <span>Poprzedni</span>
             </button>
@@ -550,12 +574,12 @@
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 class="text-xl font-bold font-mono text-white flex items-center gap-2">
-            <span>🧪</span> Laboratorium Bezpieczeństwa na Żywo
+            <span>🧪</span> Laboratorium Bezpieczeństwa na Żywo (CTF)
           </h2>
           <p class="text-xs text-slate-400">Wykonaj eksperymenty, zobacz jak działają algorytmy i zdobądź punkty XP</p>
         </div>
         <div class="text-xs font-mono text-cyber-neon bg-cyber-neon/10 border border-cyber-neon/30 px-3 py-1.5 rounded-lg flex items-center gap-2">
-          <span>🎯 Ukończone zadania:</span>
+          <span>🎯 Ukończone laboratoria:</span>
           <span id="labs-completed-count" class="font-bold">0 / 4</span>
         </div>
       </div>
@@ -858,7 +882,199 @@ print(f"Hash: {hash_val}")</code></pre>
       </div>
     </section>
 
-    <!-- ==================== TAB 4: ZADANIA CLASSROOM ==================== -->
+    <!-- ==================== TAB 4: GRA DECYZYJNA & HASŁA (NOWY WYPASIONY MODUŁ) ==================== -->
+    <section id="tab-games" class="tab-pane space-y-8 hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold font-mono text-white flex items-center gap-2">
+            <span>🎮</span> Symulator Incydentu & Laboratorium Haseł
+          </h2>
+          <p class="text-xs text-slate-400">Podejmuj krytyczne decyzje pod presją czasu oraz przetestuj hasła przeciwko karcie RTX 4090</p>
+        </div>
+      </div>
+
+      <!-- DECISION GAME: Ransomware / Malware w Pracowni Szkolnej -->
+      <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-6 cyber-border-glow">
+        <div class="flex items-center justify-between border-b border-cyber-border/60 pb-4">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-cyber-danger/20 border border-cyber-danger/40 text-cyber-danger flex items-center justify-center text-xl font-bold">⚠️</span>
+            <div>
+              <h3 class="text-base font-bold font-mono text-white">Gra Decyzyjna: Atak Szyfrujący w Pracowni Komputerowej</h3>
+              <p class="text-xs text-slate-400">Podłączyłeś pendrive kolegi i nagle pliki na pulpicie zmieniają rozszerzenia na .LOCKED!</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyber-danger/10 text-cyber-danger border border-cyber-danger/30">+80 XP</span>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Step 1 -->
+          <div class="p-4 rounded-xl bg-cyber-dark border border-slate-800 space-y-3">
+            <div class="flex items-center gap-2 text-xs font-mono text-cyber-warning font-bold">
+              <span>KROK 1 / 2:</span> Twoje pierwsze działanie w pierwszych 5 sekundach ataku:
+            </div>
+            <p class="text-xs text-slate-300 font-sans">
+              Ekran zaczyna migać, procesor obciążony na 100%, pojawia się okno z żądaniem 500 zł w Bitcoinie za odszyfrowanie plików. Co robisz w pierwszej kolejności?
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+              <button onclick="handleIncidentChoice(1, 'restart')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-red-400 text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">A. Restart komputera</strong>
+                <span class="text-slate-400 text-[11px]">Wciskam przycisk Reset na obudowie PC.</span>
+              </button>
+              <button onclick="handleIncidentChoice(1, 'isolate')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-cyber-neon text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">B. Fizyczna Izolacja Sieci</strong>
+                <span class="text-slate-400 text-[11px]">Wyciągam kabel sieciowy (RJ45) i wyłączam Wi-Fi.</span>
+              </button>
+              <button onclick="handleIncidentChoice(1, 'pay')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-amber-400 text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">C. Kontakt z hakerem</strong>
+                <span class="text-slate-400 text-[11px]">Wpisuję maila do hakera, by negocjować cenę.</span>
+              </button>
+            </div>
+
+            <div id="incident-feedback-1" class="hidden text-xs font-mono p-3 rounded-lg"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div id="incident-step-2" class="hidden p-4 rounded-xl bg-cyber-dark border border-slate-800 space-y-3">
+            <div class="flex items-center gap-2 text-xs font-mono text-cyber-neon font-bold">
+              <span>KROK 2 / 2:</span> Stacja została skutecznie odcięta od sieci szkolnej. Co robisz dalej?
+            </div>
+            <p class="text-xs text-slate-300 font-sans">
+              Zatrzymałeś rozprzestrzenianie robaka na serwery i inne komputery w szkole. Jak postępujesz zgodnie z prawem i etyką?
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+              <button onclick="handleIncidentChoice(2, 'hide')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-red-400 text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">A. Ukrycie problemu</strong>
+                <span class="text-slate-400 text-[11px]">Wyłączam monitor i udaję, że nic się nie stało.</span>
+              </button>
+              <button onclick="handleIncidentChoice(2, 'report')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-cyber-neon text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">B. Zgłoszenie Incydentu</strong>
+                <span class="text-slate-400 text-[11px]">Informuję nauczyciela/admina i zgłaszam do CERT (8080).</span>
+              </button>
+              <button onclick="handleIncidentChoice(2, 'friend')" class="p-3 rounded-lg bg-cyber-card border border-slate-700 hover:border-amber-400 text-left text-xs font-mono transition">
+                <strong class="text-white block mb-1">C. Test na koledze</strong>
+                <span class="text-slate-400 text-[11px]">Przekładam pendrive koledze z ławki na próbę.</span>
+              </button>
+            </div>
+
+            <div id="incident-feedback-2" class="hidden text-xs font-mono p-3 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSWORD STRENGTH & RTX 4090 TESTER + PASSPHRASE GENERATOR -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Tester -->
+        <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-4 cyber-border-glow">
+          <div class="flex items-center justify-between border-b border-cyber-border/60 pb-3">
+            <h3 class="text-base font-bold font-mono text-white flex items-center gap-2">
+              <span>🛡️</span> Miernik Siły Hasła (Karta RTX 4090)
+            </h3>
+            <span class="text-xs font-mono text-cyber-neon">Real-Time Entropia</span>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1">Przetestuj dowolne hasło (np. szkolne lub testowe):</label>
+            <input type="text" id="pwd-meter-input" placeholder="Wpisz hasło..." oninput="evaluatePasswordStrength()" class="w-full px-3 py-2 rounded-lg bg-cyber-dark border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-cyber-neon">
+          </div>
+
+          <!-- Progress bar -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-mono">
+              <span class="text-slate-400">Siła zabezpieczenia:</span>
+              <span id="pwd-score-label" class="font-bold text-red-400">BRAK DANYCH</span>
+            </div>
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div id="pwd-score-bar" class="h-full bg-red-500 w-0 transition-all duration-300"></div>
+            </div>
+          </div>
+
+          <!-- Crack Time estimates -->
+          <div class="grid grid-cols-2 gap-3 text-xs font-mono pt-2">
+            <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
+              <span class="text-slate-400 text-[10px] block">Czas łamania (1x RTX 4090):</span>
+              <span id="pwd-time-rtx" class="text-sm font-bold text-cyber-warning mt-1 block">0 sekund</span>
+            </div>
+            <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800">
+              <span class="text-slate-400 text-[10px] block">Klaster 8x RTX 4090 (Hakerzy):</span>
+              <span id="pwd-time-cluster" class="text-sm font-bold text-cyber-danger mt-1 block">0 sekund</span>
+            </div>
+          </div>
+
+          <div id="pwd-tips" class="text-[11px] text-slate-400 font-sans p-3 bg-cyber-dark rounded-lg border border-slate-800">
+            Wpisz minimum 14 znaków, unikaj imion zwierząt i dat urodzenia.
+          </div>
+        </div>
+
+        <!-- Generator Passphrase XKCD -->
+        <div class="rounded-xl border border-cyber-border bg-cyber-card p-6 space-y-4 cyber-border-glow flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-cyber-border/60 pb-3">
+              <h3 class="text-base font-bold font-mono text-white flex items-center gap-2">
+                <span>🔑</span> Generator Bezpiecznych Haseł (Metoda Passphrase)
+              </h3>
+              <span class="text-xs font-mono text-cyber-cyan">Metoda XKCD</span>
+            </div>
+
+            <p class="text-xs text-slate-300 font-sans mt-3 leading-relaxed">
+              Zamiast trudnego do zapamiętania <code class="text-cyber-warning">Tr0ub4dor&3</code>, nowym standardem bezpieczeństwa są 4 losowe, łatwe do wyobrażenia słowa oddzielone myślnikami.
+            </p>
+
+            <div class="my-4 p-4 rounded-xl bg-cyber-dark border border-cyber-cyan/40 text-center font-mono text-lg font-bold text-cyber-cyan tracking-wider shadow-inner" id="generated-passphrase">
+              poprawny-koń-bateria-zszywacz
+            </div>
+
+            <div class="flex gap-2">
+              <button onclick="generateNewPassphrase()" class="flex-1 py-2 rounded-lg bg-cyber-cyan/15 hover:bg-cyber-cyan/25 text-cyber-cyan border border-cyber-cyan/30 text-xs font-mono font-bold transition">
+                🔄 Losuj nowe słowa
+              </button>
+              <button onclick="copyGeneratedPassphrase()" class="px-4 py-2 rounded-lg bg-cyber-card border border-slate-700 hover:border-white text-xs font-mono text-white transition">
+                📋 Kopiuj
+              </button>
+            </div>
+          </div>
+
+          <div class="p-3 bg-cyber-dark rounded-lg border border-slate-800 text-[11px] text-slate-400">
+            Entropia 4 losowych słów to ponad <strong class="text-cyber-neon">64 bity</strong> – złamanie takiego hasła metodą brute force zajęłoby klastrowi superkomputerów ponad <strong>3000 lat</strong>!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 5: EGZAMIN & QUIZ WIEDZY ==================== -->
+    <section id="tab-quiz" class="tab-pane space-y-6 hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold font-mono text-white flex items-center gap-2">
+            <span>📝</span> Egzamin Adepta Cyberbezpieczeństwa
+          </h2>
+          <p class="text-xs text-slate-400">Sprawdź swoją wiedzę z materiału lekcyjnego, uzyskaj ocenę szkolną i wpisz ją na certyfikat</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-slate-400">Wynik:</span>
+          <span id="quiz-score-badge" class="px-3 py-1 rounded bg-cyber-neon/15 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold">0 / 5 (0%)</span>
+        </div>
+      </div>
+
+      <!-- Quiz Questions Container -->
+      <div id="quiz-container" class="space-y-4">
+        <!-- Injected dynamically by JS based on LO / TECH track -->
+      </div>
+
+      <div class="flex justify-between items-center p-4 bg-cyber-card rounded-xl border border-cyber-border">
+        <div>
+          <span class="text-xs font-mono text-slate-400">Ocena końcowa:</span>
+          <span id="quiz-grade" class="text-base font-bold font-mono text-white ml-2">-</span>
+        </div>
+        <button onclick="resetQuiz()" class="px-4 py-2 rounded-lg bg-cyber-dark border border-slate-700 hover:border-cyber-cyan text-xs font-mono text-slate-300 hover:text-white transition">
+          🔄 Rozwiąż ponownie
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 6: ZADANIA CLASSROOM ==================== -->
     <section id="tab-classroom" class="tab-pane space-y-6 hidden">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -977,7 +1193,7 @@ print(f"Hash: {hash_val}")</code></pre>
       </div>
     </section>
 
-    <!-- ==================== TAB 5: NARZĘDZIOWNIK & OSINT ==================== -->
+    <!-- ==================== TAB 7: NARZĘDZIOWNIK & OSINT ==================== -->
     <section id="tab-toolbox" class="tab-pane space-y-6 hidden">
       <div>
         <h2 class="text-xl font-bold font-mono text-white flex items-center gap-2">
@@ -1078,7 +1294,7 @@ print(f"Hash: {hash_val}")</code></pre>
       </div>
     </section>
 
-    <!-- ==================== TAB 6: SOS & ZGŁASZANIE INCYDENTÓW ==================== -->
+    <!-- ==================== TAB 8: SOS & ZGŁASZANIE INCYDENTÓW ==================== -->
     <section id="tab-sos" class="tab-pane space-y-6 hidden">
       <div class="p-6 rounded-2xl border border-cyber-danger/40 bg-gradient-to-br from-red-950/20 via-cyber-card to-cyber-dark cyber-border-glow">
         <div class="flex items-center gap-3">
@@ -1247,7 +1463,8 @@ print(f"Hash: {hash_val}")</code></pre>
       soundEnabled: true,
       currentSlide: 0,
       completedLabs: new Set(),
-      phishFlagsFound: new Set()
+      phishFlagsFound: new Set(),
+      quizAnswers: {}
     };
 
     /* ================= SOUND SYNTHESIZER (WEB AUDIO API) ================= */
@@ -1276,19 +1493,35 @@ print(f"Hash: {hash_val}")</code></pre>
           gain.connect(this.ctx.destination);
           osc.start();
           osc.stop(this.ctx.currentTime + duration);
-        } catch (e) {
-          // ignore audio failure
-        }
+        } catch (e) {}
       }
       click() { this.playTone(800, 'sine', 0.04, 0.03); }
       beep() { this.playTone(1200, 'sine', 0.08, 0.04); }
+      laser() {
+        if (!state.soundEnabled) return;
+        try {
+          this.init();
+          if (!this.ctx) return;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(1400, this.ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(250, this.ctx.currentTime + 0.15);
+          gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.15);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start();
+          osc.stop(this.ctx.currentTime + 0.15);
+        } catch (e) {}
+      }
       success() {
         this.playTone(523.25, 'triangle', 0.1, 0.05); // C5
         setTimeout(() => this.playTone(659.25, 'triangle', 0.1, 0.05), 80); // E5
         setTimeout(() => this.playTone(783.99, 'triangle', 0.2, 0.06), 160); // G5
       }
       alert() {
-        this.playTone(300, 'sawtooth', 0.15, 0.05);
+        this.playTone(280, 'sawtooth', 0.18, 0.06);
       }
     }
     const sound = new CyberSound();
@@ -1302,7 +1535,7 @@ print(f"Hash: {hash_val}")</code></pre>
 
     /* ================= PRELOADER LOGIC ================= */
     const bootLogs = [
-      "> [SYSTEM] Inicjalizacja protokołów dydaktycznych...",
+      "> [SYSTEM] Inicjalizacja protokołów dydaktycznych INFOTECH...",
       "> [INFO] Ładowanie programu Liceum (Higiena & 2FA)...",
       "> [INFO] Ładowanie programu Technikum (Python SHA-256 & OSINT)...",
       "> [SECURITY] Sprawdzanie integralności laboratoriów CTF...",
@@ -1355,7 +1588,7 @@ print(f"Hash: {hash_val}")</code></pre>
     /* ================= TRACK MANAGEMENT (LICEUM vs TECHNIKUM) ================= */
     function setTrack(trackKey) {
       state.track = trackKey;
-      sound.click();
+      sound.laser();
 
       const isLo = trackKey === 'lo';
       const loBtn = document.getElementById('track-btn-lo');
@@ -1382,6 +1615,7 @@ print(f"Hash: {hash_val}")</code></pre>
       }
 
       renderMaterialsContent();
+      renderQuiz();
     }
 
     function toggleTrack() {
@@ -1391,7 +1625,7 @@ print(f"Hash: {hash_val}")</code></pre>
     /* ================= TAB NAVIGATION ================= */
     function switchTab(tabId) {
       state.activeTab = tabId;
-      sound.click();
+      sound.laser();
 
       // Toggle tab buttons
       document.querySelectorAll('.nav-tab').forEach(btn => {
@@ -1404,8 +1638,13 @@ print(f"Hash: {hash_val}")</code></pre>
 
       // Toggle content panes
       document.querySelectorAll('.tab-pane').forEach(pane => {
-        pane.classList.toggle('hidden', pane.id !== `tab-${tabId}`);
-        pane.classList.toggle('block', pane.id === `tab-${tabId}`);
+        const isMatch = pane.id === `tab-${tabId}`;
+        pane.classList.toggle('hidden', !isMatch);
+        pane.classList.toggle('block', isMatch);
+        if (isMatch) {
+          pane.classList.add('animate-supernova');
+          setTimeout(() => pane.classList.remove('animate-supernova'), 600);
+        }
       });
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1435,7 +1674,7 @@ print(f"Hash: {hash_val}")</code></pre>
       }
     }
 
-    /* ================= SYLLABUS DATA (LO vs TECH) ================= */
+    /* ================= SYLLABUS DATA ================= */
     const syllabusData = {
       lo: {
         toc: [
@@ -1728,7 +1967,7 @@ print(f"Hash: {hash_val}")</code></pre>
       }
     };
 
-    /* ================= RENDER MATERIALS CONTENT (TOC) ================= */
+    /* ================= RENDER MATERIALS CONTENT ================= */
     function renderMaterialsContent() {
       const data = syllabusData[state.track];
       
@@ -1794,6 +2033,15 @@ print(f"Hash: {hash_val}")</code></pre>
         <button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition-all ${i === state.currentSlide ? 'bg-cyber-neon w-6' : 'bg-slate-700 hover:bg-slate-500'}"></button>
       `).join('');
 
+      // Render Thumbnails Bar
+      const thumbBar = document.getElementById('slide-thumbnails-bar');
+      thumbBar.innerHTML = slides.map((s, i) => `
+        <button onclick="goToSlide(${i})" class="px-3 py-1.5 rounded-lg border text-left shrink-0 text-xs font-mono transition ${i === state.currentSlide ? 'border-cyber-neon bg-cyber-neon/15 text-cyber-neon' : 'border-slate-800 bg-cyber-dark text-slate-400 hover:text-white'}">
+          <span class="text-[10px] block opacity-75">SLAJD ${i + 1}</span>
+          <span class="truncate max-w-[120px] block font-bold">${s.title.substring(0, 18)}...</span>
+        </button>
+      `).join('');
+
       // Notes
       document.getElementById('slide-teacher-notes').textContent = slide.notes;
     }
@@ -1825,7 +2073,6 @@ print(f"Hash: {hash_val}")</code></pre>
       }
     }
 
-    // Keyboard navigation for slides
     document.addEventListener('keydown', (e) => {
       if (state.activeTab === 'materials' && state.viewMode === 'slides') {
         if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
@@ -1903,7 +2150,6 @@ print(f"Hash: {hash_val}")</code></pre>
       } else {
         queryElem.innerHTML = `SELECT * FROM users WHERE login = '<span class="text-cyber-purple font-bold">${escapeHtml(user)}</span>' AND password = '<span class="text-cyber-cyan font-bold">${escapeHtml(pass)}</span>';`;
 
-        // Check if injection payload present
         if (user.includes("' OR '") || user.includes("' OR 1=1") || user.includes("'--") || user.includes("' --")) {
           verdictElem.className = "p-3 rounded-lg border border-cyber-danger/60 bg-red-950/30 text-cyber-danger text-xs font-mono";
           verdictElem.innerHTML = "<strong>LUKA WYKORZYSTANA (PWNED)!</strong> Warunek logiczny został zmanipulowany na PRAWDA (1=1). Logowanie bez hasła jako pierwszy użytkownik w tabeli (Administrator)!";
@@ -1939,7 +2185,6 @@ print(f"Hash: {hash_val}")</code></pre>
 
       const history = document.getElementById('ai-chat-history');
 
-      // Append user msg
       const userBubble = document.createElement('div');
       userBubble.className = "p-2.5 rounded bg-cyber-dark border border-slate-700 text-slate-200 text-right";
       userBubble.innerHTML = `<span class="text-cyber-cyan font-bold">TY:</span> ${escapeHtml(text)}`;
@@ -1948,7 +2193,6 @@ print(f"Hash: {hash_val}")</code></pre>
 
       sound.click();
 
-      // Bot simulated reasoning
       setTimeout(() => {
         const botBubble = document.createElement('div');
         botBubble.className = "p-2.5 rounded bg-slate-800/80 border border-slate-700 text-slate-300";
@@ -1977,7 +2221,337 @@ print(f"Hash: {hash_val}")</code></pre>
       }, 500);
     }
 
-    /* ================= COMPLETING LABS & XP SYSTEM ================= */
+    /* ================= GAME & INCIDENT RESPONSE SIMULATOR ================= */
+    function handleIncidentChoice(step, choice) {
+      if (step === 1) {
+        const fb = document.getElementById('incident-feedback-1');
+        fb.classList.remove('hidden');
+
+        if (choice === 'isolate') {
+          sound.success();
+          fb.className = "text-xs font-mono p-3 rounded-lg bg-emerald-950/60 border border-emerald-500 text-emerald-300";
+          fb.innerHTML = "✅ <strong>DOSKONAŁA DECYZJA!</strong> Fizyczne odłączenie kabla LAN i Wi-Fi natychmiast zapobiega rozprzestrzenieniu się ransomware na serwer szkolny i komputery kolegów. Komputer zostaje włączony, dzięki czemu w pamięci RAM zachowają się klucze deszyfrujące dla CERT!";
+          document.getElementById('incident-step-2').classList.remove('hidden');
+        } else if (choice === 'restart') {
+          sound.alert();
+          fb.className = "text-xs font-mono p-3 rounded-lg bg-red-950/60 border border-red-500 text-red-300";
+          fb.innerHTML = "❌ <strong>BŁĄD KRYTYCZNY!</strong> Restart komputera nieodwracalnie czyści pamięć RAM (niszcząc klucze szyfrujące), a przy ponownym uruchomieniu ransomware może uszkodzić sektor rozruchowy dysku (MBR)!";
+        } else {
+          sound.alert();
+          fb.className = "text-xs font-mono p-3 rounded-lg bg-red-950/60 border border-red-500 text-red-300";
+          fb.innerHTML = "❌ <strong>BŁĄD!</strong> Płacenie okupu finansuje cyberprzestępców i nigdy nie daje gwarancji odzyskania danych. Ponadto przestępcy oznaczą Cię jako łatwy cel.";
+        }
+      } else if (step === 2) {
+        const fb = document.getElementById('incident-feedback-2');
+        fb.classList.remove('hidden');
+
+        if (choice === 'report') {
+          sound.success();
+          fb.className = "text-xs font-mono p-3 rounded-lg bg-emerald-950/60 border border-emerald-500 text-emerald-300";
+          fb.innerHTML = "✅ <strong>PRAWIDŁOWA PROCEDURA:</strong> Nauczyciel lub administrator IT zabezpiecza próbkę złośliwego pliku i zgłasza incydent do CERT Polska (incydent.cert.pl / tel. 8080). Misja zaliczona!";
+          addXp(80);
+          activateBadge('badge-pass');
+        } else {
+          sound.alert();
+          fb.className = "text-xs font-mono p-3 rounded-lg bg-red-950/60 border border-red-500 text-red-300";
+          fb.innerHTML = "❌ <strong>BŁĄD!</strong> Ukrywanie incydentu lub podłączanie zainfekowanego nośnika do innych komputerów powiększa straty i naraża całą sieć szkolną na paraliż.";
+        }
+      }
+    }
+
+    /* ================= PASSWORD STRENGTH EVALUATOR ================= */
+    function evaluatePasswordStrength() {
+      const pwd = document.getElementById('pwd-meter-input').value;
+      const bar = document.getElementById('pwd-score-bar');
+      const label = document.getElementById('pwd-score-label');
+      const timeRtx = document.getElementById('pwd-time-rtx');
+      const timeCluster = document.getElementById('pwd-time-cluster');
+      const tips = document.getElementById('pwd-tips');
+
+      if (!pwd) {
+        bar.style.width = '0%';
+        bar.className = 'h-full bg-red-500';
+        label.textContent = 'BRAK HASŁA';
+        label.className = 'font-bold text-red-400';
+        timeRtx.textContent = '0 sekund';
+        timeCluster.textContent = '0 sekund';
+        return;
+      }
+
+      let score = 0;
+      if (pwd.length >= 8) score += 20;
+      if (pwd.length >= 12) score += 25;
+      if (pwd.length >= 16) score += 25;
+      if (/[A-Z]/.test(pwd)) score += 10;
+      if (/[0-9]/.test(pwd)) score += 10;
+      if (/[^A-Za-z0-9]/.test(pwd)) score += 10;
+
+      // Penalize common patterns
+      if (/123|admin|piesek|haslo|szkola|qwerty/i.test(pwd)) {
+        score = Math.min(score, 25);
+      }
+
+      bar.style.width = score + '%';
+
+      if (score < 40) {
+        bar.className = 'h-full bg-red-500';
+        label.textContent = 'BARDZO SŁABE (KRYTYCZNE)';
+        label.className = 'font-bold text-red-400';
+        timeRtx.textContent = '< 0.001 sekundy';
+        timeCluster.textContent = 'Błyskawicznie';
+        tips.innerHTML = '⚠️ Hasło podatne na natychmiastowy atak słownikowy. Zwiększ długość powyżej 14 znaków.';
+      } else if (score < 75) {
+        bar.className = 'h-full bg-amber-500';
+        label.textContent = 'ŚREDNIE (DO POPRAWY)';
+        label.className = 'font-bold text-amber-400';
+        timeRtx.textContent = 'Kilka godzin - dni';
+        timeCluster.textContent = 'Kilka minut';
+        tips.innerHTML = '⚡ Dobre, ale współczesne karty graficzne złamią je w tablicach tęczowych. Dodaj kolejne słowo!';
+      } else {
+        bar.className = 'h-full bg-emerald-500';
+        label.textContent = 'PANCERNE (ODPORNE)';
+        label.className = 'font-bold text-emerald-400';
+        timeRtx.textContent = '> 4 000 lat';
+        timeCluster.textContent = '> 500 lat';
+        tips.innerHTML = '🛡️ Doskonałe hasło! Odporne na ataki brute force i tęczowe tablice.';
+        activateBadge('badge-pass');
+      }
+      sound.click();
+    }
+
+    /* ================= PASSPHRASE GENERATOR (XKCD) ================= */
+    const wordList = [
+      'bateria', 'koń', 'zegar', 'chmura', 'wulkan', 'pustynia', 'laser', 'raketa',
+      'komputer', 'droga', 'statek', 'zamek', 'bramka', 'orzeł', 'most', 'diament',
+      'jabłko', 'ocean', 'tarcza', 'radar', 'szermierz', 'bursztyn', 'wilk', 'planeta'
+    ];
+
+    function generateNewPassphrase() {
+      const words = [];
+      for (let i = 0; i < 4; i++) {
+        const rand = wordList[Math.floor(Math.random() * wordList.length)];
+        words.push(rand);
+      }
+      const phrase = words.join('-');
+      document.getElementById('generated-passphrase').textContent = phrase;
+      document.getElementById('pwd-meter-input').value = phrase;
+      evaluatePasswordStrength();
+      sound.success();
+    }
+
+    function copyGeneratedPassphrase() {
+      const text = document.getElementById('generated-passphrase').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        sound.beep();
+        alert("Hasło skopiowane do schowka: " + text);
+      });
+    }
+
+    /* ================= QUIZ & EXAM ENGINE ================= */
+    const quizData = {
+      lo: [
+        {
+          q: "1. Dlaczego używanie tego samego hasła na 15 portalach jest niebezpieczne?",
+          answers: [
+            "Bo przeglądarka zapomina hasła po 30 dniach",
+            "Bo wyciek bazy z jednego, słabo zabezpieczonego sklepu pozwala hakerom wejść na wszystkie pozostałe konta (Credential Stuffing)",
+            "Bo litery w hasłach ulegają zatarciu",
+            "Bo procesor zużywa więcej prądu"
+          ],
+          correct: 1,
+          explanation: "Większość włamań nie wynika ze złamania hasła na serwerach Google czy Apple, lecz z kradzieży bazy ze słabo zabezpieczonych forów lub sklepów."
+        },
+        {
+          q: "2. Co daje włączenie weryfikacji dwuetapowej (2FA / MFA)?",
+          answers: [
+            "Zwiększa prędkość łącza internetowego",
+            "Nawet jeśli haker pozna Twoje hasło, nie zaloguje się bez kodu z Twojego telefonu",
+            "Zastępuje antywirusa",
+            "Pozwala logować się bez hasła"
+          ],
+          correct: 1,
+          explanation: "2FA wymaga drugiego składnika (czegoś, co masz – np. aplikacji w telefonie). Samo hasło staje się dla hakera bezużyteczne."
+        },
+        {
+          q: "3. Jaka jest kluczowa cecha ataku phishingowego?",
+          answers: [
+            "Przesyłanie dużych plików graficznych",
+            "Wywarcie presji czasu, emocji oraz podszycie się pod zaufaną markę z fałszywym linkiem",
+            "Wyłączenie ekranu komputera",
+            "Brak połączenia z siecią"
+          ],
+          correct: 1,
+          explanation: "Oszuści zawsze stosują pośpiech („Paczka zostanie odesłana za 2 godziny”) i podmienione domeny (np. inpost-doplata.pl)."
+        },
+        {
+          q: "4. Czym różni się licencja Open Source MIT od GNU GPL?",
+          answers: [
+            "MIT jest płatna, a GPL darmowa",
+            "MIT pozwala na swobodne użycie komercyjne i zamykanie kodu, podczas gdy GPL (Copyleft) wymaga otwarcia kodu programu pochodnego",
+            "MIT działa tylko na Linuxie",
+            "GPL zabrania używania AI"
+          ],
+          correct: 1,
+          explanation: "Licencja MIT to licencja permisywna (maksymalna wolność). GPL to licencja wirusowa/copyleft dbająca o wieczną otwartość kodu."
+        },
+        {
+          q: "5. Na jaki bezpłatny numer w Polsce należy przekazać fałszywy SMS od oszustów?",
+          answers: ["112", "997", "8080 (CERT Polska)", "998"],
+          correct: 2,
+          explanation: "Numer 8080 to ogólnopolski numer CERT Polska. Zgłoszone złośliwe domeny trafiają na listę ostrzeżeń w ciągu kilkunastu minut."
+        }
+      ],
+      tech: [
+        {
+          q: "1. Czym różni się funkcja skrótu (hash SHA-256) od szyfrowania symetrycznego (AES)?",
+          answers: [
+            "Hash jest dwukierunkowy z kluczem, a AES jednokierunkowy",
+            "Hash SHA-256 jest ściśle jednokierunkowy (brak możliwości odkodowania), a szyfr AES jest w pełni odwracalny przy znajomości klucza",
+            "Hash zajmuje zawsze 1024 bity",
+            "SHA-256 działa tylko w Pythonie"
+          ],
+          correct: 1,
+          explanation: "Funkcja skrótu to matematyczny jednokierunkowy odcisk palca danych. Nie istnieje funkcja odwrotna sha256_decrypt()."
+        },
+        {
+          q: "2. Do czego w kryptografii służy sól (Salt) doklejana do hasła?",
+          answers: [
+            "Do zmniejszenia objętości bazy danych",
+            "Do uniemożliwienia ataku z użyciem Tęczowych Tablic (Rainbow Tables) – dwóch użytkowników z hasłem 'admin' ma inny hash",
+            "Do szyfrowania dysku SSD",
+            "Do automatycznego resetowania hasła po roku"
+          ],
+          correct: 1,
+          explanation: "Losowa sól sprawia, że gotowe bazy wyliczonych skrótów (Rainbow Tables) stają się bezużyteczne dla cyberprzestępców."
+        },
+        {
+          q: "3. W jaki sposób programista powinien zabezpieczyć aplikację przed atakiem SQL Injection?",
+          answers: [
+            "Ukrywając kod w pliku .zip",
+            "Stosując Prepared Statements (zapytania sparametryzowane) zamiast sklejania stringów",
+            "Wyłączając bazę danych na noc",
+            "Stosując tylko hasła dłuższe niż 30 znaków"
+          ],
+          correct: 1,
+          explanation: "Prepared Statements oddzielają kod SQL od danych użytkownika, sprawiając że ładunek ' OR '1'='1 traktowany jest jako zwykły tekst, a nie instrukcja bazy."
+        },
+        {
+          q: "4. Jaki znany wyciek w Polsce (OSINT) obnażył nie tylko hashe, ale i numery PESEL klientów?",
+          answers: [
+            "Afera Morele.net oraz ALAB laboratoria",
+            "Wyciek Wikipedii",
+            "Afera GitHuba",
+            "Awaria Google Maps"
+          ],
+          correct: 0,
+          explanation: "Wyciek Morele.net i ALAB ujawniły wrażliwe dane identyfikacyjne (PESEL, telefony, adresy), co umożliwiło ukierunkowany phishing."
+        },
+        {
+          q: "5. Dlaczego język Rust jest uznawany za bezpieczniejszy dla systemów niż C/C++ (Memory Safety)?",
+          answers: [
+            "Bo Rust nie kompiluje się do kodu maszynowego",
+            "Bo Borrow Checker Rusta eliminuje wycieki pamięci, Buffer Overflow i Use-After-Free już na etapie kompilacji",
+            "Bo Rust nie pozwala na łączenie z internetem",
+            "Bo C/C++ nie posiada wskaźników"
+          ],
+          correct: 1,
+          explanation: "Ponad 70% podatności w Microsoft i Google wynika z błędów pamięci C/C++. Rust eliminuje je w kompilatorze bez spowalniającego Garbage Collectora."
+        }
+      ]
+    };
+
+    function renderQuiz() {
+      const container = document.getElementById('quiz-container');
+      const questions = quizData[state.track];
+      state.quizAnswers = {};
+
+      container.innerHTML = questions.map((item, qIdx) => `
+        <div class="p-5 rounded-xl border border-cyber-border bg-cyber-card space-y-3" id="quiz-card-${qIdx}">
+          <h4 class="text-sm font-bold font-mono text-white">${item.q}</h4>
+          <div class="space-y-2 pt-1">
+            ${item.answers.map((ans, aIdx) => `
+              <button onclick="selectQuizAnswer(${qIdx}, ${aIdx})" class="quiz-btn w-full p-2.5 rounded-lg border border-slate-800 bg-cyber-dark text-left text-xs font-mono text-slate-300 hover:border-cyber-cyan hover:text-white transition flex items-start gap-2.5" id="q-${qIdx}-a-${aIdx}">
+                <span class="w-5 h-5 rounded bg-slate-800 text-slate-400 flex items-center justify-center text-[10px] shrink-0 font-bold">${String.fromCharCode(65 + aIdx)}</span>
+                <span class="pt-0.5 leading-relaxed">${ans}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div id="quiz-expl-${qIdx}" class="hidden p-3 rounded-lg text-xs font-mono"></div>
+        </div>
+      `).join('');
+
+      updateQuizScore();
+    }
+
+    function selectQuizAnswer(qIdx, aIdx) {
+      const questions = quizData[state.track];
+      const q = questions[qIdx];
+      state.quizAnswers[qIdx] = aIdx;
+
+      // Lock buttons for this question
+      for (let i = 0; i < q.answers.length; i++) {
+        const btn = document.getElementById(`q-${qIdx}-a-${i}`);
+        btn.onclick = null;
+        if (i === q.correct) {
+          btn.className = "w-full p-2.5 rounded-lg border border-emerald-500 bg-emerald-950/40 text-left text-xs font-mono text-emerald-300 flex items-start gap-2.5";
+        } else if (i === aIdx) {
+          btn.className = "w-full p-2.5 rounded-lg border border-red-500 bg-red-950/40 text-left text-xs font-mono text-red-300 flex items-start gap-2.5";
+        }
+      }
+
+      const expl = document.getElementById(`quiz-expl-${qIdx}`);
+      expl.classList.remove('hidden');
+
+      if (aIdx === q.correct) {
+        sound.success();
+        expl.className = "p-3 rounded-lg text-xs font-mono bg-emerald-950/50 border border-emerald-500 text-emerald-300";
+        expl.innerHTML = `✅ <strong>PRAWIDŁOWA ODPOWIEDŹ:</strong> ${q.explanation}`;
+      } else {
+        sound.alert();
+        expl.className = "p-3 rounded-lg text-xs font-mono bg-red-950/50 border border-red-500 text-red-300";
+        expl.innerHTML = `❌ <strong>BŁĄD:</strong> ${q.explanation}`;
+      }
+
+      updateQuizScore();
+    }
+
+    function updateQuizScore() {
+      const questions = quizData[state.track];
+      let correct = 0;
+      let totalAnswered = Object.keys(state.quizAnswers).length;
+
+      for (let qIdx in state.quizAnswers) {
+        if (state.quizAnswers[qIdx] === questions[qIdx].correct) {
+          correct++;
+        }
+      }
+
+      const pct = Math.round((correct / questions.length) * 100);
+      document.getElementById('quiz-score-badge').textContent = `${correct} / ${questions.length} (${pct}%)`;
+
+      let grade = "-";
+      if (totalAnswered === questions.length) {
+        if (pct >= 90) grade = "Celujący (6) 🏆";
+        else if (pct >= 75) grade = "Bardzo Dobry (5) ⭐";
+        else if (pct >= 60) grade = "Dobry (4) 👍";
+        else if (pct >= 50) grade = "Dostateczny (3)";
+        else grade = "Niedostateczny (1) - Powtórz materiał";
+        
+        if (pct >= 60) {
+          addXp(100);
+          sound.success();
+        }
+      }
+
+      document.getElementById('quiz-grade').textContent = grade;
+    }
+
+    function resetQuiz() {
+      sound.click();
+      renderQuiz();
+    }
+
+    /* ================= PROGRESS & XP MANAGEMENT ================= */
     function completeLab(labNum) {
       if (state.completedLabs.has(labNum)) return;
       state.completedLabs.add(labNum);
@@ -1986,26 +2560,28 @@ print(f"Hash: {hash_val}")</code></pre>
       if (labNum === 3) xpGain = 75;
       if (labNum === 4) xpGain = 100;
 
-      state.xp += xpGain;
-      document.getElementById('user-xp').textContent = state.xp;
+      addXp(xpGain);
       document.getElementById('labs-completed-count').textContent = `${state.completedLabs.size} / 4`;
 
-      // Update badge visual
       if (labNum === 1) activateBadge('badge-hash');
       if (labNum === 2) activateBadge('badge-phish');
       if (labNum === 3) activateBadge('badge-pass');
       if (labNum === 4) activateBadge('badge-ai');
 
-      // Rank progression
-      if (state.xp >= 300) {
+      sound.success();
+    }
+
+    function addXp(amount) {
+      state.xp += amount;
+      document.getElementById('user-xp').textContent = state.xp;
+
+      if (state.xp >= 350) {
         document.getElementById('user-rank').textContent = 'Architekt';
         document.getElementById('user-rank').className = 'text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyber-purple/20 text-cyber-purple border border-cyber-purple/40 uppercase font-bold';
-      } else if (state.xp >= 200) {
+      } else if (state.xp >= 220) {
         document.getElementById('user-rank').textContent = 'Audytor';
         document.getElementById('user-rank').className = 'text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyber-neon/20 text-cyber-neon border border-cyber-neon/40 uppercase font-bold';
       }
-
-      sound.success();
     }
 
     function activateBadge(id) {
@@ -2055,8 +2631,10 @@ print(f"Hash: {hash_val}")</code></pre>
     window.addEventListener('DOMContentLoaded', () => {
       runBoot();
       renderMaterialsContent();
+      renderQuiz();
       calculateShaDemo();
       updateSqliDemo();
+      generateNewPassphrase();
     });
   </script>
 </body>
