@@ -741,6 +741,22 @@
                 <div id="classroom-steps-list" class="space-y-2 text-slate-300 font-sans">
                   <!-- Steps injected by JS -->
                 </div>
+
+                <!-- 1-Klik Kopiowanie tekstów ćwiczeniowych Worda -->
+                <div class="p-3 rounded-lg bg-black/50 border border-amber-500/30 flex flex-wrap items-center justify-between gap-2 mt-3">
+                  <div class="flex items-center gap-2">
+                    <span class="text-base">📋</span>
+                    <span class="text-[11px] font-bold text-amber-400 font-mono">SUROWY TEKST DO WORDA (1-KLIK):</span>
+                  </div>
+                  <div class="flex flex-wrap gap-2">
+                    <button onclick="copyWordTaskPresetText('letter')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 text-[11px] font-mono transition flex items-center gap-1">
+                      <span>✉️</span> <span>Kopiuj Zadanie 1 (Pismo)</span>
+                    </button>
+                    <button onclick="copyWordTaskPresetText('report')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 text-[11px] font-mono transition flex items-center gap-1">
+                      <span>📊</span> <span>Kopiuj Zadanie 2 (Raport)</span>
+                    </button>
+                  </div>
+                </div>
               </div>
 
               <div class="p-4 bg-cyber-dark rounded-xl border border-slate-800 space-y-2">
@@ -820,6 +836,27 @@
               <span id="checkpoint-score-pill" class="text-xs font-mono px-2 py-0.5 rounded bg-cyber-cyan/15 text-cyber-cyan border border-cyber-cyan/30">
                 0 / 3
               </span>
+            </div>
+
+            <!-- ODZNAKA CHECKPOINTU -->
+            <div id="checkpoint-badge-card" class="p-3.5 rounded-xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-[#181308] to-cyber-dark flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md transition-all">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl shrink-0 shadow">
+                  🎯
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] uppercase font-mono tracking-wider text-amber-400 font-bold">Odznaka do zdobycia:</span>
+                    <span class="text-xs font-bold text-white font-mono">Perfekcyjny Checkpoint (+50 XP)</span>
+                  </div>
+                  <p class="text-[11px] text-slate-300 font-sans mt-0.5">
+                    Warunek: Odpowiedz poprawnie na wszystkie 3 pytania kontrolne w tym teście.
+                  </p>
+                </div>
+              </div>
+              <div id="checkpoint-badge-status" class="shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-black/60 border border-slate-700 text-slate-400 text-center font-bold">
+                🔒 Zablokowana (0/3)
+              </div>
             </div>
 
             <div id="checkpoint-questions-container" class="space-y-4">
@@ -948,6 +985,27 @@
           <div id="exam-result-banner" class="text-xs font-mono text-slate-400">
             Odpowiedz na wszystkie pytania i kliknij Zatwierdź.
           </div>
+        </div>
+      </div>
+
+      <!-- ODZNAKA GŁÓWNA EGZAMINU -->
+      <div id="exam-badge-card" class="p-4 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-[#1c1509] to-cyber-card flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg transition-all">
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl shadow shrink-0">
+            👑
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] uppercase font-mono tracking-wider text-amber-400 font-bold">Główna Odznaka Egzaminu:</span>
+              <span class="text-sm font-bold text-white font-mono">Cyfrowy Mistrz INFOTECH (+50 XP & Certyfikat)</span>
+            </div>
+            <p class="text-xs text-slate-300 font-sans mt-0.5">
+              Warunek: Uzyskaj co najmniej 80% punktów (min. 4/5 poprawnych odpowiedzi), aby odblokować Złotą Odznakę Mistrza oraz imienny Certyfikat Adepta IT!
+            </p>
+          </div>
+        </div>
+        <div id="exam-badge-status-box" class="shrink-0 text-xs font-mono px-3.5 py-2 rounded-lg bg-black/60 border border-slate-700 text-slate-400 text-center font-bold">
+          🔒 Zablokowana (Wymagane min. 80%)
         </div>
       </div>
 
@@ -1453,93 +1511,94 @@
       "icon": "📝",
       "theme": "theme-docs",
       "brand": "DOCUCRAFT STUDIO",
-      "title": "Procesory Tekstu, Standard ECDL B3 & Dokumentacja",
-      "subtitle": "Formatowanie Akapitów, Twarde Spacje, Style Nagłówkowe H1-H3 & Automatyczny Spis Treści",
+      "title": "Procesory Tekstu: Standard ECDL B3, Pismo Oficjalne & Raport",
+      "subtitle": "Zasady Edycji, Akapity, Twarde Spacje, Style H1-H2, Tabele i Automatyczny Spis Treści",
       "tag": "PROFIL: LICEUM • MODUŁ 03",
       "duration": "Moduł Praktyczny",
       "xp": 50,
-      "desc": "Opanuj zasady tworzenia profesjonalnych dokumentów zgodnie ze standardem ECDL B3: zapomnij o pustych Enterach, eliminuj wiszące spójniki twardą spacją (Ctrl+Shift+Spacja) i generuj automatyczne spisy treści.",
-      "blackboard": "1. Formatowanie znaku (font, kerning) vs formatowanie akapitu (interlinia, odstępy przed/po).\n2. Nigdy nie rób odstępów pustymi Enterami – używaj 'Odstęp po akapicie'.\n3. Twarda spacja (Ctrl+Shift+Spacja): spójniki (w, z, o, i, a, u) NIE MOGĄ wisieć na końcu wiersza.\n4. Hierarchia stylów (Nagłówek 1, Nagłówek 2) = 1-klik automatyczny Spis Treści (TOC).\n5. Podział strony (Ctrl+Enter) zamiast 20 Enterów.\n6. Znaki niedrukowalne (¶) to rentgen struktury dokumentu.",
-      "teacher_notes": "Pokaż uczniom w edytorze Word/Docs włączenie znaków niedrukowalnych ¶. Zwróć uwagę na koszmar redakcyjny gdy ktoś wciska spację 20 razy aby wyśrodkować tekst.",
+      "desc": "Opanuj praktyczną obsługę procesora tekstu (MS Word / Google Docs) zgodnie ze standardem ECDL B3. Naucz się profesjonalnego formatowania pism oficjalnych, usuwania wiszących spójników twardą spacją (Ctrl+Shift+Spacja), formatowania tabel oraz generowania automatycznych spisów treści.",
+      "blackboard": "1. Złota zasada edycji: Najpierw zaznacz, potem zmień (2-klik = słowo, 3-klik = akapit, Ctrl+A = wszystko).\n2. Klawisz Enter = NOWY AKAPIT, a nie nowa linijka! Word sam zawija wiersze tekstu.\n3. Justowanie (Ctrl+J) wyrównuje tekst do obu marginesów naraz jak w książkach i gazetach.\n4. Twarda spacja (Ctrl+Shift+Spacja) wiąże samotne spójniki (w, z, o, i, a, u) z kolejnym wyrazem.\n5. Style wbudowane (Nagłówek 1) to jedyny poprawny sposób na automatyczny Spis Treści.\n6. Nigdy nie wciskaj 15 razy Enter – do przejścia na nową stronę służy Podział Strony (Ctrl+Enter).",
+      "teacher_notes": "Przeprowadź z uczniami ćwiczenie na żywo: pokaż surowy tekst zaproszenia i raportu bez formatowania. Pokaż dlaczego ręczne spacje i puste entery psują dokument na innym komputerze lub drukarce. Wytłumacz działanie widoku znaków ukrytych ¶ oraz kluczowych skrótów: Ctrl+J, Ctrl+Shift+Spacja i Ctrl+Enter.",
       "slides": [
         {
-          "title": "Formatowanie Znaku a Akapitu: Standard ECDL B3",
+          "title": "Złota Zasada Edycji: Najpierw Zaznacz, Potem Zmień",
           "points": [
-            "Formatowanie znaku: dotyczy wyłącznie zaznaczonych liter (krój czcionki, rozmiar w punktach, pogrubienie, kerning).",
-            "Formatowanie akapitu: dotyczy całej jednostki logicznej zakończonej naciśnięciem klawisza Enter.",
-            "Kardynalny błąd amatorów: wciskanie podwójnego Entera, aby zrobić przerwę między akapitami!",
-            "Profesjonalna metoda: ustawienie parametru 'Odstęp po akapicie' (np. 8 pt) oraz interlinii (np. 1.15 wiersza)."
+            "Złota reguła edytora: Aby zmienić wygląd tekstu, musisz go najpierw ZAZNACZYĆ (komputer musi wiedzieć, o który fragment chodzi).",
+            "Szybkie zaznaczanie: 2-klik zaznacza słowo, 3-klik zaznacza cały akapit, a skrót Ctrl + A zaznacza cały dokument.",
+            "Klawisz ENTER służy wyłącznie do tworzenia NOWEGO AKAPITU (nowej myśli). Nigdy nie wciskaj Enter na końcu wiersza!",
+            "Usuwanie tekstu: Klawisz Backspace usuwa znaki przed kursorem (w lewo), a Delete usuwa znaki za kursorem (w prawo)."
           ],
-          "notes": "Wyjaśnij uczniom, dlaczego puste entery rozjeżdżają dokument przy zmianie marginesów lub czcionki."
+          "notes": "Przetestujcie z uczniami zaznaczanie słów i akapitów bez przeciągania myszką po literach."
         },
         {
-          "title": "Twarda Spacja (Ctrl+Shift+Spacja): Stop Wiszącym Spójnikom",
+          "title": "Formatowanie Akapitu: Justowanie, Interlinia & Odstępy",
           "points": [
-            "W typografii polskiej pojedyncze litery (tzw. spójniki i przyimki: w, z, o, i, a, u, do, na) NIE MOGĄ zostawać same na końcu linijki.",
-            "Zjawisko to nazywane jest 'wiszącymi spójnikami' lub 'sierotami typograficznymi'.",
-            "Rozwiązanie: wstawienie Twardej Spacji (Non-breaking space: Ctrl + Shift + Spacja lub &nbsp;).",
-            "Twarda spacja łączy spójnik z następnym wyrazem w nierozerwalny blok, który w razie potrzeby przeskakuje do nowej linii razem."
+            "Wyrównywanie tekstu: do lewej (Ctrl+L), do środka (Ctrl+E), do prawej (Ctrl+R) oraz Wyjustuj (Ctrl+J).",
+            "Justowanie (Ctrl+J) rozciąga mikro-odstępy między wyrazami, wyrównując tekst idealnie do lewego i prawego marginesu jak w książkach.",
+            "Interlinia 1.5 wiersza: Oficjalny standard pism urzędowych i prac dyplomowych gwarantujący wysoką czytelność.",
+            "Odstęp po akapicie (6-12 pt): Elegancko oddziela akapity bez konieczności wciskania niepotrzebnych, pustych Enterów."
           ],
-          "notes": "Włączcie w Laboratorium podgląd znaków niewidocznych i przetestujcie automatyczną naprawę spójników."
+          "notes": "Pokaż różnicę między 'poszarpanym' tekstem wyrównanym do lewej a eleganckim blokiem wyjustowanym."
         },
         {
-          "title": "Style Nagłówkowe (H1, H2, H3) & Automatyczny Spis Treści",
+          "title": "Typografia bez Błędów: Twarda Spacja (Ctrl+Shift+Spacja)",
           "points": [
-            "Ręczne pogrubianie i powiększanie tytułów do 16 pt to najczęstszy błąd początkujących.",
-            "Używaj stylów logicznych: 'Nagłówek 1' dla głównych rozdziałów, 'Nagłówek 2' dla podrozdziałów.",
-            "Magia stylów: zmiana stylu 'Nagłówek 1' natychmiast aktualizuje wygląd wszystkich 50 rozdziałów w całym dokumencie!",
-            "Automatyczny Spis Treści (TOC): procesor tekstu generuje spis treści w 1 sekundę na podstawie hierarchii stylów, wraz z numerami stron."
+            "W typografii polskiej samotne litery (w, z, o, i, a, u) NIE MOGĄ zostawać same na końcu linijki tekstu.",
+            "Zjawisko to nazywa się wiszącymi spójnikami lub 'sierotami typograficznymi' i jest rażącym błędem estetycznym.",
+            "Rozwiązanie: wstawienie Twardej Spacji (spacji nierozdzielnej) za pomocą skrótu Ctrl + Shift + Spacja.",
+            "Twarda spacja łączy literę z następnym słowem w nierozerwalny blok, który w razie potrzeby przeskakuje do nowej linii razem."
+          ],
+          "notes": "Włącz widok znaków ukrytych ¶, aby pokazać uczniom małe kółeczko twardej spacji."
+        },
+        {
+          "title": "Style Wbudowane (Nagłówek 1) & Automatyczny Spis Treści",
+          "points": [
+            "Nigdy nie twórz tytułów rozdziałów poprzez ręczne pogrubianie i powiększanie liter – to błąd nowicjusza!",
+            "Używaj stylów wbudowanych: 'Nagłówek 1' dla głównych rozdziałów, 'Nagłówek 2' dla podrozdziałów.",
+            "Automatyczny Spis Treści (TOC): karta Odwołania -> Spis treści generuje kompletny spis z numeracją stron w ułamku sekundy.",
+            "Twardy podział strony: Skrót Ctrl + Enter natychmiast przenosi kursor na nową stronę, zapobiegając przesuwaniu tekstu."
           ],
           "notes": "Zademonstruj na żywo aktualizację spisu treści po dopisaniu nowego rozdziału."
         },
         {
-          "title": "Podziały Stron (Ctrl+Enter) & Podziały Sekcji w Długich Pracach",
+          "title": "Tabele, Ilustracje & Eksport do Formatu PDF",
           "points": [
-            "Przejście na nową stronę poprzez wciskanie klawisza Enter 15 razy to gwarancja katastrofy formatowania.",
-            "Wystarczy dodać jedną linijkę wyżej, aby cały tekst w dalszej części dokumentu przesunął się na środek strony.",
-            "Skrót mistrzów: naciśnij Ctrl + Enter, aby wstawić twardy Podział Strony.",
-            "Podział Sekcji: pozwala na zmianę orientacji pojedynczej strony na poziomą (dla szerokiej tabeli) oraz odmienną numerację stron."
+            "Tabele (Wstawianie -> Tabela): sformatuj wiersz nagłówkowy (wyróżnienie kolorem), liczby wyrównaj do prawej, a tekst do lewej.",
+            "Wstawianie obrazów: zmiana zawijania tekstu na 'Przyległe' (Kwadrat) pozwala na płynne otoczenie ilustracji tekstem.",
+            "Numeracja stron: Wstawianie -> Numer strony -> Dół strony (numeracja pojawia się automatycznie w stopce na każdej stronie).",
+            "Eksport do pliku PDF: Zapewnia nienaruszony układ dokumentu na dowolnym urządzeniu i drukarce."
           ],
-          "notes": "Pokaż uczniom jak formatuje się pracę dyplomową lub raport projektowy."
-        },
-        {
-          "title": "Uziemianie Dokumentacji z AI: Google NotebookLM [1]",
-          "points": [
-            "W nowoczesnym biurze inżynierskim procesor tekstu współpracuje ze sztuczną inteligencją uziemiającą wiedzę.",
-            "Google NotebookLM pozwala wgrać specyfikacje PDF i syntetyzować obszerne raporty bez ryzyka halucynacji.",
-            "Każdy wygenerowany akapit posiada precyzyjne odnośniki [1] prowadzące bezpośrednio do zdań w oryginalnych plikach.",
-            "Standard rynkowy: dokumentacja techniczna musi być zawsze weryfikowalna i poparta materiałami źródłowymi."
-          ],
-          "notes": "Pokaż uczniom jak uziemia się wiedzę przy pisaniu dokumentacji specyfikacji IT."
+          "notes": "Pokaż jak wyeksportować gotowy plik do formatu PDF i sprawdzić jego wygląd w przeglądarce."
         }
       ],
       "classroom": {
-        "title": "Misja LO-03: Wzorcowa Specyfikacja Projektowa ECDL B3 z Automatycznym Spisem Treści",
-        "goal": "Opanujesz standard ECDL B3: poprawną hierarchię stylów H1-H3, likwidację wiszących spójników twardą spacją (Ctrl+Shift+Spacja), wstawianie podziałów stron Ctrl+Enter oraz generowanie automatycznego spisu treści.",
+        "title": "Misja LO-03: Pakiet Dokumentów Biurowych ECDL B3 (Pismo Oficjalne & Raport ze Spisem Treści)",
+        "goal": "Wykonasz 2 konkretne zadania biurowe z oficjalnego arkusza szkoleniowego ECDL B3: sformatujesz oficjalne zaproszenie firmowe oraz przygotujesz raport biznesowy z automatycznym spisem treści i tabelą kosztów.",
         "steps": [
-          "Krok 1 (Laboratorium Typografii): Otwórz edytor w Laboratorium, włącz podgląd znaków ¶ i napraw wiszące spójniki twardą spacją.",
-          "Krok 2 (Formatowanie dokumentu): W Google Docs lub MS Word utwórz dokument 'Specyfikacja Systemu INFOTECH'. Zastosuj styl 'Tytuł' oraz min. 3 'Nagłówki 1' i 2 'Nagłówki 2'.",
-          "Krok 3 (Twarde spacje): Zadbaj, aby żadna litera (w, z, o, i, a, u) nie wisiała na końcu wiersza w całym dokumencie.",
-          "Krok 4 (Spis treści & Podział): Wstaw podział strony (Ctrl+Enter) i wygeneruj automatyczny Spis Treści z numeracją stron. Zapisz jako PDF i dołącz do Classroom."
+          "Krok 1 (Zadanie 1 - Pismo Oficjalne): Skopiuj surowy tekst zaproszenia z formularza poniżej i wklej do pustego dokumentu MS Word lub Google Docs.",
+          "Krok 2 (Formatowanie Pisma): Tytuł pogrub (Ctrl+B), wyśrodkuj (Ctrl+E) i ustaw rozmiar 14 pt. Główne akapity wyjustuj (Ctrl+J), ustaw interlinię 1.5 wiersza. Zamień agendę na listę wypunktowaną. Zlikwiduj wiszące spójniki twardą spacją (Ctrl+Shift+Spacja).",
+          "Krok 3 (Zadanie 2 - Raport ze Stylami): Wstaw podział strony (Ctrl+Enter). Skopiuj surowy tekst raportu biznesowego. Tytułom rozdziałów ('Wstęp - Cel raportu', 'Koszty Operacyjne', 'Podsumowanie Działań') nadaj styl wbudowany 'Nagłówek 1'.",
+          "Krok 4 (Tabela, Spis Treści & Stopka): Sformatuj tabelę kosztów (wyróżniony nagłówek, obramowanie, liczby do prawej). Na początku raportu pod tytułem wygeneruj Automatyczny Spis Treści (Odwołania -> Spis treści). Dodaj numery stron w dolnej stopce.",
+          "Krok 5 (Zapis i Zwrot): Zapisz dokument jako PDF lub pobierz z Google Docs, a następnie załącz plik wraz z formularzem odpowiedzi do zadania w Google Classroom."
         ],
         "rubric": {
-          "3": "Stworzenie dokumentu z poprawnym podziałem na akapity (brak podwójnych pustych Enterów).",
-          "4": "Ocena 3 + zastosowanie stylów H1 i H2 oraz wygenerowanie automatycznego spisu treści.",
-          "5": "Ocena 4 + bezbłędna likwidacja wszystkich wiszących spójników twardą spacją oraz użycie podziału strony Ctrl+Enter.",
-          "6": "Wzorcowa dokumentacja techniczna: tabela parametrów z nagłówkiem powtórzonym na kolejnej stronie, podział sekcji i eksport do PDF."
+          "3": "Zadanie 1 wykonane poprawnie: estetycznie sformatowane pismo oficjalne, wyjustowane akapity (Ctrl+J), interlinia 1.5, lista wypunktowana, brak podwójnych pustych Enterów.",
+          "4": "Ocena 3 + Zadanie 2: zastosowane wbudowane style 'Nagłówek 1' dla wszystkich rozdziałów oraz wygenerowany automatyczny spis treści z numerami stron.",
+          "5": "Ocena 4 + profesjonalna tabela kosztów (nagłówek wyróżniony, liczby wyrównane do prawej), numery stron w stopce, podział strony Ctrl+Enter oraz bezbłędne twarde spacje (Ctrl+Shift+Spacja).",
+          "6": "Ocena 5 + wzorowa estetyka dokumentu biznesowego: wstawiona grafika z zawijaniem przyległym, bezbłędne odpowiedzi w formularzu ucznia oraz eksport do pliku PDF."
         },
-        "teacher_copy": "ZADANIE DLA KLASY: Wzorcowa Dokumentacja Projektowa zgodnie ze Standardem ECDL B3\n\nDroga Klaso, stwórzcie profesjonalny dokument techniczny:\n1. Zastosujcie formatowanie stylami H1-H3 (nigdy ręcznie!).\n2. Usuńcie wiszące spójniki twardą spacją (Ctrl+Shift+Spacja).\n3. Wygenerujcie automatyczny spis treści i wyeksportujcie plik do PDF.",
-        "student_copy": "--- FORMULARZ ODPOWIEDZI UCZNIA (LO-03) ---\nImię i Nazwisko: [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nLink do dokumentu Google Docs lub załącznik PDF: [LINK/PLIK]\n1. Jaka jest różnica między formatowaniem znaku a akapitu?: [ODPOWIEDŹ]\n2. Do czego służy twarda spacja i jak ją wstawiamy skrótem klawiszowym?: [ODPOWIEDŹ: Ctrl+Shift+Spacja]\n3. Dlaczego automatyczny Spis Treści wymaga stosowania stylów Nagłówek 1 / Nagłówek 2?: [ODPOWIEDŹ]\n4. Jakim skrótem klawiszowym prawidłowo przechodzi się na nową stronę?: [ODPOWIEDŹ: Ctrl+Enter]\n--------------------------------------------"
+        "teacher_copy": "ZADANIE DLA KLASY: Procesory Tekstu ECDL B3 – Pismo Oficjalne & Raport ze Spisem Treści\n\nDrodzy Uczniowie, wykonajcie dzisiaj 2 praktyczne zadania biurowe:\n1. Sformatujcie oficjalne zaproszenie firmowe (justowanie, interlinia 1.5, twarda spacja Ctrl+Shift+Spacja, lista punktowana).\n2. Opracujcie raport biznesowy (style Nagłówek 1, automatyczny spis treści, sformatowana tabela, podział strony Ctrl+Enter).\n\nDo zadania w Classroom załączcie gotowy plik (.docx lub .pdf) oraz wypełniony formularz odpowiedzi.",
+        "student_copy": "--- FORMULARZ ODPOWIEDZI UCZNIA (MODUŁ 03: WORD ECDL B3) ---\nImię i Nazwisko: [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nLink do dokumentu Google Docs lub nazwa załącznika (.docx / .pdf): [LINK / PLIK]\n\nKONTROLA ZASAD I SKRÓTÓW WORDA:\n1. Podaj skrót klawiszowy do wstawienia Twardej Spacji (spacji nierozdzielnej): [Ctrl + Shift + Spacja]\n2. Dlaczego do przejścia na nową stronę NIE wolno wciskać 15 razy Enter? Jaki skrót należy zastosować?: [Ctrl + Enter - twardy podział strony]\n3. Jaki skrót klawiszowy włącza Justowanie akapitu?: [Ctrl + J]\n4. Dlaczego aby wygenerować automatyczny Spis Treści, tytuły muszą mieć styl 'Nagłówek 1' lub 'Nagłówek 2'?: [Ponieważ procesor tekstu buduje spis treści na podstawie znaczników stylów semantycznych, a nie ręcznego powiększenia czcionki]\n\nRAPORT Z WYKONANYCH ZADAŃ:\n[x] Zadanie 1: Pismo sformatowane (justowanie, interlinia 1.5, brak wiszących spójników, wypunktowanie)\n[x] Zadanie 2: Style Nagłówek 1 nadane prawidłowo\n[x] Zadanie 2: Tabela kosztów sformatowana (nagłówek wyróżniony, liczby wyrównane do prawej)\n[x] Zadanie 2: Automatyczny Spis Treści wygenerowany pod tytułem\n[x] Zadanie 2: Numery stron dodane w stopce\n[x] Eksport do pliku PDF wykonany pomyślnie\n-----------------------------------------------------------"
       },
       "checklist": [
-        "Włącz podgląd znaków niedrukowalnych ¶ w Laboratorium",
-        "Przetestuj automatyczną naprawę wiszących spójników twardą spacją",
-        "Wygeneruj automatyczny Spis Treści na podstawie nagłówków",
-        "Sprawdź czy w Twoim dokumencie nie ma podwójnych pustych Enterów"
+        "Znam złotą zasadę edycji: najpierw zaznacz, potem zmień (2-klik dla wyrazu, 3-klik dla akapitu)",
+        "Wiem, dlaczego nie wolno łamać wierszy klawiszem Enter i potrafię użyć justowania (Ctrl+J)",
+        "Umiem wstawić twardą spację (Ctrl+Shift+Spacja) przy samotnych spójnikach w, z, o, i, a, u",
+        "Potrafię nadać style Nagłówek 1 i wygenerować automatyczny spis treści jednym kliknięciem"
       ],
       "checkpoint": [
         {
-          "q": "W jaki sposób w edytorze tekstu (np. MS Word, Google Docs) należy prawidłowo wstawić twardą spację, zapobiegającą pozostawieniu spójnika na końcu wiersza?",
+          "q": "W jaki sposób w edytorze tekstu (MS Word, Google Docs) należy prawidłowo wstawić twardą spację, zapobiegającą pozostawieniu spójnika na końcu wiersza?",
           "options": [
             "Wciskając dwukrotnie klawisz Spacja",
             "Używając kombinacji klawiszy Ctrl + Shift + Spacja",
@@ -1955,123 +2014,124 @@
       "icon": "📝",
       "theme": "theme-docs",
       "brand": "DOCUCRAFT STUDIO",
-      "title": "Docs-as-Code, Specyfikacje Techniczne & Standardy Inżynierskie",
-      "subtitle": "Dokumentacja w Markdown/GFM, Wersjonowanie w Git, User Stories & Kryteria BDD",
+      "title": "Procesory Tekstu: Dokumentacja Techniczna & Raport Wdrożeniowy IT (ECDL B3)",
+      "subtitle": "Hierarchia Stylów H1-H3, Twarde Spacje, Tabele Parametrów, Spis Treści & Standardy Inżynierskie",
       "tag": "PROFIL: TECHNIKUM • MODUŁ 03",
-      "duration": "Warsztat Dokumentacji IT",
-      "xp": 75,
-      "desc": "Przejdź od edytorów biurowych do inżynierii oprogramowania: koncepcja Docs-as-Code, format Markdown wersjonowany w Git, formułowanie User Stories oraz kryteria akceptacji BDD w składni Gherkin.",
-      "blackboard": "1. Docs-as-Code: Dokumentacja żyje w repozytorium kodu w plikach .md.\n2. Wersjonowanie dokumentacji w Git: Pull Requesty i Code Review tekstu.\n3. Format Markdown (GFM): tabele, bloki kodu, listy zadań bez ukrytych formatowań.\n4. User Story: 'Jako [rola], chcę [akcja], aby [korzyść biznesowa]'.\n5. BDD (Gherkin): Given [stan początkowy], When [akcja], Then [oczekiwany skutek].\n6. Specyfikacja API: Endpointy REST, kody odpowiedzi HTTP (200, 400, 404, 500).",
-      "teacher_notes": "Pokaż uczniom jak dokumentacja pisana w Markdown jest automatycznie kompilowana do witryny przez narzędzia typu MkDocs, VitePress czy Docusaurus.",
+      "duration": "Moduł Praktyczny",
+      "xp": 50,
+      "desc": "Opanuj profesjonalną edycję dokumentacji technicznej i raportów wdrożeniowych IT w edytorze tekstu. Poznaj standard ECDL B3: hierarchię stylów H1-H3, twarde spacje, tabelaryczne zestawienia serwerów i licencji, podziały stron oraz automatyczny spis treści.",
+      "blackboard": "1. Typografia techniczna: brak podwójnych spacji i pustych Enterów (kontrola widoku znaków ¶).\n2. Formatowanie akapitu: justowanie (Ctrl+J), interlinia 1.5, odstęp po akapicie (brak pustych wierszy).\n3. Twarda spacja (Ctrl+Shift+Spacja): nierozerwalne łączenie spójników (w, z, o, i, a) oraz wartości z jednostkami (np. 16 GB, 240 V).\n4. Hierarchia stylów: Nagłówek 1 (moduły), Nagłówek 2 (podrozdziały) jako fundament automatycznego spisu treści.\n5. Tabele inżynierskie: formatowanie nagłówka, wyrównanie danych (tekst do lewej, parametry liczbowe do prawej).\n6. Znak podziału strony (Ctrl+Enter): separacja sekcji bez deformacji układu na innych maszynach.",
+      "teacher_notes": "Zwróć uwagę przyszłym technikom i informatykom, że czytelna dokumentacja wdrożeniowa to wizytówka inżyniera. Pokaż jak niechlujnie sformatowany dokument traci układ na innej wersji Office/LibreOffice, jeśli użyto spacji i Enterów zamiast justowania, twardych spacji i stylów nagłówkowych.",
       "slides": [
         {
-          "title": "Filozofia Docs-as-Code & Dokumentacja w Repozytorium Git",
+          "title": "Standardy Dokumentacji Technicznej & Zasady Edycji",
           "points": [
-            "W nowoczesnych zespołach IT dokumentacja nie leży w plikach .docx na dysku sieciowym, lecz w plikach tekstowych obok kodu.",
-            "Wersjonowanie w Git: każda zmiana w architekturze posiada swoją historię commitów, autora i uzasadnienie w Pull Requeście.",
-            "Automatyczna walidacja: lintery sprawdzają martwe linki, formatowanie i błędy językowe w procesie CI/CD.",
-            "Single Source of Truth: jedna wersja kodu odpowiada dokładnie jednej wersji dokumentacji w danym tagu wydania (Release Tag)."
+            "Każdy inżynier IT tworzy specyfikacje, instrukcje wdrożeniowe i protokoły zdawczo-odbiorcze.",
+            "Złota zasada edytora: Najpierw zaznacz, potem zmień (2-klik dla wyrazu, 3-klik dla akapitu, Ctrl+A dla całości).",
+            "Klawisz Enter służy wyłącznie do tworzenia nowego akapitu logicznego – edytor sam odpowiada za zawijanie tekstu.",
+            "Usuwanie precyzyjne: Backspace usuwa znaki po lewej stronie, Delete po prawej stronie kursora."
           ],
-          "notes": "Pokaż przykładowy workflow dokumentacji w repozytorium na GitHubie."
+          "notes": "Wyjaśnij pojęcie 'czystości kodu dokumentu' – dokument sformatowany stylami zachowuje pełną przenośność."
         },
         {
-          "title": "Format GitHub Flavored Markdown (GFM) dla Inżynierów",
+          "title": "Formatowanie Akapitu & Typografia Inżynierska",
           "points": [
-            "Czysty tekst pozbawiony ukrytych znaczników binarnych: łatwy w porównywaniu różnic (git diff).",
-            "Składnia GFM: nagłówki logiczne (#, ##, ###), tabele, bloki kodu z kolorowaniem składni (```python), listy zadań (- [x]).",
-            "Generatory statycznych stron (SSG): MkDocs (Material for MkDocs), Docusaurus czy Astro kompilują Markdown do witryny HTML.",
-            "Wsparcie dla diagramów: integracja Mermaid.js pozwala rysować diagramy sekwencji i architektury bezpośrednio tekstem w Markdownie."
+            "Justowanie (Ctrl+J): Wyrównuje tekst równocześnie do lewego i prawego marginesu, tworząc zwarty, czytelny blok tekstu.",
+            "Interlinia 1.5 wiersza: Wymóg formalny dokumentacji technicznej, ułatwiający nanoszenie uwag i recenzję kodu.",
+            "Odstęp po akapicie: Ustawiany we właściwościach akapitu (np. 6 pt), całkowicie eliminuje wciskanie pustych Enterów.",
+            "Widok znaków ukrytych ¶ (Ctrl+*): Podstawowe narzędzie diagnostyczne – ujawnia zbędne spacje, tabulatory i błędne łamania wierszy."
           ],
-          "notes": "Pokaż jak blok tekstu Mermaid generuje interaktywny diagram architektury."
+          "notes": "Pokaż jak błędy formatowania stają się natychmiast widoczne po włączeniu widoku ¶."
         },
         {
-          "title": "Definiowanie Wymagań: Architektura User Stories w Agile",
+          "title": "Twarda Spacja (Ctrl+Shift+Spacja) w Dokumentacji IT",
           "points": [
-            "Zamiast 200-stronicowych specyfikacji, nowoczesna inżynieria opisuje wymagania za pomocą atomowych Historyjek Użytkownika (User Stories).",
-            "Kanon formułowania: 'Jako [rola użytkownika], chcę [wykonać określoną akcję], aby [osiągnąć konkretną wartość biznesową]'.",
-            "Przykład: 'Jako Administrator Szkoły, chcę resetować hasła uczniów jednym kliknięciem, aby nie blokować zajęć w pracowni'.",
-            "Zasada INVEST: dobra historyjka jest Niezależna, Negocjowalna, Wartościowa, Szacowalna, Zwięzła i Testowalna."
+            "W języku polskim pojedyncze litery (w, z, o, i, a, u) nie mogą pozostawać osamotnione na końcu wiersza.",
+            "W dokumentacji technicznej twardą spację stosujemy także między liczbą a jednostką: '16 Ctrl+Shift+Spacja GB', '240 Ctrl+Shift+Spacja V'.",
+            "Dzięki temu jednostka miary nigdy nie przeskoczy do nowej linii bez powiązanej z nią wartości liczbowej.",
+            "Skrót: Ctrl + Shift + Spacja w MS Word oraz Google Docs wstawia znak spacji nierozdzielnej (Non-breaking space)."
           ],
-          "notes": "Przeprowadźcie ćwiczenie zamiany nieprecyzyjnego życzenia klienta na wzorcowe User Story."
+          "notes": "Zwróć uwagę na czytelność specyfikacji serwerów (RAM, dyski SSD, pasmo sieciowe)."
         },
         {
-          "title": "Kryteria Akceptacji BDD w Notacji Gherkin (Given-When-Then)",
+          "title": "Hierarchia Stylów H1-H3 & Automatyczny Spis Treści",
           "points": [
-            "Behavior-Driven Development (BDD): most porozumienia między biznesem, programistami a testerami QA.",
-            "Składnia Gherkin: Given (Mając dany kontekst), When (Gdy nastąpi zdarzenie), Then (Wtedy oczekujemy określonego rezultatu).",
-            "Scenariusz BDD staje się bezpośrednio zautomatyzowanym testem integracyjnym (np. w Cucumber lub Behave).",
-            "Eliminacja nieporozumień: brak miejsca na domysły programisty dotyczące zachowania aplikacji w sytuacjach skrajnych (Edge Cases)."
+            "Architektura dokumentu: stosuj styl 'Nagłówek 1' dla rozdziałów, 'Nagłówek 2' dla podrozdziałów i 'Nagłówek 3' dla szczegółów.",
+            "Automatyczny Spis Treści (TOC): karta Odwołania -> Spis treści kompiluje strukturę dokumentu z numerami stron w ułamku sekundy.",
+            "Aktualizacja spisu: po dopisaniu nowych modułów wystarczy kliknąć 'Aktualizuj spis treści' (F9), bez ręcznego przepisywania.",
+            "Podział strony (Ctrl+Enter): Wymusza rozpoczęcie nowego rozdziału na kolejnej stronie, gwarantując niezmienny układ wydruku."
           ],
-          "notes": "Pokaż scenariusz logowania błędnym hasłem w notacji Gherkin."
+          "notes": "Pokaż aktualizację spisu po dodaniu nowej sekcji raportu infrastrukturalnego."
         },
         {
-          "title": "Projektowanie Specyfikacji API REST & Schematów JSON",
+          "title": "Tabele Parametrów, Numery Stron & Eksport do PDF",
           "points": [
-            "Każdy endpoint API musi być precyzyjnie opisany: metoda HTTP (GET, POST, PUT, DELETE), ścieżka URI, nagłówki i kody odpowiedzi.",
-            "Kody statusu HTTP: 200 (OK), 201 (Created), 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), 500 (Internal Server Error).",
-            "Standard OpenAPI / Swagger: specyfikacja API w formacie YAML/JSON generująca interaktywną dokumentację z możliwością testowania na żywo.",
-            "Kontrakty API zapobiegają błędom integracji między zespołem Frontendu i Backendu."
+            "Tabele sprzętowe: wyróżniony nagłówek kolumny, tekst wyrównany do lewej, adresy IP / numery portów / kwoty do prawej.",
+            "Wstawianie diagramów i schematów sieciowych: ustawienie zawijania tekstu na 'Przyległe' (Kwadrat).",
+            "Stopka dokumentu: Wstawianie -> Numer strony -> Dół strony (automatyczne pole {PAGE} na każdej stronie).",
+            "Eksport do formatu PDF: Standard dystrybucji dokumentacji projektowej – gwarantuje zgodność wizualną na każdym systemie (Linux, Windows, macOS)."
           ],
-          "notes": "Pokaż interfejs Swagger UI dowolnego otwartego API."
+          "notes": "Pokaż standardy publikowania dokumentów w formacie PDF w środowisku korporacyjnym IT."
         }
       ],
       "classroom": {
-        "title": "Misja TECH-03: Specyfikacja Techniczna Modułu Auth (Markdown, User Stories & BDD)",
-        "goal": "Potrafisz stworzyć kompletną inżynierską specyfikację techniczną w formacie Markdown (Docs-as-Code), zawierającą User Stories, kryteria BDD w notacji Gherkin oraz opis endpointów API REST.",
+        "title": "Misja TECH-03: Raport Wdrożeniowy Infrastruktury IT ze Spisem Treści i Tabelą (ECDL B3)",
+        "goal": "Opracujesz profesjonalny raport wdrożeniowy infrastruktury IT: sformatujesz oficjalny protokół wdrożenia, nadasz hierarchię stylów Nagłówek 1 i 2, przygotujesz tabelę specyfikacji serwerów i licencji, wstawisz automatyczny spis treści i wyeksportujesz plik do PDF.",
         "steps": [
-          "Krok 1 (Laboratorium Markdown): W Laboratorium przetestuj formatowanie nagłówków H1/H2, naprawę spójników i podgląd znaków ¶.",
-          "Krok 2 (User Story & BDD): Sformułuj 2 User Stories dla mechanizmu resetowania hasła z 2FA oraz napisz min. 2 scenariusze testowe w składni Gherkin (Given-When-Then).",
-          "Krok 3 (Specyfikacja API REST): Zaprojektuj endpoint POST /api/v1/auth/login. Zdefiniuj strukturę JSON żądania oraz kody odpowiedzi 200, 401 i 429 (Rate Limiting).",
-          "Krok 4 (Docs-as-Code): Zapisz plik jako auth_spec.md i dodaj do repozytorium lub prześlij do Classroom."
+          "Krok 1 (Protokół odbioru prac): Skopiuj surowy tekst oficjalnego zaproszenia/pisma formalnego. Wyjustuj akapity (Ctrl+J), ustaw interlinię 1.5 wiersza, sformatuj listę punktowaną i zlikwiduj wiszące spójniki twardą spacją (Ctrl+Shift+Spacja).",
+          "Krok 2 (Raport techniczny): Wstaw podział strony (Ctrl+Enter). Skopiuj surowy tekst raportu infrastrukturalnego. Tytułom rozdziałów ('Wstęp - Cel raportu', 'Koszty Operacyjne', 'Podsumowanie Działań') nadaj styl wbudowany 'Nagłówek 1'.",
+          "Krok 3 (Tabela specyfikacji): Sformatuj tabelę zestawienia licencji i sprzętu (wyróżniony nagłówek pogrubieniem i tłem, obramowanie, liczby wyrównane do prawej).",
+          "Krok 4 (Spis treści & Stopka): Na początku raportu pod tytułem wygeneruj Automatyczny Spis Treści (Odwołania -> Spis treści). Wstaw automatyczną numerację stron w dolnej stopce.",
+          "Krok 5 (Eksport & Zwrot): Zapisz plik jako PDF i prześlij do Classroom wraz z wypełnionym formularzem odpowiedzi ucznia."
         ],
         "rubric": {
-          "3": "Poprawnie sformatowany plik Markdown ze strukturą nagłówków.",
-          "4": "Ocena 3 + poprawnie sformułowane User Stories wg kanonu 'Jako... Chcę... Aby...' oraz kryteria BDD.",
-          "5": "Ocena 4 + precyzyjna specyfikacja endpointów REST z kodami błędów HTTP i schematem JSON.",
-          "6": "Wzorcowa dokumentacja inżynierska zawierająca diagram sekwencji logowania w Mermaid.js i analizę edge cases bezpieczeństwa."
+          "3": "Poprawnie sformatowany protokół oficjalny: justowanie akapitów (Ctrl+J), interlinia 1.5, brak wielokrotnych pustych Enterów.",
+          "4": "Ocena 3 + zastosowanie wbudowanych stylów Nagłówek 1 oraz wygenerowany automatyczny spis treści z numeracją stron.",
+          "5": "Ocena 4 + profesjonalnie sformatowana tabela parametrów, numery stron w stopce, podział strony Ctrl+Enter oraz bezbłędne twarde spacje przy spójnikach i jednostkach.",
+          "6": "Ocena 5 + wzorcowa dokumentacja inżynierska: dodany schemat/logo z zawijaniem przyległym, bezbłędny formularz odpowiedzi oraz eksport do eleganckiego pliku PDF."
         },
-        "teacher_copy": "ZADANIE DLA TECHNIKUM: Docs-as-Code, User Stories i Specyfikacja API REST\n\nDroga Klaso, zrealizujcie zadanie inżynierii oprogramowania:\n1. Opracujcie specyfikację techniczną w formacie Markdown (.md).\n2. Zdefiniujcie wymagania w kanonie User Stories i scenariuszach BDD Gherkin.\n3. Opiszcie architekturę REST API dla modułu uwierzytelniania.",
-        "student_copy": "--- FORMULARZ ODPOWIEDZI UCZNIA (TECH-03) ---\nImię i Nazwisko: [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nLink do pliku Markdown (.md) na GitHubie / Colab: [LINK]\n1. User Story dla logowania z 2FA (Jako... Chcę... Aby...): [TREŚĆ]\n2. Scenariusz BDD w notacji Gherkin (Given-When-Then): [SCENARIUSZ]\n3. Specyfikacja endpointu POST /api/v1/auth/login (Request & Response JSON): [KOD JSON]\n4. Dlaczego dokumentacja wersjonowana w Git (Docs-as-Code) wyparła pliki DOCX w zespołach IT?: [ODPOWIEDŹ]\n--------------------------------------------"
+        "teacher_copy": "ZADANIE DLA TECHNIKUM: Dokumentacja Wdrożeniowa IT ECDL B3 – Protokół & Raport ze Spisem Treści\n\nDrodzy Uczniowie, wykonajcie zadanie inżynierii dokumentacyjnej:\n1. Sformatujcie oficjalny protokół zdawczo-odbiorczy (justowanie, interlinia 1.5, twarda spacja Ctrl+Shift+Spacja, lista punktowana).\n2. Opracujcie raport wdrożeniowy IT (style Nagłówek 1, automatyczny spis treści, sformatowana tabela serwerów i licencji, podział strony Ctrl+Enter).\n\nDo zadania w Classroom załączcie plik (.docx lub .pdf) oraz wypełniony formularz odpowiedzi.",
+        "student_copy": "--- FORMULARZ ODPOWIEDZI UCZNIA (MODUŁ TECH-03: DOKUMENTACJA IT ECDL B3) ---\nImię i Nazwisko: [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nLink do pliku / Nazwa załącznika (.docx / .pdf): [LINK / PLIK]\n\nKONTROLA ZASAD I SKRÓTÓW WORDA:\n1. Podaj skrót klawiszowy do wstawienia Twardej Spacji (spacji nierozdzielnej): [Ctrl + Shift + Spacja]\n2. Dlaczego do przejścia na nową stronę NIE wolno wciskać 15 razy Enter? Jaki skrót należy zastosować?: [Ctrl + Enter - twardy podział strony]\n3. Jaki skrót klawiszowy włącza Justowanie akapitu?: [Ctrl + J]\n4. Dlaczego aby wygenerować automatyczny Spis Treści, tytuły muszą mieć styl 'Nagłówek 1' lub 'Nagłówek 2'?: [Ponieważ procesor tekstu buduje spis treści na podstawie znaczników stylów semantycznych, a nie ręcznego powiększenia czcionki]\n\nRAPORT Z WYKONANYCH ZADAŃ:\n[x] Zadanie 1: Pismo/Protokół sformatowane (justowanie, interlinia 1.5, brak wiszących spójników, wypunktowanie)\n[x] Zadanie 2: Style Nagłówek 1 nadane prawidłowo\n[x] Zadanie 2: Tabela specyfikacji sformatowana (nagłówek wyróżniony, liczby wyrównane do prawej)\n[x] Zadanie 2: Automatyczny Spis Treści wygenerowany pod tytułem\n[x] Zadanie 2: Numery stron dodane w stopce\n[x] Eksport do pliku PDF wykonany pomyślnie\n-----------------------------------------------------------"
       },
       "checklist": [
-        "Przetestuj edytor Markdown w Laboratorium",
-        "Napisz scenariusz Given-When-Then w składni Gherkin",
-        "Zaprojektuj schemat odpowiedzi HTTP 401 Unauthorized",
-        "Wypełnij formularz inżynierski w Classroom"
+        "Potrafię zidentyfikować błędy w widoku znaków ukrytych ¶",
+        "Wiem, jak stosować justowanie (Ctrl+J) i interlinię 1.5",
+        "Stosuję twardą spację (Ctrl+Shift+Spacja) dla spójników oraz wartości z jednostkami (np. 16 GB)",
+        "Umiem wygenerować automatyczny spis treści na podstawie stylów Nagłówek 1/2"
       ],
       "checkpoint": [
         {
-          "q": "Na czym polega podejście 'Docs-as-Code' w nowoczesnej inżynierii oprogramowania?",
+          "q": "W jaki sposób w edytorze tekstu należy prawidłowo wstawić twardą spację (spację nierozdzielną)?",
           "options": [
-            "Na pisaniu dokumentacji wyłącznie w kodzie binarnym (zerami i jedynkami)",
-            "Na traktowaniu dokumentacji tak samo jak kodu źródłowego: pisaniu w Markdownie, wersjonowaniu w Git i automatycznym budowaniu w CI/CD",
-            "Na zakazie czytania dokumentacji przez osoby nietechniczne",
-            "Na drukowaniu dokumentacji na papierze perforowanym"
+            "Wciskając dwukrotnie klawisz Spacja",
+            "Używając kombinacji klawiszy Ctrl + Shift + Spacja",
+            "Wciskając klawisz Tabulator",
+            "Zmieniając kolor spójnika na biały"
           ],
           "correct": 1,
-          "explanation": "Docs-as-Code zakłada przechowywanie dokumentacji tekstowej (np. Markdown) w repozytorium kodu, jej wersjonowanie w Git oraz weryfikację w procesie Code Review."
+          "explanation": "Skrót Ctrl + Shift + Spacja wstawia znak spacji niełamliwej (Non-breaking space), który uniemożliwia rozdzielenie spójnika od następującego po nim wyrazu."
         },
         {
-          "q": "Jaka jest prawidłowa struktura scenariusza testowego w notacji Gherkin (BDD)?",
+          "q": "Dlaczego dokumentacja techniczna musi używać stylów wbudowanych (Nagłówek 1, Nagłówek 2) zamiast ręcznego pogrubiania tekstu?",
           "options": [
-            "Start -> Stop -> Restart",
-            "Given (Mając dane) -> When (Gdy nastąpi akcja) -> Then (Wtedy oczekiwany rezultat)",
-            "Select -> From -> Where",
-            "Input -> Output -> Print"
+            "Ponieważ ręczne formatowanie jest zablokowane w systemie Windows",
+            "Umożliwia to natychmiastowe wygenerowanie automatycznego spisu treści oraz gwarantuje spójną strukturę semantyczną dokumentu",
+            "Zmniejsza to wagę pliku o 90%",
+            "Jest to wymagane przez dostawcę Internetu"
           ],
           "correct": 1,
-          "explanation": "Struktura Given-When-Then opisuje stan początkowy, akcję użytkownika oraz obserwowalny skutek biznesowy w sposób zrozumiały dla inżynierów i biznesu."
+          "explanation": "Style wbudowane definiują logiczną strukturę dokumentu. Na ich podstawie procesor tekstu buduje automatyczny spis treści i nawigację."
         },
         {
-          "q": "Który kod odpowiedzi HTTP powinien zwrócić poprawnie zaprojektowany endpoint REST API, gdy użytkownik podał błędne hasło podczas logowania?",
+          "q": "Jakim skrótem klawiszowym należy wymusić przejście do nowej strony, aby układ dokumentu nie uległ rozpadnięciu?",
           "options": [
-            "200 OK",
-            "401 Unauthorized",
-            "404 Not Found",
-            "500 Internal Server Error"
+            "Naciskając klawisz Enter tak długo, aż kursor przeskoczy na kolejną stronę",
+            "Wstawiając Znak Podziału Strony za pomocą skrótu Ctrl + Enter",
+            "Zwiększając rozmiar czcionki do 72 pt",
+            "Tworząc całkowicie nowy plik dla każdej strony"
           ],
           "correct": 1,
-          "explanation": "Kod HTTP 401 Unauthorized oznacza, że żądanie wymaga poprawnego uwierzytelnienia użytkownika, które w tym wypadku nie powiodło się."
+          "explanation": "Podział strony (Ctrl+Enter) gwarantuje, że nowy rozdział zawsze rozpocznie się na początku nowej kartki, niezależnie od modyfikacji poprzednich stron."
         }
       ]
     },
@@ -3119,23 +3179,54 @@ print(hashlib.sha256(haslo.encode('utf-8')).hexdigest())</code></pre>
 
       else if (moduleId === 'mod-docs') {
         wrap.innerHTML = `
-          <!-- LAB DOCS: Typographic Validator & Markdown Editor (ECDL B3) -->
+          <!-- LAB DOCS: Typographic Validator & Word Studio (ECDL B3) -->
           <div class="rounded-xl border border-amber-500/30 bg-cyber-card p-6 space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
               <div class="flex items-center gap-3">
                 <span class="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center font-mono font-bold text-sm">03</span>
                 <div>
-                  <h3 class="text-base font-bold font-mono text-white">Walidator Typografii ECDL B3 & Edytor Dokumentacji</h3>
-                  <p class="text-xs text-slate-400">Sprawdź widok znaków niedrukowalnych ¶, napraw wiszące spójniki twardą spacją i wygeneruj Spis Treści</p>
+                  <h3 class="text-base font-bold font-mono text-white">DocuCraft Studio & Walidator Typografii ECDL B3</h3>
+                  <p class="text-xs text-slate-400">Praktyczne przygotowanie do MS Word / Google Docs: likwidacja wiszących spójników, podgląd znaków ¶ i spis treści</p>
                 </div>
               </div>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 w-fit">+50 XP</span>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">+50 XP</span>
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-amber-400/15 text-amber-300 border border-amber-400/40 font-bold flex items-center gap-1.5">
+                  <span>✍️</span> <span>Odznaka: Mistrz Typografii</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Quick Task Presets from Disk -->
+            <div class="p-3 bg-cyber-dark rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-amber-400 font-bold">ZAŁADUJ TEKST ZADANIA:</span>
+                <button onclick="loadWordTaskPreset('letter')" class="px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1">
+                  <span>✉️</span> <span>Zadanie 1: Pismo Oficjalne</span>
+                </button>
+                <button onclick="loadWordTaskPreset('report')" class="px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1">
+                  <span>📊</span> <span>Zadanie 2: Raport Biznesowy</span>
+                </button>
+              </div>
+              <button onclick="copyCurrentWordLabText()" class="px-3 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold transition flex items-center gap-1.5 shadow">
+                <span>📋</span> <span>Kopiuj ten tekst do Worda</span>
+              </button>
+            </div>
+
+            <!-- Word Keyboard Shortcuts Bar -->
+            <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-[11px] font-mono grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-slate-300 text-center">
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Ctrl + B</span><br><span class="text-[10px] text-slate-400">Pogrubienie</span></div>
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Ctrl + J</span><br><span class="text-[10px] text-slate-400">Justowanie</span></div>
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Ctrl+Shift+Spacja</span><br><span class="text-[10px] text-slate-400">Twarda Spacja</span></div>
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Ctrl + Enter</span><br><span class="text-[10px] text-slate-400">Podział Strony</span></div>
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Ctrl + E</span><br><span class="text-[10px] text-slate-400">Wyśrodkowanie</span></div>
+              <div class="p-1.5 rounded bg-black/40 border border-slate-800"><span class="text-amber-400 font-bold">Nagłówek 1</span><br><span class="text-[10px] text-slate-400">Spis Treści</span></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 font-mono text-xs">
               <div class="space-y-4 bg-cyber-dark p-5 rounded-xl border border-slate-800">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <span class="text-slate-300 font-bold">DOKUMENT ŹRÓDŁOWY:</span>
+                  <span class="text-slate-300 font-bold">DOKUMENT ROBOCZY:</span>
                   <div class="flex items-center gap-2">
                     <button onclick="togglePilcrow()" id="btn-pilcrow" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[10px]">
                       Pokaż znaki ¶
@@ -3143,18 +3234,13 @@ print(hashlib.sha256(haslo.encode('utf-8')).hexdigest())</code></pre>
                   </div>
                 </div>
 
-                <textarea id="typo-text-input" rows="8" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono focus:outline-none focus:border-amber-400 leading-relaxed">
-# Specyfikacja Systemu INFOTECH
-Wdrożenie nowych procedur bezpieczeństwa w szkole oraz w urzędzie wymaga ścisłej współpracy z dyrekcją i nauczycielami.
-## Architektura i Wymogi
-Dokumentacja musi spełniać standardy ECDL B3 o wysokiej czytelności i braku wiszących spójników na końcach linii.
-</textarea>
+                <textarea id="typo-text-input" rows="9" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono focus:outline-none focus:border-amber-400 leading-relaxed"></textarea>
 
                 <div class="flex flex-wrap gap-2">
                   <button onclick="fixHangingConjunctions()" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition font-bold flex items-center gap-1.5">
                     <span>⚡ Napraw wiszące spójniki (Ctrl+Shift+Spacja)</span>
                   </button>
-                  <button onclick="generateLiveTOC()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:text-white transition">
+                  <button onclick="generateLiveTOC()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                     <span>📑 Generuj Spis Treści (TOC)</span>
                   </button>
                 </div>
@@ -3168,28 +3254,27 @@ Dokumentacja musi spełniać standardy ECDL B3 o wysokiej czytelności i braku w
                     <span id="typo-status-badge" class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400">Oczekiwanie...</span>
                   </div>
 
-                  <div id="typo-output-preview" class="p-3.5 bg-black/60 rounded-xl border border-slate-800 text-slate-200 text-xs font-mono min-h-[140px] leading-relaxed whitespace-pre-wrap">
-Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
-                  </div>
+                  <div id="typo-output-preview" class="p-3.5 bg-black/60 rounded-xl border border-slate-800 text-slate-200 text-xs font-mono min-h-[160px] leading-relaxed whitespace-pre-wrap"></div>
                 </div>
 
                 <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 space-y-1">
                   <div class="flex justify-between text-slate-300">
-                    <span>Zgodność ze standardem ECDL B3:</span>
-                    <span id="typo-score" class="text-amber-400 font-bold">100% Zgodności</span>
+                    <span>Wykryte i zabezpieczone spójniki:</span>
+                    <span id="typo-fix-count" class="text-amber-400 font-bold">0 naprawionych</span>
                   </div>
                   <p class="text-[11px] text-slate-400 font-sans">
-                    Twarde spacje (&amp;nbsp;) zabezpieczają spójniki (w, z, o, i, a, u) przed pozostaniem na końcu wiersza.
+                    Standard ECDL B3 nakazuje eliminację wiszących spójników (w, z, o, i, a, u) z końców wierszy.
                   </p>
                 </div>
 
                 <button onclick="submitDocsTask()" id="lab-docs-btn" class="w-full py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold transition">
-                  Zatwierdź zadanie typografii (+50 XP & Odznaka ✍️)
+                  Zatwierdź zadanie typograficzne (+50 XP & Odznaka ✍️)
                 </button>
               </div>
             </div>
           </div>
         `;
+        loadWordTaskPreset('letter');
       }
 
       else if (moduleId === 'mod-calc') {
@@ -3404,6 +3489,75 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
       updateTypoPreview();
     }
 
+    
+    /* ================= WORD / DOCUCRAFT HELPERS & PRESETS ================= */
+    const WORD_PRESETS = {
+      letter: `Firma Przykładowa Sp. z o.o.
+ul. Biurowa 12/4
+00-001 Warszawa
+Email: biuro@przykladowa.pl
+
+ZAPROSZENIE NA KONFERENCJĘ TECHNOLOGICZNĄ
+
+Szanowni Państwo, mamy zaszczyt zaprosić Państwa na nadchodzącą konferencję dotyczącą nowych technologii w biurze. Konferencja odbędzie się w przyszłym miesiącu i zgromadzi ekspertów z całego kraju. Prosimy o potwierdzenie przybycia do końca bieżącego tygodnia.
+
+W programie przewidziano wiele atrakcji oraz warsztatów praktycznych z zakresu oprogramowania biurowego, w tym pakiety Microsoft Office.
+
+Tematy paneli dyskusyjnych:
+Bezpieczeństwo w sieci
+Narzędzia pracy zdalnej
+Automatyzacja w Excelu
+
+Z poważaniem,
+Zarząd Firmy`,
+      report: `# RAPORT BIZNESOWY 2024
+
+[TUTAJ WSTAW AUTOMATYCZNY SPIS TREŚCI]
+
+# Wstęp - Cel raportu
+Niniejszy raport podsumowuje wydatki i działania podjęte w pierwszej połowie roku 2024. Wdrożenie nowych systemów TIK pozwoliło na znaczną optymalizację czasu pracy wszystkich pracowników administracyjnych.
+
+# Koszty Operacyjne
+Poniżej przedstawiono zestawienie kosztów na poszczególne licencje oprogramowania:
+
+Produkt	Ilość	Koszt (PLN)
+Pakiet Office 365	50	25000
+Program Antywirusowy	50	7500
+System CRM	10	12000
+
+# Podsumowanie Działań
+Wszystkie zaplanowane zakupy zostały zrealizowane zgodnie z założonym budżetem. W kolejnym kwartale planowane jest szkolenie personelu z zakresu cyberbezpieczeństwa oraz zaawansowanej edycji dokumentów.`
+    };
+
+    function loadWordTaskPreset(type) {
+      sound.click();
+      const ta = document.getElementById('typo-text-input');
+      if (!ta) return;
+      ta.value = WORD_PRESETS[type] || WORD_PRESETS.letter;
+      updateTypoPreview();
+      const badge = document.getElementById('typo-status-badge');
+      if (badge) badge.textContent = type === 'letter' ? 'Załadowano Zadanie 1 (Pismo)' : 'Załadowano Zadanie 2 (Raport)';
+      showToast(type === 'letter' ? 'Załadowano tekst Zadania 1 (Pismo Oficjalne)' : 'Załadowano tekst Zadania 2 (Raport Biznesowy)');
+    }
+
+    function copyCurrentWordLabText() {
+      const ta = document.getElementById('typo-text-input');
+      if (!ta) return;
+      navigator.clipboard.writeText(ta.value).then(() => {
+        sound.click();
+        showToast('Skopiowano tekst do schowka! Wklej go do Worda (Ctrl+V).');
+      });
+    }
+
+    function copyWordTaskPresetText(type) {
+      const text = WORD_PRESETS[type] || WORD_PRESETS.letter;
+      navigator.clipboard.writeText(text).then(() => {
+        sound.click();
+        const name = type === 'letter' ? 'Zadanie 1 (Pismo Oficjalne)' : 'Zadanie 2 (Raport Biznesowy)';
+        showToast(`Skopiowano ${name}! Wklej do Worda za pomocą Ctrl+V.`);
+      });
+    }
+
     function fixHangingConjunctions() {
       sound.click();
       const ta = document.getElementById('typo-text-input');
@@ -3586,10 +3740,40 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
       document.getElementById('checklist-progress-pill').textContent = `${checked} / ${total}`;
     }
 
+    let currentModuleCheckpointAnswers = {};
+
+    function updateCheckpointBadgeStatus() {
+      const statusBox = document.getElementById('checkpoint-badge-status');
+      const badgeCard = document.getElementById('checkpoint-badge-card');
+      const pill = document.getElementById('checkpoint-score-pill');
+      if (!statusBox) return;
+
+      const correctCount = Object.values(currentModuleCheckpointAnswers).filter(Boolean).length;
+      if (pill) pill.textContent = `${correctCount} / 3`;
+
+      if (state.badges.has('badge-check')) {
+        statusBox.className = "shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-center font-bold";
+        statusBox.innerHTML = "✨ ODBLOKOWANO! (+50 XP)";
+        if (badgeCard) badgeCard.className = "p-3.5 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/15 via-[#0d1f17] to-cyber-dark flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md";
+      } else {
+        if (correctCount === 0) {
+          statusBox.className = "shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-black/60 border border-slate-700 text-slate-400 text-center font-bold";
+          statusBox.innerHTML = "🔒 Zablokowana (0/3)";
+        } else {
+          statusBox.className = "shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-center font-bold";
+          statusBox.innerHTML = `⏳ Postęp: ${correctCount}/3`;
+        }
+        if (badgeCard) badgeCard.className = "p-3.5 rounded-xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-[#181308] to-cyber-dark flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md";
+      }
+    }
+
     function renderCheckpoint() {
       const mod = syllabusData[state.track][state.currentModule];
       const container = document.getElementById('checkpoint-questions-container');
       if (!container) return;
+
+      currentModuleCheckpointAnswers = {};
+      updateCheckpointBadgeStatus();
 
       container.innerHTML = mod.checkpoint.map((cp, qIdx) => `
         <div class="p-3 bg-black/40 rounded-xl border border-slate-800 space-y-2 font-mono text-xs">
@@ -3607,7 +3791,6 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
       `).join('');
     }
 
-    let checkpointCorrectCount = 0;
     function checkCheckpointAns(qIdx, selectedOpt) {
       const mod = syllabusData[state.track][state.currentModule];
       const q = mod.checkpoint[qIdx];
@@ -3619,15 +3802,20 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
         sound.click();
         fb.className = "text-[11px] font-sans p-2 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30";
         fb.innerHTML = `<strong>✓ Prawidłowo!</strong> ${q.explanation}`;
-        checkpointCorrectCount++;
+        currentModuleCheckpointAnswers[qIdx] = true;
       } else {
         sound.alert();
         fb.className = "text-[11px] font-sans p-2 rounded bg-red-500/15 text-red-400 border border-red-500/30";
         fb.innerHTML = `<strong>✗ Błąd:</strong> ${q.explanation}`;
+        currentModuleCheckpointAnswers[qIdx] = false;
       }
 
-      if (checkpointCorrectCount >= 3) {
+      updateCheckpointBadgeStatus();
+
+      const correctCount = Object.values(currentModuleCheckpointAnswers).filter(Boolean).length;
+      if (correctCount >= 3) {
         unlockBadge('badge-check');
+        updateCheckpointBadgeStatus();
       }
     }
 
@@ -3680,7 +3868,24 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
       }
     ];
 
+    function updateExamBadgeStatus() {
+      const box = document.getElementById('exam-badge-status-box');
+      const card = document.getElementById('exam-badge-card');
+      if (!box) return;
+
+      if (state.badges.has('badge-master')) {
+        box.className = "shrink-0 text-xs font-mono px-3.5 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-center font-bold";
+        box.innerHTML = "✨ ODBLOKOWANO! (+50 XP)";
+        if (card) card.className = "p-4 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/15 via-[#0e2118] to-cyber-card flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg transition-all";
+      } else {
+        box.className = "shrink-0 text-xs font-mono px-3.5 py-2 rounded-lg bg-black/60 border border-slate-700 text-slate-400 text-center font-bold";
+        box.innerHTML = "🔒 Do zdobycia (Wymagane min. 80%)";
+        if (card) card.className = "p-4 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-[#1c1509] to-cyber-card flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg transition-all";
+      }
+    }
+
     function renderExam() {
+      updateExamBadgeStatus();
       const container = document.getElementById('exam-questions-container');
       if (!container) return;
 
@@ -3718,15 +3923,19 @@ Kliknij „Napraw wiszące spójniki” lub „Generuj Spis Treści”...
       else if (pct >= 50) grade = '3 (Dostateczny)';
       else grade = '2 (Niedostateczny)';
 
-      sound.success();
       const banner = document.getElementById('exam-result-banner');
-      banner.innerHTML = `<strong class="text-cyber-neon text-sm">Wynik: ${score} / ${examQuestions.length} (${pct}%) • Ocena: ${grade}</strong>`;
-      showToast(`Egzamin zakończony! Twoja ocena to: ${grade}`);
-      
       if (pct >= 80) {
+        sound.success();
+        banner.innerHTML = `<strong class="text-emerald-400 text-sm">✓ Egzamin Zdany! Wynik: ${score} / ${examQuestions.length} (${pct}%) • Ocena: ${grade} • Odznaka i Certyfikat Odblokowane!</strong>`;
         unlockBadge('badge-master');
+        updateExamBadgeStatus();
+        showToast(`Gratulacje! Ocena ${grade} - Odznaka Cyfrowy Mistrz odblokowana!`);
+        openCertificateModal();
+      } else {
+        sound.alert();
+        banner.innerHTML = `<strong class="text-amber-400 text-sm">Wynik: ${score} / ${examQuestions.length} (${pct}%) • Ocena: ${grade} (Wymagane min. 80% do zdobycia Złotej Odznaki). Spróbuj ponownie!</strong>`;
+        showToast(`Wynik: ${pct}%. Popraw odpowiedzi, aby zdobyć odznakę.`);
       }
-      openCertificateModal();
     }
 
     /* ================= TOOLBOX ENGINES ================= */
