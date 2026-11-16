@@ -715,7 +715,7 @@
           <div class="p-4 bg-cyber-dark/90 border-t border-cyber-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
             <div class="flex items-center gap-2">
               <button onclick="toggleTeacherNotes()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition flex items-center gap-1.5">
-                <span>💡</span> <span>Wskazówki Dydaktyczne</span>
+                <span>💡</span> <span>Ciekawostka & Podpowiedź</span>
                 <span id="notes-chevron">↓</span>
               </button>
             </div>
@@ -735,9 +735,9 @@
             </div>
           </div>
 
-          <!-- Collapsible Teacher Notes -->
+          <!-- Collapsible Student Curiosity / Tip -->
           <div id="teacher-notes-panel" class="p-4 bg-slate-900 border-t border-slate-800 text-xs font-sans text-slate-300 hidden leading-relaxed space-y-1">
-            <strong class="text-cyber-warning block font-mono">NOTATKA DLA NAUCZYCIELA / PROWADZĄCEGO:</strong>
+            <strong class="text-cyber-warning block font-mono">💡 CIEKAWOSTKA & PODPOWIEDŹ:</strong>
             <p id="slide-teacher-note-text"></p>
           </div>
 
@@ -786,9 +786,6 @@
             </div>
 
             <div class="flex flex-wrap gap-2 shrink-0">
-              <button onclick="copyCurrentTeacherPost()" class="px-3 py-2 rounded-lg bg-cyber-cyan/15 hover:bg-cyber-cyan/25 text-cyber-cyan border border-cyber-cyan/40 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
-                <span>📋</span> <span>Kopiuj dla Nauczyciela</span>
-              </button>
               <button onclick="copyCurrentStudentTemplate()" class="px-3 py-2 rounded-lg bg-cyber-neon/15 hover:bg-cyber-neon/25 text-cyber-neon border border-cyber-neon/40 text-xs font-mono font-bold transition flex items-center gap-1.5 shadow">
                 <span>✍️</span> <span>Kopiuj Formularz Ucznia</span>
               </button>
@@ -1334,7 +1331,6 @@
       "xp": 50,
       "desc": "Zrozum dlaczego hasła wyciekają, jak działa menedżer Bitwarden, jak skonfigurować bezpieczne 2FA, zdemaskuj oszustwo na dopłatę do paczki InPost oraz poznaj prawdę o trybie Incognito.",
       "blackboard": "1. Jedno hasło wszędzie = katastrofa (Credential Stuffing).\n2. Szyfrowanie Zero-Knowledge w Bitwarden (AES-256).\n3. Hierarchia 2FA: Kody SMS < Aplikacja TOTP < Klucz U2F.\n4. Phishing manipuluje emocjami: pośpiech, lęk, mała kwota (1,50 zł).\n5. Podejrzany SMS przekaż na bezpłatny numer CERT: 8080.\n6. Tryb Incognito kasuje tylko pliki lokalne – dostawca sieci i strony nadal widzą Twój IP.",
-      "teacher_notes": "Zadaj na początku pytanie: 'Ilu z Was ma identyczne hasło do więcej niż 3 serwisów?'. Pokaż uczniom wyciek Morele.net i zademonstruj symulator SMS oraz skaner odcisku przeglądarki w Laboratorium.",
       "slides": [
         {
           "title": "Bazy Danych Serwera & Zjawisko Credential Stuffing",
@@ -1344,7 +1340,7 @@
             "Zasada 1:1: Jedno konto w sieci = Jedno całkowicie unikalne hasło.",
             "Nigdy nie używaj tego samego hasła na skrzynce e-mail, która służy do resetowania innych haseł!"
           ],
-          "notes": "Wyjaśnij pojęcie 'uniwersalnego klucza' – jeśli złodziej ma klucz do Twojej szopy, nie daj mu nim otworzyć drzwi do domu."
+          "notes": "Ciekawostka: Wyobraź sobie klucz uniwersalny – jeśli złodziej ukradnie klucz do Twojej szopy na rowery, a pasuje on też do drzwi mieszkania, stracisz wszystko. Dlatego każde konto powinno mieć osobne hasło!"
         },
         {
           "title": "Menedżer Haseł: Bitwarden & Szyfrowanie Zero-Knowledge",
@@ -1354,7 +1350,7 @@
             "Architektura Zero-Knowledge: serwer Bitwarden przechowuje wyłącznie zaszyfrowaną papkę – administratorzy nie mają możliwości odczytania Twoich haseł.",
             "Pamiętasz tylko jedno mocne hasło główne (Master Passphrase) składające się z 4 losowych słów (metoda XKCD)."
           ],
-          "notes": "Podkreśl, że dedykowane menedżery (Bitwarden) chronią przed złośliwymi rozszerzeniami i phishingiem domenowym."
+          "notes": "Podpowiedź: Dobre menedżery haseł (np. Bitwarden) nigdy nie autouzupełnią hasła na fałszywej stronie phishingowej, ponieważ sprawdzają dokładny adres domeny w pasku przeglądarki."
         },
         {
           "title": "Weryfikacja Dwuetapowa (2FA): Hierarchia Bezpieczeństwa",
@@ -1364,7 +1360,7 @@
             "Poziom 2 (Zalecany standard): Aplikacja TOTP (Google Authenticator, Aegis) – jednorazowe kody generowane offline co 30 sekund.",
             "Poziom 3 (Maksymalny): Fizyczny klucz FIDO2 / WebAuthn (YubiKey) – w 100% odporny na fałszywe strony phishingowe."
           ],
-          "notes": "Pokaż uczniom jak działa aplikacja uwierzytelniająca bez połączenia z siecią komórkową czy Internetem."
+          "notes": "Ciekawostka: Kody w aplikacjach typu Google Authenticator generowane są za pomocą algorytmu TOTP na podstawie aktualnego czasu – dlatego działają nawet w trybie samolotowym bez dostępu do Internetu!"
         },
         {
           "title": "Anatomia Phishingu: Dopłata 1,50 zł & Zgłoszenia CERT 8080",
@@ -1374,7 +1370,7 @@
             "Adres URL zawsze czytaj od prawej do lewej strony: inpost-platnosci.pl to NIE jest oficjalna domena inpost.pl!",
             "Każdy podejrzany SMS w Polsce należy bezpłatnie przekazać na numer CERT Polska: 8080."
           ],
-          "notes": "Przełącz się na zakładkę Laboratorium i przeanalizujcie interaktywny model smartfona z 4 flagami."
+          "notes": "Wskazówka do zadania: Przejdź do zakładki „2. Laboratorium” i sprawdź interaktywny model smartfona, aby samodzielnie kliknąć i zdemaskować wszystkie 4 czerwone flagi w fałszywym SMS-ie."
         },
         {
           "title": "Prawda o Trybie Incognito & Ślad Cyfrowy Urządzenia",
@@ -1384,7 +1380,7 @@
             "Twój dostawca Internetu (ISP), administrator sieci szkolnej oraz serwery docelowe nadal widzą Twój prawdziwy adres IP.",
             "Technika Browser Fingerprinting pozwala stronom identyfikować urządzenie na podstawie rozdzielczości ekranu, czcionek i karty graficznej."
           ],
-          "notes": "Wyjaśnij różnicę między prywatnością lokalną (rodzeństwo nie widzi historii) a sieciową."
+          "notes": "Ciekawostka: Tryb Incognito chroni Cię wyłącznie przed osobą siadającą później przy tym samym komputerze – sieć szkolna, router Wi-Fi i dostawca Internetu nadal widzą, z jakimi serwerami się łączysz."
         }
       ],
       "classroom": {
@@ -1459,7 +1455,6 @@
       "xp": 50,
       "desc": "Poznaj reguły gry w świecie oprogramowania: czy wolno sprzedawać darmowy kod, na czym polega wirusowa licencja GPL, komu przysługują prawa do kodu wygenerowanego przez AI i jak uniknąć plagiatu.",
       "blackboard": "1. Darmowy kod nie oznacza braku praw autorskich (Copyright).\n2. Licencja MIT / Apache 2.0 = permisywna (rób co chcesz, zachowaj notę o autorze).\n3. Licencja GNU GPL v3 = wirusowy copyleft (musisz udostępnić cały program na GPL).\n4. Art. 1 ustawy o pr. autorskim: Prawo chroni tylko utwór człowieka (AI nie ma praw autorskich!).\n5. Google NotebookLM uziemia wiedzę ze wskazaniem cytowań [1].",
-      "teacher_notes": "Zwróć uwagę uczniów na to, że pobierając kod z GitHuba pozbawiony pliku LICENSE, prawnie nie mają prawa go w ogóle uruchomić ani zmodyfikować.",
       "slides": [
         {
           "title": "Czy Darmowy Program Można Sprzedawać? Filozofia Open Source",
@@ -1469,7 +1464,7 @@
             "Brak pliku LICENSE w repozytorium na GitHubie oznacza 'Wszelkie Prawa Zastrzeżone' – nikt nie ma prawa używać kodu!",
             "Licencja to prawny kontrakt pomiędzy autorem a każdym użytkownikiem programu na świecie."
           ],
-          "notes": "Wyjaśnij różnicę między 'public domain' a kodem objętym prawem autorskim z licencją otwartą."
+          "notes": "Ciekawostka: Kod udostępniony publicznie na GitHubie bez pliku LICENSE wcale nie należy do domeny publicznej – domyślnie podlega pełnym prawom autorskim (All Rights Reserved)!"
         },
         {
           "title": "Permisywne Licencje: MIT oraz Apache License 2.0",
@@ -1479,7 +1474,7 @@
             "Jedyny twardy wymóg MIT: musisz zachować oryginalną notę o prawach autorskich twórcy (Copyright Notice).",
             "Apache 2.0: Rozszerza zasady MIT o wyraźną ochronę przed pozwami patentowymi ze strony twórców biblioteki."
           ],
-          "notes": "Pokaż dlaczego startupy i korporacje (Google, Meta, Microsoft) najchętniej wybierają licencje permisywne."
+          "notes": "Ciekawostka: Wielkie firmy technologiczne (Google, Meta, Microsoft) najchętniej wybierają biblioteki na licencjach permisywnych (MIT / Apache 2.0), bo pozwalają one budować na nich płatne, zamknięte produkty."
         },
         {
           "title": "Wirusowy Copyleft: GNU General Public License (GPL v3)",
@@ -1489,7 +1484,7 @@
             "Musisz udostępnić pełny kod źródłowy wszystkim użytkownikom, którym dystrybuujesz program.",
             "Wielkie korporacje mają rygorystyczne zakazy włączania bibliotek GPL do aplikacji o zamkniętym kodzie źródłowym."
           ],
-          "notes": "Przełącz się na zakładkę Laboratorium i uruchomcie Audytor Zgodności Licencji."
+          "notes": "Wskazówka do zadania: Uruchom Audytor Zgodności Licencji w zakładce „2. Laboratorium” i przetestuj, co dzieje się z aplikacją komercyjną po dodaniu biblioteki GNU GPL v3."
         },
         {
           "title": "Status Prawny AI w Polsce: Art. 1 Prawa Autorskiego",
@@ -1499,7 +1494,7 @@
             "Tylko twórczy wkład człowieka (selekcja, manualna edycja, autorska aranżacja) może podlegać ochronie prawnej.",
             "Wpisywanie poufnych danych firmy lub szkoły do darmowych modeli AI jest złamaniem tajemnicy przedsiębiorstwa i RODO."
           ],
-          "notes": "Wyjaśnij uczniom orzeczenia amerykańskich i europejskich sądów w sprawach autorstwa grafik AI."
+          "notes": "Ciekawostka: Urząd ds. Praw Autorskich w USA oraz sądy w UE stoją na stanowisku, że utwór wygenerowany w 100% automatycznie przez AI bez twórczego wkładu człowieka nie podlega ochronie prawa autorskiego."
         },
         {
           "title": "Etyka & Uziemianie Źródeł w NotebookLM (Zasada Cytowań)",
@@ -1509,7 +1504,7 @@
             "Google NotebookLM analizuje wgrane materiały i przy każdym twierdzeniu umieszcza klikalny przypis [1].",
             "Weryfikacja faktów: kliknięcie przypisu natychmiast podświetla dokładny fragment tekstu w dokumencie źródłowym."
           ],
-          "notes": "Zachęć uczniów do kliknięcia interaktywnego indeksu źródłowego na ekranie."
+          "notes": "Podpowiedź: Zwróć uwagę na klikalny przypis [1] na tym slajdzie – jego kliknięcie weryfikuje uziemienie źródłowe i odblokowuje specjalną odznakę w Pokoju Trofeów!"
         }
       ],
       "classroom": {
@@ -1583,7 +1578,6 @@
       "xp": 50,
       "desc": "Opanuj praktyczną obsługę procesora tekstu (MS Word / Google Docs) zgodnie ze standardem ECDL B3. Naucz się profesjonalnego formatowania pism oficjalnych, usuwania wiszących spójników twardą spacją (Ctrl+Shift+Spacja), formatowania tabel oraz generowania automatycznych spisów treści.",
       "blackboard": "1. Złota zasada edycji: Najpierw zaznacz, potem zmień (2-klik = słowo, 3-klik = akapit, Ctrl+A = wszystko).\n2. Klawisz Enter = NOWY AKAPIT, a nie nowa linijka! Word sam zawija wiersze tekstu.\n3. Justowanie (Ctrl+J) wyrównuje tekst do obu marginesów naraz jak w książkach i gazetach.\n4. Twarda spacja (Ctrl+Shift+Spacja) wiąże samotne spójniki (w, z, o, i, a, u) z kolejnym wyrazem.\n5. Style wbudowane (Nagłówek 1) to jedyny poprawny sposób na automatyczny Spis Treści.\n6. Nigdy nie wciskaj 15 razy Enter – do przejścia na nową stronę służy Podział Strony (Ctrl+Enter).",
-      "teacher_notes": "Przeprowadź z uczniami ćwiczenie na żywo: pokaż surowy tekst zaproszenia i raportu bez formatowania. Pokaż dlaczego ręczne spacje i puste entery psują dokument na innym komputerze lub drukarce. Wytłumacz działanie widoku znaków ukrytych ¶ oraz kluczowych skrótów: Ctrl+J, Ctrl+Shift+Spacja i Ctrl+Enter.",
       "slides": [
         {
           "title": "Złota Zasada Edycji: Najpierw Zaznacz, Potem Zmień",
@@ -1593,7 +1587,7 @@
             "Klawisz ENTER służy wyłącznie do tworzenia NOWEGO AKAPITU (nowej myśli). Nigdy nie wciskaj Enter na końcu wiersza!",
             "Usuwanie tekstu: Klawisz Backspace usuwa znaki przed kursorem (w lewo), a Delete usuwa znaki za kursorem (w prawo)."
           ],
-          "notes": "Przetestujcie z uczniami zaznaczanie słów i akapitów bez przeciągania myszką po literach."
+          "notes": "Pro-tip Word/Docs: Dwukrotne kliknięcie zaznacza całe słowo, a trzykrotne kliknięcie zaznacza od razu cały akapit – bez mozolnego przeciągania kursorem!"
         },
         {
           "title": "Formatowanie Akapitu: Justowanie, Interlinia & Odstępy",
@@ -1603,7 +1597,7 @@
             "Interlinia 1.5 wiersza: Oficjalny standard pism urzędowych i prac dyplomowych gwarantujący wysoką czytelność.",
             "Odstęp po akapicie (6-12 pt): Elegancko oddziela akapity bez konieczności wciskania niepotrzebnych, pustych Enterów."
           ],
-          "notes": "Pokaż różnicę między 'poszarpanym' tekstem wyrównanym do lewej a eleganckim blokiem wyjustowanym."
+          "notes": "Ciekawostka: W profesjonalnych publikacjach tekst wyjustowany (Ctrl + J) zawsze wymaga użycia twardych spacji – inaczej między wyrazami mogą powstać brzydkie, szerokie 'rzeki' białego tła."
         },
         {
           "title": "Typografia bez Błędów: Twarda Spacja (Ctrl+Shift+Spacja)",
@@ -1613,7 +1607,7 @@
             "Rozwiązanie: wstawienie Twardej Spacji (spacji nierozdzielnej) za pomocą skrótu Ctrl + Shift + Spacja.",
             "Twarda spacja łączy literę z następnym słowem w nierozerwalny blok, który w razie potrzeby przeskakuje do nowej linii razem."
           ],
-          "notes": "Włącz widok znaków ukrytych ¶, aby pokazać uczniom małe kółeczko twardej spacji."
+          "notes": "Wskazówka: Włącz w edytorze widok znaków ukrytych ¶ – zobaczysz wtedy małe kółeczko (lub kropkę z daszkiem) dokładnie w miejscu, gdzie zadziałała twarda spacja (Ctrl + Shift + Spacja)."
         },
         {
           "title": "Style Wbudowane (Nagłówek 1) & Automatyczny Spis Treści",
@@ -1623,7 +1617,7 @@
             "Automatyczny Spis Treści (TOC): karta Odwołania -> Spis treści generuje kompletny spis z numeracją stron w ułamku sekundy.",
             "Twardy podział strony: Skrót Ctrl + Enter natychmiast przenosi kursor na nową stronę, zapobiegając przesuwaniu tekstu."
           ],
-          "notes": "Zademonstruj na żywo aktualizację spisu treści po dopisaniu nowego rozdziału."
+          "notes": "Ciekawostka: Gdy w długim raporcie zmienisz tytuł rozdziału albo dodasz nową stronę, nie poprawiaj numerów stron ręcznie – wystarczy kliknąć 'Aktualizuj spis treści', a wszystko przeliczy się samo!"
         },
         {
           "title": "Tabele, Ilustracje & Eksport do Formatu PDF",
@@ -1633,7 +1627,7 @@
             "Numeracja stron: Wstawianie -> Numer strony -> Dół strony (numeracja pojawia się automatycznie w stopce na każdej stronie).",
             "Eksport do pliku PDF: Zapewnia nienaruszony układ dokumentu na dowolnym urządzeniu i drukarce."
           ],
-          "notes": "Pokaż jak wyeksportować gotowy plik do formatu PDF i sprawdzić jego wygląd w przeglądarce."
+          "notes": "Podpowiedź: Przed wysłaniem ważnego dokumentu (np. CV lub sprawozdania) wyeksportuj go do pliku PDF – wtedy masz 100% pewności, że u odbiorcy nic się nie 'rozjedzie'."
         }
       ],
       "classroom": {
@@ -1709,7 +1703,6 @@
       "xp": 50,
       "desc": "Opanuj potęgę arkuszy kalkulacyjnych zgodnie ze standardem ECDL B4: poznaj tajemnicę blokowania komórki dolarem ($), pisz formuły obliczeniowe i logiczne oraz dobieraj właściwe wykresy.",
       "blackboard": "1. Każda formuła w arkuszu ZAWSZE rozpoczyna się od znaku '='.\n2. Adresowanie względne (A1) przesuwa współrzędne przy przeciąganiu formuły.\n3. Adresowanie bezwzględne ($A$1): znak '$' zamraża komórkę (np. stała stawka VAT).\n4. Formuły podstawowe: =SUMA(zakres), =ŚREDNIA(zakres), =MIN(zakres), =MAX(zakres).\n5. Formuła warunkowa: =JEŻELI(warunek; wartość_gdy_prawda; wartość_gdy_fałsz).\n6. Dobór wykresu: kolumnowy = porównania, liniowy = upływ czasu, kołowy = proporcje (max 5 części!).",
-      "teacher_notes": "Zademonstruj na żywo błąd powstający gdy uczeń liczy kwotę brutto i przeciąga formułę bez znaku dolara – stawka podatku 'ucieka' w dół dając zera.",
       "slides": [
         {
           "title": "Anatomia Arkusza Kalkulacyjnego & Typy Danych: ECDL B4",
@@ -1719,7 +1712,7 @@
             "Wyrównanie danych zdradza ich typ: tekst domyślnie równa do lewej, liczby do prawej strony.",
             "Jeśli wpisana liczba wyrównuje się do lewej, arkusz traktuje ją jako tekst i zwróci błąd #ARG! przy próbie dodawania."
           ],
-          "notes": "Wyjaśnij różnicę między kropką a przecinkiem jako separatorem dziesiętnym w polskiej wersji językowej."
+          "notes": "Uwaga na pułapkę: W polskiej wersji Excela i Arkuszy Google separatorem dziesiętnym jest przecinek (np. 12,50), a nie kropka! Kropka zamieni liczbę w tekst lub datę i zepsuje obliczenia."
         },
         {
           "title": "Magia Znaku Dolara ($): Adresowanie Względne vs Bezwzględne",
@@ -1729,7 +1722,7 @@
             "Przy przeciągnięciu formuła zmieni się na C2, C3, gdzie nie ma stawki podatku – otrzymamy zera lub błędy!",
             "Rozwiązanie: Adresowanie Bezwzględne ($C$1) – znak '$' zamraża kolumnę i wiersz, uniemożliwiając przesunięcie komórki."
           ],
-          "notes": "Przełącz się na zakładkę Laboratorium i pokaż interaktywny przełącznik znaku dolara w tabeli."
+          "notes": "Wskazówka do zadania: Przejdź do zakładki „2. Laboratorium” i kliknij przełącznik znaku dolara ($), aby na żywo zobaczyć, jak jedna zapomniana blokada komórki psuje cały kosztorys."
         },
         {
           "title": "Niezbędnik Analityka: SUMA, ŚREDNIA, MIN, MAX i ILE.LICZB",
@@ -1739,7 +1732,7 @@
             "=MAX(B2:B20) oraz =MIN(B2:B20): błyskawicznie odnajdują największą i najmniejszą wartość w zbiorze.",
             "=ILE.LICZB(B2:B20): zlicza ile komórek zawiera prawidłowe dane numeryczne."
           ],
-          "notes": "Zwróć uwagę uczniów na dwukropek ':' oznaczający ciągły zakres komórek oraz średnik ';' rozdzielający argumenty."
+          "notes": "Ciekawostka: Dwukropek ':' w formule =SUMA(A1:A10) oznacza ciągły zakres 'od A1 do A10', natomiast średnik ';' oddziela poszczególne argumenty funkcji (np. w funkcji JEŻELI)."
         },
         {
           "title": "Decyzyjność w Arkuszu: Formuła =JEŻELI() & Formatowanie Warunkowe",
@@ -1749,7 +1742,7 @@
             "Formatowanie Warunkowe: dynamiczne kolorowanie komórek spełniających określone kryteria.",
             "Wizualny alert: komórki z kosztami powyżej budżetu automatycznie podświetlają się na czerwono bez udziału człowieka."
           ],
-          "notes": "Zademonstruj regułę formatowania warunkowego na żywo w arkuszu."
+          "notes": "Ciekawostka: Formatowanie warunkowe działa dynamicznie w czasie rzeczywistym – gdy zmienisz liczbę w komórce, kolor tła natychmiast sam się zaktualizuje bez ręcznego kolorowania."
         },
         {
           "title": "Sztuka Wizualizacji: Dobór Właściwego Typu Wykresu",
@@ -1759,7 +1752,7 @@
             "Wykres Kołowy: WYŁĄCZNIE do prezentacji udziału części w całości (100%) i przy maksymalnie 4-5 kategoriach!",
             "Złota zasada ECDL: każdy profesjonalny wykres musi posiadać tytuł, podpisane osie oraz czytelną legendę."
           ],
-          "notes": "Pokaż uczniom jak nieczytelny staje się wykres kołowy z 15 drobnymi wycinkami."
+          "notes": "Ciekawostka: Wykres kołowy z 15 drobnymi wycinkami jest całkowicie nieczytelny dla ludzkiego oka – w takich sytuacjach profesjonaliści zawsze wybierają wykres słupkowy lub kolumnowy."
         }
       ],
       "classroom": {
@@ -1834,7 +1827,6 @@
       "xp": 75,
       "desc": "Przejdź od prostego czatowania z AI do świadomej pracy projektowej! Naucz się wykrywać halucynacje, uziemiać wiedzę w Google NotebookLM, projektować prompty systemowe R.K.F.O. oraz zrealizuj jeden z 3 gotowych projektów klasowych.",
       "blackboard": "1. LLM to model statystyczny przewidujący kolejne tokeny – NIE jest bazą zweryfikowanych faktów.\n2. Halucynacja AI: Model zmyśla nieistniejące książki, daty lub paragrafy, brzmiąc bardzo pewnie.\n3. Grounding (Uziemienie) w Google NotebookLM: Model odpowiada WYŁĄCZNIE na bazie wgranych źródeł z cytowaniami.\n4. Formuła dobrego promptu R.K.F.O.: Rola + Kontekst + Format + Ograniczenia (zakazy).\n5. Scenariusze projektowe (praca w parach/zespołach): Cyfrowy Detektyw (Fact-Checking) | Trener Sokratejski | Tarcza Anty-Deepfake.",
-      "teacher_notes": "Po wstępnym warsztacie z AI uczniowie często bezkrytycznie kopiują odpowiedzi bota. Zacznij od prowokacji: poproś Gemini na rzutniku o 5 źródeł naukowych na niszowy lokalny temat i wspólnie sprawdźcie, czy istnieją. Następnie podziel klasę na zespoły i przydziel jeden z 3 scenariuszy z Laboratorium.",
       "slides": [
         {
           "title": "Dlaczego Sztuczna Inteligencja kłamie? (Mechanizm Halucynacji)",
@@ -1844,7 +1836,7 @@
             "Model zawsze dąży do bycia pomocnym i pewnym siebie: zamiast przyznać 'nie wiem', często płynnie zmyśla brakujące ogniwo.",
             "Złota zasada pracy z GenAI: Każda liczba, cytat, przepis prawny i data wygenerowana przez AI wymaga weryfikacji przez człowieka."
           ],
-          "notes": "Przypomnij głośny przykład prawnika z USA, który złożył w sądzie pismo z wyrokami całkowicie wymyślonymi przez ChatGPT."
+          "notes": "Ciekawostka: Głośna sprawa z USA pokazała, jak groźne są halucynacje AI – doświadczony prawnik złożył w sądzie pismo z 6 precedensami, które w całości zmyślił ChatGPT, i dostał surową karę!"
         },
         {
           "title": "Uziemianie Wiedzy (Grounding / RAG) w Google NotebookLM",
@@ -1854,7 +1846,7 @@
             "Każda odpowiedź w Google NotebookLM posiada klikalne przypisy cyfrowe prowadzące dokładnie do akapitu w oryginalnym dokumencie.",
             "Jeśli w źródłach nie ma odpowiedzi – dobrze uziemiony asystent odpowiada: 'W dostarczonych materiałach brak informacji na ten temat'."
           ],
-          "notes": "Kliknij w indeks [1] na slajdzie, aby zaprezentować weryfikację uziemionego źródła i odblokować odznakę 'Uziemiony Analityk AI'."
+          "notes": "Podpowiedź: Kliknij pomarańczowy indeks [1] na tym slajdzie, aby zweryfikować uziemienie źródłowe i odblokować w Pokoju Trofeów odznakę 'Uziemiony Analityk AI'."
         },
         {
           "title": "Inżynieria Promptu R.K.F.O.: Jak sterować zachowaniem modelu?",
@@ -1864,7 +1856,7 @@
             "K (Kontekst): Podaj cel, odbiorcę i sytuację (np. 'Przygotowujesz materiał dla licealistów na lekcję informatyki').",
             "F + O (Format i Ograniczenia): Zdefiniuj strukturę (tabela, 5 punktów) oraz ZAKAZY (np. 'Nie podawaj gotowej odpowiedzi, zadawaj pytania naprowadzające')."
           ],
-          "notes": "Pokaż w Laboratorium różnicę między słabym promptem a pełnym promptem w strukturze R.K.F.O."
+          "notes": "Wskazówka do projektu: W zakładce „2. Laboratorium” czeka Konstruktor R.K.F.O. – przetestuj na żywo różnicę między słabym promptem za 25 pkt a profesjonalnym szablonem na 100 pkt!"
         },
         {
           "title": "Deepfake, Bańki Informacyjne & Bezpieczeństwo Promptów",
@@ -1874,7 +1866,7 @@
             "Każdy system oparty o AI może zostać zmanipulowany przez użytkownika (Prompt Injection – próba obejścia reguł asystenta).",
             "Zawsze oznaczaj materiały stworzone lub istotnie przetworzone przez AI zgodnie z zasadami etyki szkolnej i regulacjami EU AI Act."
           ],
-          "notes": "Przetestujcie w Laboratorium symulator AI Red-Team, aby zobaczyć jak łatwo przełamać słabo zabezpieczonego bota."
+          "notes": "Ciekawostka: Ataki Prompt Injection potrafią oszukać nawet komercyjne boty bankowe czy salonów samochodowych – w 2023 r. internauci zmusili czatbota dealera Chevy do 'sprzedaży' nowego auta za 1 dolara!"
         },
         {
           "title": "3 Scenariusze Projektowe dla Zespołów (Wybierz Swój Projekt!)",
@@ -1884,7 +1876,7 @@
             "Projekt L3 – 'Tarcza Anty-Deepfake': Przygotuj 3-elementową mini-kampanię ostrzegawczą przed oszustwami AI (klonowanie głosu, fałszywe reklamy) dla młodszych klas.",
             "Pełne instrukcje projektów oraz przycisk kopiowania do Classroom czekają w zakładce Laboratorium oraz Zadanie Classroom!"
           ],
-          "notes": "Rozdziel zespoły po 2-3 osoby i pozwól uczniom wybrać jeden z trzech scenariuszy projektowych."
+          "notes": "Wskazówka do projektu: W zakładce „2. Laboratorium” wybierzcie w parze jeden z 3 gotowych scenariuszy projektowych (L1, L2 lub L3) – jednym kliknięciem skopiujecie też gotową kartę do Classroom."
         }
       ],
       "classroom": {
@@ -1961,7 +1953,6 @@
       "xp": 75,
       "desc": "Poznaj matematyczne podstawy bezpieczeństwa: hashowanie jednokierunkowe SHA-256, łamanie haseł kartami GPU, rola soli kryptograficznej, audyt OSINT na realnych wyciekach oraz zabezpieczenia sesji.",
       "blackboard": "1. Hashowanie (SHA-256) to funkcja jednokierunkowa – brak możliwości 'odszyfrowania'.\n2. Tęczowe tablice (Rainbow Tables) i ataki słownikowe łamią proste hashe w milisekundy.\n3. Sól kryptograficzna (Salt) unikalizuje hash dla każdego użytkownika.\n4. Funkcje KDF (Argon2id, PBKDF2, bCrypt) celowo spowalniają obliczenia GPU.\n5. Zero-Knowledge: Klucz szyfrujący tworzony po stronie klienta (PBKDF2-SHA256).\n6. OSINT: Sprawdzaj wycieki na HaveIBeenPwned i rejestry CERT Polska.",
-      "teacher_notes": "Pokaż uczniom kod Pythona z biblioteką hashlib w Google Colab. Wyjaśnij dlaczego baza danych przechowująca jawne hasła jest natychmiastowym złamaniem RODO.",
       "slides": [
         {
           "title": "Funkcje Jednokierunkowe SHA-256 & Efekt Lawinowy",
@@ -1971,7 +1962,7 @@
             "Efekt lawinowy (Avalanche Effect): zmiana zaledwie 1 bitu w danych wejściowych zmienia średnio 50% bitów wyjściowego skrótu.",
             "Odporność na kolizje: znalezienie dwóch różnych tekstów dających identyczny hash SHA-256 wymagałoby więcej energii niż istnieje we wszechświecie."
           ],
-          "notes": "Pokaż w Laboratorium zmianę 'Piesek123' na 'Piesek124' i całkowite przeformatowanie hasha."
+          "notes": "Wskazówka: Przetestuj w zakładce „2. Laboratorium” wpisanie 'Piesek123' i zmianę jednej cyfry na 'Piesek124' – zobaczysz efekt lawinowy, w którym zmienia się ponad 50% bitów całego skrótu SHA-256!"
         },
         {
           "title": "Tęczowe Tablice (Rainbow Tables) & Rola Soli Kryptograficznej",
@@ -1981,7 +1972,7 @@
             "Kryptograficzna sól (Salt): losowy ciąg bajtów (np. 16 bajtów z urandom) dodawany do hasła przed hashowaniem.",
             "Hash = SHA-256(hasło + sól): dwaj użytkownicy o tym samym haśle uzyskują całkowicie odmienne hashe w bazie."
           ],
-          "notes": "Wyjaśnij dlaczego sól całkowicie neutralizuje atak tęczowymi tablicami."
+          "notes": "Ciekawostka: Tęczowe tablice (Rainbow Tables) mają często setki gigabajtów, ale dodanie losowej soli kryptograficznej do każdego hasła całkowicie unieważnia ich przydatność – atakujący musi liczyć wszystko od zera."
         },
         {
           "title": "Funkcje KDF (Argon2id, PBKDF2) vs Farma GPU RTX 4090",
@@ -1991,7 +1982,7 @@
             "Argon2id oraz bCrypt celowo wymagają dużej ilości pamięci RAM i czasu procesora na każdy pojedynczy hash.",
             "Spowolnienie logowania dla człowieka o 0.1 sekundy oznacza dla hakera spowolnienie ataku bruteforce z minut do milionów lat."
           ],
-          "notes": "Pokaż specyfikację algorytmu Argon2id – zwycięzcy Password Hashing Competition."
+          "notes": "Ciekawostka: Algorytm Argon2id (zwycięzca międzynarodowego konkursu Password Hashing Competition) specjalnie zużywa dużo pamięci RAM, aby zablokować masowe łamanie haseł na kartach graficznych GPU."
         },
         {
           "title": "Analiza Incydentów & OSINT: Wycieki Morele / ALAB",
@@ -2001,7 +1992,7 @@
             "Analiza nagłówków wiadomości e-mail: sprawdzanie rekordów SPF, DKIM oraz DMARC w celu wykrycia spoofingu domenowego.",
             "Zabezpieczenia ciasteczek sesyjnych: flagi HttpOnly (brak dostępu z poziomu JS) oraz SameSite=Strict."
           ],
-          "notes": "Przeanalizujcie z uczniami nagłówek prawdziwej wiadomości phishingowej w konsoli."
+          "notes": "Ciekawostka: Nawet jeśli nadawca w polu 'Od' wpisze adres banku, analiza nagłówków technicznych wiadomości (SPF, DKIM, DMARC) w konsoli pocztowej błyskawicznie demaskuje podszywanie się (spoofing)."
         },
         {
           "title": "Architektura Zero-Knowledge & Szyfrowanie AES-256-CBC",
@@ -2011,7 +2002,7 @@
             "Nawet zajęcie serwerów przez służby lub wrogiego aktora nie pozwala na odzyskanie danych bez znajomości hasła głównego.",
             "Standard AES-256 jest zatwierdzony przez NSA do ochrony informacji o klauzuli TOP SECRET."
           ],
-          "notes": "Pokaż schemat blokowy generowania kluczy w dokumentacji Bitwarden Security Whitepaper."
+          "notes": "Podpowiedź: Bitwarden publikuje swój pełny dokument techniczny (Security Whitepaper) oraz przechodzi niezależne audyty kodu Open Source – warto zajrzeć, jak projektuje się prawdziwe szyfrowanie Zero-Knowledge."
         }
       ],
       "classroom": {
@@ -2086,7 +2077,6 @@
       "xp": 75,
       "desc": "Zrozum architekturę prawną systemów informatycznych: audyt łańcucha dostaw (SBOM), licencje sieciowe AGPL v3, modele Dual-Licensing oraz ryzyka patentowe i prawne używania modeli Generative AI w kodzie komercyjnym.",
       "blackboard": "1. Zależności tranzytywne (npm, pip, cargo) mogą 'zarazić' kod licencją GPL.\n2. AGPL v3 zamyka lukę chmurową (SaaS) – interakcja sieciowa wymusza udostępnienie kodu.\n3. SBOM (Software Bill of Materials) i skanery compliance w pipeline CI/CD (FOSSA, Snyk).\n4. Odpowiedzialność za halucynacje i naruszenia praw autorskich spoczywa na inżynierze.\n5. RODO: Prawo do bycia zapomnianym a immutability w bazach i blockchainie.",
-      "teacher_notes": "Pokaż uczniom jak duża korporacja może stracić prawa do zamkniętego oprogramowania przez przypadkowe zlinkowanie pojedynczej biblioteki GPL.",
       "slides": [
         {
           "title": "Łańcuch Dostaw Oprogramowania & Licencje Tranzytywne",
@@ -2096,7 +2086,7 @@
             "Zanieczyszczenie licencyjne (License Tainting) może wymusić prawny nakaz upublicznienia kodu Twojej komercyjnej aplikacji!",
             "Inżynierowie DevSecOps stosują automatyczne skanery licencji w procesie Continuous Integration."
           ],
-          "notes": "Pokaż drzewo zależności w package-lock.json lub poetry.lock."
+          "notes": "Ciekawostka: W dużym projekcie JavaScript lub Python jedna paczka zainstalowana z npm/pip potrafi pociągnąć za sobą drzewo kilkuset podzależności – audytuje się je automatycznie w plikach lock (package-lock.json / poetry.lock)."
         },
         {
           "title": "Luka Chmurowa & Licencja GNU AGPL v3 (Affero Copyleft)",
@@ -2106,7 +2096,7 @@
             "Affero GPL (AGPL v3) zamyka tę lukę: udostępnienie usługi przez sieć komputerową jest traktowane na równi z dystrybucją.",
             "Jeśli postawisz serwis SaaS na bazie kodu AGPL v3, musisz udostępnić pełny kod źródłowy wszystkim użytkownikom łączącym się przez przeglądarkę."
           ],
-          "notes": "Wyjaśnij spory prawne wokół baz danych MongoDB, ElasticSearch i Redis."
+          "notes": "Ciekawostka: Głośne zmiany licencyjne baz MongoDB, ElasticSearch czy Redis na tzw. Source-Available wynikły z tego, że giganci chmurowi sprzedawali ich darmowy kod jako własne usługi SaaS, nie dzieląc się zyskami."
         },
         {
           "title": "Modele Biznesowe Dual-Licensing & Re-licencjonowanie",
@@ -2116,7 +2106,7 @@
             "Zmiany licencyjne: dlaczego projekty odchodzą od czystego Open Source ku licencjom BSL (Business Source License) lub SSPL?",
             "Ochrona przed gigantami chmurowymi (AWS), którzy sprzedawali otwartoźródłowe bazy danych bez wspierania ich twórców."
           ],
-          "notes": "Omówcie studium przypadku forka OpenSearch (utworzonego przez AWS po zmianie licencji ElasticSearch)."
+          "notes": "Ciekawostka: Gdy ElasticSearch zamknął swoją licencję, Amazon (AWS) utworzył legalny fork ostatniej otwartej wersji pod nazwą OpenSearch – to idealny przykład siły licencji Open Source."
         },
         {
           "title": "Ryzyko Prawne Naruszenia Copyright przez Modele GenAI",
@@ -2126,7 +2116,7 @@
             "Pozwy zbiorowe w USA przeciwko twórcom modeli za naruszenie wymogów atrybucji i licencji open source.",
             "Praktyka inżynierska: włączanie filtrów duplicate code w Copilocie i weryfikacja praw autorskich."
           ],
-          "notes": "Zwróć uwagę na odpowiedzialność kontraktową programisty przed pracodawcą."
+          "notes": "Wskazówka inżynierska: W umowie B2B lub o pracę zawsze sprawdzaj zapis o przeniesieniu autorskich praw majątkowych i zakazie wykorzystywania prywatnych repozytoriów firmy poza projektami służbowymi."
         },
         {
           "title": "Standardy SBOM & Automatyzacja Compliance w CI/CD",
@@ -2136,7 +2126,7 @@
             "Narzędzia automatyzacji: FOSSA, Syft, Grype, Trivy blokujące wdrożenie commita w razie wykrycia niezgodności licencyjnej.",
             "Inżynieria prawna to dziś integralna część pracy architekta systemów IT."
           ],
-          "notes": "Pokaż przykładowy plik SPDX w formacie JSON generowany przez pipeline GitHuba."
+          "notes": "Ciekawostka: Standard SPDX i CycloneDX pozwala w pipeline CI/CD na GitHubie wygenerować w kilka sekund pełny plik SBOM (Software Bill of Materials) w formacie JSON ze spisem wszystkich licencji projektu."
         }
       ],
       "classroom": {
@@ -2211,7 +2201,6 @@
       "xp": 50,
       "desc": "Opanuj profesjonalną edycję dokumentacji technicznej i raportów wdrożeniowych IT w edytorze tekstu. Poznaj standard ECDL B3: hierarchię stylów H1-H3, twarde spacje, tabelaryczne zestawienia serwerów i licencji, podziały stron oraz automatyczny spis treści.",
       "blackboard": "1. Typografia techniczna: brak podwójnych spacji i pustych Enterów (kontrola widoku znaków ¶).\n2. Formatowanie akapitu: justowanie (Ctrl+J), interlinia 1.5, odstęp po akapicie (brak pustych wierszy).\n3. Twarda spacja (Ctrl+Shift+Spacja): nierozerwalne łączenie spójników (w, z, o, i, a) oraz wartości z jednostkami (np. 16 GB, 240 V).\n4. Hierarchia stylów: Nagłówek 1 (moduły), Nagłówek 2 (podrozdziały) jako fundament automatycznego spisu treści.\n5. Tabele inżynierskie: formatowanie nagłówka, wyrównanie danych (tekst do lewej, parametry liczbowe do prawej).\n6. Znak podziału strony (Ctrl+Enter): separacja sekcji bez deformacji układu na innych maszynach.",
-      "teacher_notes": "Zwróć uwagę przyszłym technikom i informatykom, że czytelna dokumentacja wdrożeniowa to wizytówka inżyniera. Pokaż jak niechlujnie sformatowany dokument traci układ na innej wersji Office/LibreOffice, jeśli użyto spacji i Enterów zamiast justowania, twardych spacji i stylów nagłówkowych.",
       "slides": [
         {
           "title": "Standardy Dokumentacji Technicznej & Zasady Edycji",
@@ -2221,7 +2210,7 @@
             "Klawisz Enter służy wyłącznie do tworzenia nowego akapitu logicznego – edytor sam odpowiada za zawijanie tekstu.",
             "Usuwanie precyzyjne: Backspace usuwa znaki po lewej stronie, Delete po prawej stronie kursora."
           ],
-          "notes": "Wyjaśnij pojęcie 'czystości kodu dokumentu' – dokument sformatowany stylami zachowuje pełną przenośność."
+          "notes": "Ciekawostka: Dobrze sformatowana dokumentacja techniczna oparta na stylach (H1–H3) zachowuje idealną strukturę przy eksporcie do HTML, PDF czy Markdown – dokładnie tak działają generatory dokumentacji Docs-as-Code!"
         },
         {
           "title": "Formatowanie Akapitu & Typografia Inżynierska",
@@ -2231,7 +2220,7 @@
             "Odstęp po akapicie: Ustawiany we właściwościach akapitu (np. 6 pt), całkowicie eliminuje wciskanie pustych Enterów.",
             "Widok znaków ukrytych ¶ (Ctrl+*): Podstawowe narzędzie diagnostyczne – ujawnia zbędne spacje, tabulatory i błędne łamania wierszy."
           ],
-          "notes": "Pokaż jak błędy formatowania stają się natychmiast widoczne po włączeniu widoku ¶."
+          "notes": "Wskazówka: Włączenie widoku znaków ukrytych ¶ przed oddaniem dokumentacji wdrożeniowej to najszybszy 'linter' – w 3 sekundy wyłapiesz zbędne spacje, puste entery i brak twardych spacji."
         },
         {
           "title": "Twarda Spacja (Ctrl+Shift+Spacja) w Dokumentacji IT",
@@ -2241,7 +2230,7 @@
             "Dzięki temu jednostka miary nigdy nie przeskoczy do nowej linii bez powiązanej z nią wartości liczbowej.",
             "Skrót: Ctrl + Shift + Spacja w MS Word oraz Google Docs wstawia znak spacji nierozdzielnej (Non-breaking space)."
           ],
-          "notes": "Zwróć uwagę na czytelność specyfikacji serwerów (RAM, dyski SSD, pasmo sieciowe)."
+          "notes": "Podpowiedź: W specyfikacjach serwerowych (RAM, dyski NVMe, pasmo sieciowe) zawsze stawiaj twardą spację przed jednostką (np. 64 GB, 10 Gbps), żeby liczba nigdy nie została rozdzielona od jednostki na końcu wiersza."
         },
         {
           "title": "Hierarchia Stylów H1-H3 & Automatyczny Spis Treści",
@@ -2251,7 +2240,7 @@
             "Aktualizacja spisu: po dopisaniu nowych modułów wystarczy kliknąć 'Aktualizuj spis treści' (F9), bez ręcznego przepisywania.",
             "Podział strony (Ctrl+Enter): Wymusza rozpoczęcie nowego rozdziału na kolejnej stronie, gwarantując niezmienny układ wydruku."
           ],
-          "notes": "Pokaż aktualizację spisu po dodaniu nowej sekcji raportu infrastrukturalnego."
+          "notes": "Ciekawostka: W dużych zespołach IT dokumentację API i procedury awaryjne pisze się często w Markdownie lub LaTeX-u obok kodu w repozytorium Git, aby łatwo śledzić zmiany przez Pull Requesty."
         },
         {
           "title": "Tabele Parametrów, Numery Stron & Eksport do PDF",
@@ -2261,7 +2250,7 @@
             "Stopka dokumentu: Wstawianie -> Numer strony -> Dół strony (automatyczne pole {PAGE} na każdej stronie).",
             "Eksport do formatu PDF: Standard dystrybucji dokumentacji projektowej – gwarantuje zgodność wizualną na każdym systemie (Linux, Windows, macOS)."
           ],
-          "notes": "Pokaż standardy publikowania dokumentów w formacie PDF w środowisku korporacyjnym IT."
+          "notes": "Wskazówka: Eksport specyfikacji do PDF/A zapewnia długoterminową archiwizację – wszystkie czcionki są wtedy osadzone w pliku i dokument wygląda identycznie na Windows, macOS oraz Linuksie."
         }
       ],
       "classroom": {
@@ -2337,7 +2326,6 @@
       "xp": 75,
       "desc": "Zobacz jak profesjonalni inżynierowie danych wykorzystują arkusze kalkulacyjne: szybka eksploracja dużych zbiorów, tabele przestawne, formuły XLOOKUP oraz most do ekosystemu Python / Pandas.",
       "blackboard": "1. Czyszczenie 'brudnych' danych: funkcja USUŃ.ZBĘDNE.ODSTĘPY, zamiana typów, split tekstu.\n2. =XLOOKUP() rozwiązuje wszystkie wady przestarzałego =WYSZUKAJ.PIONOWO().\n3. Tabele Przestawne (Pivot Tables): wielowymiarowa agregacja bez pisania kodu.\n4. Arkusz to szybki prototyp – gdy danych jest >100k wierszy przechodzimy do Pythona.\n5. Eksport do formatu CSV (UTF-8, separator przecinek/średnik).\n6. Analiza w Pandas: pd.read_csv(), df.groupby(), filtrowanie wektorowe.",
-      "teacher_notes": "Pokaż uczniom jak za pomocą Tabeli Przestawnej w 3 kliknięcia podsumować 10 000 wierszy logów serwerowych z podziałem na statusy HTTP.",
       "slides": [
         {
           "title": "Higiena Danych & Techniki Data Wrangling w Arkuszu",
@@ -2347,7 +2335,7 @@
             "Rozdzielanie tekstu na kolumny: automatyczne parsowanie logów serwera (np. adres IP, znacznik czasu, metoda HTTP).",
             "Narzędzie 'Usuń duplikaty': natychmiastowa deduplikacja rekordów na podstawie kluczy unikalnych."
           ],
-          "notes": "Pokaż uczniom jak spacja na końcu loginu uniemożliwia poprawne dopasowanie danych."
+          "notes": "Pułapka w bazach i logach: Pojedyncza niewidoczna spacja na końcu nazwy użytkownika ('admin ') sprawia, że VLOOKUP czy XLOOKUP zwracają błąd #N/D! Funkcja =USUŃ.ZBĘDNE.ODSTĘPY() (TRIM) ratuje życie."
         },
         {
           "title": "Ewolucja Wyszukiwania: Nowoczesne =XLOOKUP() w Praktyce",
@@ -2357,7 +2345,7 @@
             "Składnia: =XLOOKUP(szukana_wartość; przeszukiwana_tablica; zwracana_tablica; [wartość_jeśli_nie_znaleziono]).",
             "Odporność na zmiany: wstawienie nowej kolumny w środku tabeli nie psuje formuły XLOOKUP!"
           ],
-          "notes": "Zademonstruj przewagę XLOOKUP nad VLOOKUP na żywym przykładzie bazy pracowników."
+          "notes": "Ciekawostka: Nowoczesna funkcja XLOOKUP zastąpiła wysłużone VLOOKUP, ponieważ potrafi szukać zarówno w prawo, jak i w lewo od kolumny klucza, oraz ma wbudowaną obsługę komunikatu błędu."
         },
         {
           "title": "Tabele Przestawne (Pivot Tables) w Analizie Wielowymiarowej",
@@ -2367,7 +2355,7 @@
             "Grupowanie czasowe: błyskawiczne zwijanie tysięcy dat transakcji do poziomów miesięcy, kwartałów lub lat.",
             "Wykresy Przestawne (Pivot Charts): dynamiczne wykresy sterowane interaktywnymi fragmentatorami (Slicers)."
           ],
-          "notes": "Zbudujcie w 30 sekund podsumowanie sprzedaży serwerów z podziałem na regiony."
+          "notes": "Ciekawostka: Dobrze zbudowana Tabela Przestawna (Pivot Table) pozwala przeanalizować i pogrupować dziesiątki tysięcy wierszy logów sprzedażowych lub serwerowych w mniej niż 30 sekund – bez pisania ani jednej formuły!"
         },
         {
           "title": "Format CSV & Most Pomiędzy Arkuszem a Językiem Python",
@@ -2377,7 +2365,7 @@
             "Kodowanie znaków: ZAWSZE wymuszaj UTF-8, aby polskie znaki diakrytyczne nie zamieniły się w 'krzaczki' (tzw. Mojibake).",
             "Arkusz służy do szybkiej inspekcji wstępnej – gdy rozmiar pliku przekracza 500 MB, przechodzimy do biblioteki Pandas w Pythonie."
           ],
-          "notes": "Pokaż surowy plik CSV w notatniku tekstowym oraz ten sam plik otwarty w arkuszu."
+          "notes": "Podpowiedź: Plik CSV to w rzeczywistości zwykły plik tekstowy, w którym kolumny oddzielone są przecinkiem lub średnikiem – możesz go otworzyć zarówno w Notatniku, jak i wczytać jednym poleceniem w Pythonie."
         },
         {
           "title": "Wprowadzenie do Analizy Danych z Biblioteką Pandas (Colab)",
@@ -2387,7 +2375,7 @@
             "Błyskawiczne statystyki: df.describe() oraz df.info() podsumowują rozkład statystyczny w ułamku sekundy.",
             "Wektorowa agregacja: odpowiednikiem tabeli przestawnej w Pythonie jest potężna metoda df.groupby('status_http').count()."
           ],
-          "notes": "Pokaż jak 3 linijki kodu w Colab zastępują skomplikowane makra arkusza."
+          "notes": "Ciekawostka: Gdy plik przekracza 100 000 wierszy, arkusz kalkulacyjny zaczyna mocno zwalniać – wtedy inżynierowie przechodzą na Google Colab i 3 linijki w bibliotece Pandas (pd.read_csv)."
         }
       ],
       "classroom": {
@@ -2462,7 +2450,6 @@
       "xp": 75,
       "desc": "Poznaj architekturę bezpieczeństwa modeli językowych! Przeprowadź etyczny atak Prompt Injection w konsoli Red-Team, zaprojektuj warstwy obronne Guardrails, zdebuguj kod wygenerowany przez AI w Google Colab i zrealizuj jeden z 3 projektów inżynierskich.",
       "blackboard": "1. Kontekst LLM składa się z System Prompt (reguły developera) + User Prompt (dane od użytkownika).\n2. OWASP Top 10 for LLM (#1 Prompt Injection): Przejęcie kontroli nad botem przez socjotechnikę, odgrywanie ról lub kodowanie.\n3. Indirect Prompt Injection: Ukryte instrukcje zaszyte w dokumentach PDF lub na stronach WWW czytanych przez AI.\n4. Obrona (Guardrails): Separacja danych od instrukcji, filtrowanie wyjścia (DLP) i zasada najmniejszych uprawnień (Least Privilege).\n5. Scenariusze projektowe (Technikum): T1 Red Team vs Blue Team | T2 Analityk Logów (Python + AI w Colab) | T3 Architekt Bazy Wiedzy (Markdown & RAG).",
-      "teacher_notes": "Podkreśl, że w produkcji największym błędem jest traktowanie LLM jak zaufanej warstwy autoryzacji (np. wklejanie tajnych haseł czy kluczy API w System Prompt). Zademonstruj atak w konsoli Red-Team w Laboratorium, a potem pokaż przełącznik Guardrails.",
       "slides": [
         {
           "title": "Architektura Interakcji z LLM: System Prompt vs User Prompt",
@@ -2472,7 +2459,7 @@
             "Parametr Temperature (0.0 – 1.0+): Niska wartość (0.0–0.2) zapewnia deterministyczny kod i analizę logów; wysoka zwiększa kreatywność i ryzyko halucynacji.",
             "Nigdy nie umieszczaj kluczy API, haseł ani logiki autoryzacji wewnątrz samego System Promptu modelu!"
           ],
-          "notes": "Wyjaśnij analogię do SQL Injection: tak jak w SQL mieszaliśmy zapytanie z danymi użytkownika, tak w LLM mieszamy instrukcję systemową z tekstem klienta."
+          "notes": "Ciekawostka: Analogia do SQL Injection! Tak jak brak parametryzacji w SQL pozwalał danym użytkownika stać się rozkazem dla bazy, tak brak separacji w oknie kontekstu LLM pozwala tekstowi klienta przejąć rolę System Promptu."
         },
         {
           "title": "OWASP LLM01: Prompt Injection & Techniki Jailbreakingu",
@@ -2482,7 +2469,7 @@
             "Obfuskacja i kodowanie: Ukrycie zakazanych słów w Base64, ROT13, odwróconym tekście lub tłumaczeniu na rzadki język.",
             "Indirect Prompt Injection: Złośliwy tekst (np. białą czcionką na białym tle w CV lub na stronie WWW), który przejmuje kontrolę nad asystentem czytającym stronę. [1]"
           ],
-          "notes": "Kliknij indeks [1], aby odblokować odznakę 'Uziemiony Analityk AI' i omów przykład ukrytego promptu w dokumencie."
+          "notes": "Podpowiedź: Kliknij pomarańczowy indeks [1] na tym slajdzie, aby odblokować odznakę 'Uziemiony Analityk AI' i zapoznać się z przykładem ataku Indirect Prompt Injection ukrytego w dokumencie."
         },
         {
           "title": "Inżynieria Obrony: Guardrails & Zasada Najmniejszych Uprawnień",
@@ -2492,7 +2479,7 @@
             "Output Filtering (DLP): Automatyczne blokowanie odpowiedzi modelu, jeśli zawierają wzorce kluczy API, tokenów (np. FLAG{...}) lub haseł.",
             "Least Privilege: Jeśli bot nie musi mieć dostępu do zapisu w bazie danych – jego narzędzia (Function Calling) muszą mieć uprawnienia wyłącznie Read-Only."
           ],
-          "notes": "Przetestuj przełącznik Guardrails w Laboratorium, aby zablokować atak na konsolę INFOTECH HelpDesk AI."
+          "notes": "Wskazówka do laboratorium: Przetestuj najpierw złamanie bota INFOTECH w konsoli Red-Team, a potem włącz przełącznik Guardrails + DLP i zobacz, jak warstwa filtrująca odrzuca ten sam atak!"
         },
         {
           "title": "AI w Pracy Programisty: Debugowanie i Halucynacje Bibliotek",
@@ -2502,7 +2489,7 @@
             "Pętla debugowania: Gdy Google Colab zwróci Traceback, nie pisz 'nie działa' – wklej dokładny ślad błędu i poproś o wyjaśnienie przyczyny źródłowej.",
             "Weryfikuj licencje kodu (MIT vs GPL) oraz uważaj na wyciek tajemnic firmowych (NDA) przy wklejaniu kodu do publicznych modeli."
           ],
-          "notes": "Omów zjawisko Slopsquatting – atakujący rejestrują w PyPI/npm złośliwe paczki o nazwach, które modele AI najczęściej zmyślają!"
+          "notes": "Ciekawostka: Zjawisko 'Slopsquatting' to nowy wektor ataku łańcucha dostaw – hakerzy badają, jakie nazwy nieistniejących paczek najczęściej wymyślają modele AI, a potem rejestrują te nazwy w PyPI/npm ze złośliwym kodem!"
         },
         {
           "title": "3 Inżynierskie Scenariusze Projektowe dla Technikum",
@@ -2512,7 +2499,7 @@
             "Projekt T3 – 'Architekt Bazy Wiedzy (Markdown & RAG)': Zbuduj w NotebookLM uziemioną bazę wiedzy z dokumentacji Linux/API i wygeneruj czysty cheatsheet w formacie Markdown.",
             "Wybierz scenariusz w zakładce Laboratorium, przetestuj narzędzia i skopiuj kartę zadania do Google Classroom!"
           ],
-          "notes": "Zblokowane 2 godziny w Technikum idealnie wystarczają na przeprowadzenie pełnego cyklu Red Team -> Blue Team lub analizy logów w Colabie."
+          "notes": "Wskazówka do projektu: Wybierzcie w Laboratorium jeden z 3 projektów (T1 Red/Blue Team, T2 Analityk Logów w Google Colab lub T3 Architekt Bazy RAG) i skopiujcie gotową kartę projektu jednym kliknięciem."
         }
       ],
       "classroom": {
