@@ -121,3 +121,7 @@ Wszystkie pliki źródłowe, rozkłady oraz zoperacjonalizowane karty zadań z k
 * [`LO_L01_Tutorial.md`](materialy/LO_L01_Tutorial.md) & [`LO_L01_Prezentacja.md`](materialy/LO_L01_Prezentacja.md) – Pierwsze kroki w chmurze Google Colab bez instalacji lokalnej.
 * [`LO_L07_Zadanie_Podsumowujace.md`](materialy/LO_L07_Zadanie_Podsumowujace.md) – Projekt integracyjny.
 
+### 🤖 6. Moduł 05 – AI Studio & Projekt Poszukiwawczy „AI Radar 2026” (Liceum):
+* [`Projekt_AI_Radar_LO.pdf`](materialy/Projekt_AI_Radar_LO.pdf) ([źródło LaTeX](materialy/Projekt_AI_Radar_LO.tex)) – Karta projektu zespołowego dla Liceum z wykorzystaniem portalu [`ai.zarnecki.org`](https://ai.zarnecki.org), weryfikacją faktów w sieci oraz 5–6 slajdową prezentacją bez ściany tekstu.
+
+

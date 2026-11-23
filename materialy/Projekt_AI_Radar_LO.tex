@@ -1,0 +1,137 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[polish]{babel}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{booktabs,array,tabularx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!75!black,
+    urlcolor=blue!75!black
+}
+
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray} Liceum INFOTECH -- Karta Projektu Zespołowego (AI Radar)}
+\fancyhead[R]{\small\color{gray} mgr Przemysław Żarnecki}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\section}{\large\bfseries\color{blue!80!black}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+
+\setlist{itemsep=3pt, topsep=4pt}
+
+\newtcolorbox{infobox}[2][blue!70!black]{
+    colback=blue!3!white,
+    colframe=#1,
+    fonttitle=\bfseries,
+    title=#2,
+    boxrule=0.8pt,
+    arc=3pt
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\textbf{PROJEKT ZESPOŁOWY: AI RADAR 2026}}\\[5pt]
+    {\large\textbf{Śledztwo Technologiczne z \texttt{ai.zarnecki.org} \& Krótka Prezentacja}}\\[6pt]
+    \textbf{Przedmiot:} Informatyka (Liceum Ogólnokształcące) \quad | \quad \textbf{Praca w grupach:} 2--3 osoby\\[2pt]
+    \textbf{Narzędzie startowe:} \url{https://ai.zarnecki.org} \quad | \quad \textbf{Prowadzący:} mgr Przemysław Żarnecki
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{infobox}{Cel projektu -- o co tu chodzi?}
+Nie robimy kolejnej nudnej prezentacji typu „kopiuj--wklej z Wikipedii”. Waszym zadaniem jest przeprowadzenie \textbf{krótkiego śledztwa badawczego} o tym, co naprawdę dzieje się obecnie w świecie Sztucznej Inteligencji. Jako asystenta używacie szkolnego portalu \textbf{\url{https://ai.zarnecki.org}}, ale pamiętajcie o najważniejszej zasadzie inżynierskiej: \textbf{AI to punkt startowy, nie wyrocznia -- każdą informację musicie zweryfikować w prawdziwych źródłach w Internecie!}
+\end{infobox}
+
+\section{1. Wybierzcie jedną z 3 Ścieżek Śledztwa}
+
+Każdy zespół wybiera \textbf{jedną ścieżkę} (lub zgłasza prowadzącemu własny temat technologiczny z tego zakresu):
+
+\begin{enumerate}
+    \item \textbf{Ścieżka 1: „Co się teraz dzieje w AI? -- Nowości, które zmieniają grę”}\\
+    \emph{Przykłady tematów:} autonomiczni agenci AI (programy wykonujące zadania w przeglądarce), generowanie wideo i klonowanie głosu, modele rozumujące, AI w grach komputerowych lub medycynie.\\
+    \emph{Zadanie poszukiwawcze:} Zapytajcie \texttt{ai.zarnecki.org} o zasady działania wybranej technologii, a następnie wyszukajcie w sieci \textbf{najświeższe przykłady, daty i wdrożenia z lat 2025--2026}, o których model jeszcze nie wiedział lub podał je niedokładnie.
+
+    \item \textbf{Ścieżka 2: „Złap AI na kłamstwie -- Test wiarygodności na żywo”}\\
+    \emph{Przykłady tematów:} bieżące wydarzenia z Polski lub Wrocławia, niszowa historia, nowości sprzętowe albo przepisy prawa (np. prawa autorskie w sieci, deepfake w szkole).\\
+    \emph{Zadanie poszukiwawcze:} Przeprowadźcie na \texttt{ai.zarnecki.org} test w dwóch krokach (najpierw słaby, ogólny prompt, potem precyzyjny prompt z rolą i ograniczeniami), a następnie \textbf{zweryfikujcie każde twierdzenie i źródło w Google}. Na prezentacji pokażcie, co było faktem, a co halucynacją.
+
+    \item \textbf{Ścieżka 3: „Ciemna strona i rachunek za AI -- Prąd, Praca, Prawo”}\\
+    \emph{Przykłady tematów:} Ile energii i wody zużywają centra danych AI? Czy AI odbiera pierwszą pracę juniorom? Co dokładnie reguluje unijny \textbf{EU AI Act} w szkołach i firmach?\\
+    \emph{Zadanie poszukiwawcze:} Poproście \texttt{ai.zarnecki.org} o argumenty obu stron (debata \emph{Za i Przeciw}), a następnie samodzielnie znajdźcie w sieci \textbf{twarde dane liczbowe z raportów}, które pokażecie na jednym czytelnym wykresie lub infografice.
+\end{enumerate}
+
+\section{2. Harmonogram Pracy (2 Lekcje)}
+
+\begin{itemize}
+    \item \textbf{Lekcja 1 (45 min) -- Warsztat badawczy na \texttt{ai.zarnecki.org}:}\\
+    Dobór zespołu (2--3 osoby) $\rightarrow$ wybór ścieżki $\rightarrow$ rozmowa badawcza na \url{https://ai.zarnecki.org} $\rightarrow$ wyszukanie min. 2--3 potwierdzonych źródeł w Internecie (z 2025/2026 r.) $\rightarrow$ wykonanie \textbf{1 zrzutu ekranu} rozmowy z AI $\rightarrow$ założenie prezentacji (Google Slides / Canva / PowerPoint).
+    \item \textbf{Lekcja 2 (45 min) -- „Demo Day” (krótkie wystąpienia):}\\
+    Każdy zespół prezentuje swoje wyniki w \textbf{3--4 minuty}, a klasa zadaje 1 pytanie kontrolne (\emph{„Skąd wiecie, że AI w tym miejscu nie zmyśliło?”}).
+\end{itemize}
+
+\newpage
+
+\section{3. Obowiązkowa Struktura Prezentacji (5--6 Slajdów)}
+
+Zastosujcie zasady z lekcji o prezentacjach: \textbf{zero ściany tekstu!} Na slajdzie umieszczajcie wyłącznie krótkie hasła, liczby, wykresy lub zrzuty ekranu (maksymalnie 3--4 krótkie punkty na slajd).
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{} c l X @{}}
+\toprule
+\textbf{Slajd} & \textbf{Tytuł roboczy} & \textbf{Co powinno się na nim znaleźć?} \\
+\midrule
+\textbf{1} & \textbf{Tytuł i Zespół} & Chwytliwy tytuł Waszego śledztwa, wybrana ścieżka oraz imiona i nazwiska autorów. \\
+\midrule
+\textbf{2} & \textbf{Problem / Trend} & Dlaczego ten temat jest ważny właśnie teraz? Jedno kluczowe pytanie badawcze lub fakt na start. \\
+\midrule
+\textbf{3} & \textbf{Co na to \texttt{ai.zarnecki.org}?} & \textbf{Zrzut ekranu (screenshot)} fragmentu Waszej rozmowy z AI oraz krótka informacja, jaki prompt zadaliście. \\
+\midrule
+\textbf{4} & \textbf{Weryfikacja w sieci} & Twarde fakty z wyszukiwania w Internecie (linki/źródła z 2025/2026 r.) -- co AI trafiło w punkt, a co się zmieniło lub było błędem. \\
+\midrule
+\textbf{5} & \textbf{Nasz Wniosek} & Jedno mocne zdanie podsumowania: \emph{Czy w tym temacie można zaufać AI i na co trzeba uważać?} \\
+\midrule
+\textbf{6} & \textbf{Pro-tip (opcjonalnie)} & Jak zmiana lub doprecyzowanie promptu (Rola + Kontekst + Format + Ograniczenia) poprawiła odpowiedź modelu. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{4. Kryteria Sukcesu i Oceniania (NaCoBeZu)}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{} c X @{}}
+\toprule
+\textbf{Ocena} & \textbf{Wymagania na dany stopień} \\
+\midrule
+\textbf{3 (Dostateczny)} & Zespół przygotował prezentację (min. 4 slajdy), skorzystał z \texttt{ai.zarnecki.org} i przedstawił podstawowe informacje na wybrany temat. \\
+\midrule
+\textbf{4 (Dobry)} & Kompletna prezentacja (5 slajdów), zamieszczony zrzut ekranu z \texttt{ai.zarnecki.org}, podane konkretne źródła internetowe weryfikujące odpowiedź AI. \\
+\midrule
+\textbf{5 (Bardzo Dobry)} & Czytelne slajdy \textbf{bez ściany tekstu}, wyraźne porównanie wiedzy modelu z aktualnymi faktami z sieci (2025/2026), sprawne 3--4 minutowe wystąpienie zespołu. \\
+\midrule
+\textbf{6 (Celujący)} & Wszystkie wymogi na ocenę 5 + zespół pokazał, jak doprecyzowanie promptu naprawiło błąd/halucynację modelu LUB znalazł wyjątkowo trafny, świeży przykład technologiczny i obronił tezę w pytaniach od klasy. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{5. Oddanie Pracy w Google Classroom (Szablon)}
+
+Po zakończeniu prac jeden z członków zespołu wrzuca prezentację (link lub plik PDF/PPTX) w Google Classroom i wkleja krótką notatkę:
+
+\begin{tcolorbox}[colback=gray!6!white, colframe=gray!50!black, boxrule=0.6pt, arc=2pt]
+\ttfamily\small
+Skład zespołu: [Imiona i Nazwiska]\\
+Wybrana ścieżka: [Ścieżka 1 / Ścieżka 2 / Ścieżka 3] -- [Temat śledztwa]\\
+Najważniejsze odkrycie z ai.zarnecki.org vs Internet: [1--2 zdania wniosku]\\
+Link do prezentacji (lub załącznik): [WKLEJ LINK]
+\end{tcolorbox}
+
+\end{document}
