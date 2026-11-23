@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[polish]{babel}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{booktabs,array,tabularx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet!75!black,
+    urlcolor=violet!75!black
+}
+
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray} Technikum INFOTECH -- Karta Projektu Inżynierskiego (AI Tech Lab)}
+\fancyhead[R]{\small\color{gray} mgr Przemysław Żarnecki}
+\fancyfoot[C]{\thepage}
+
+\titleformat{\section}{\large\bfseries\color{violet!80!black}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+
+\setlist{itemsep=3pt, topsep=4pt}
+
+\newtcolorbox{infobox}[2][violet!70!black]{
+    colback=violet!4!white,
+    colframe=#1,
+    fonttitle=\bfseries,
+    title=#2,
+    boxrule=0.8pt,
+    arc=3pt
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\textbf{PROJEKT INŻYNIERSKI: AI TECH LAB 2026}}\\[5pt]
+    {\large\textbf{Audyt Bezpieczeństwa LLM, Kod w Pythonie \& Analiza Modeli na \texttt{ai.zarnecki.org}}}\\[6pt]
+    \textbf{Przedmiot:} Informatyka (Technikum -- 2h/tyg.) \quad | \quad \textbf{Zespoły:} 2--3 osoby\\[2pt]
+    \textbf{Platforma startowa:} \url{https://ai.zarnecki.org} \quad | \quad \textbf{Prowadzący:} mgr Przemysław Żarnecki
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{infobox}{Cel projektu -- podejście inżynierskie}
+W Technikum idziemy o poziom wyżej niż zwykłe wyszukiwanie informacji. Traktujecie portal \textbf{\url{https://ai.zarnecki.org}} jako \textbf{środowisko testowe oraz asystenta programisty/audytora}. Waszym zadaniem jest przetestowanie granic modeli AI (podatności, jakość generowanego kodu, halucynacje bibliotek) oraz zaprezentowanie twardych dowodów technicznych w zwięzłej formie.
+\end{infobox}
+
+\section{1. Wybierzcie jedną z 3 Ścieżek Inżynierskich}
+
+Każdy zespół wybiera \textbf{jedną ścieżkę techniczną} (lub zgłasza własny projekt inżynierski wykorzystujący \texttt{ai.zarnecki.org}):
+
+\begin{enumerate}
+    \item \textbf{Ścieżka T1: „Red Team vs Blue Team -- Atak Prompt Injection \& Guardrails (OWASP LLM01)”}\\
+    \emph{Zadanie:} Na \texttt{ai.zarnecki.org} (lub z użyciem promptu systemowego) zespół projektuje bota pomocniczego z ukrytym sekretem/regułą (np. \texttt{KOD\_ADMIN\_2026}), a sąsiedni zespół przeprowadza kontrolowany atak socjotechniczny (\emph{Roleplay, Debug Mode, Base64, zmiana kontekstu}). Następnie zespół broniący dopisuje warstwę ochronną (tagi separujące XML, reguły odrzucania zmiany roli) i testuje odporność ponownie.
+
+    \item \textbf{Ścieżka T2: „AI jako Junior Developer -- Analiza Logów w Pythonie \& Code Review (Colab)”}\\
+    \emph{Zadanie:} Zespół przygotowuje w Google Colab próbkę surowych logów serwera (\texttt{access.log} / CSV z kodami 200, 404, 500), zleca na \texttt{ai.zarnecki.org} napisanie skryptu Pythona (\texttt{pandas} / \texttt{matplotlib}) parsującego błędy i rysującego wykres Top 5 podejrzanych IP. Kluczowy etap: \textbf{Code Review \& Debugging} -- uruchamiacie kod, naprawiacie błędy wykonania (Traceback), sprawdzacie obsługę wyjątków (\texttt{try-except}) oraz weryfikujecie, czy AI nie zmyśliło nieistniejących bibliotek (\emph{Slopsquatting}).
+
+    \item \textbf{Ścieżka T3: „Benchmark Modeli \& Baza Wiedzy (Docs-as-Code / Markdown)”}\\
+    \emph{Zadanie:} Na \texttt{ai.zarnecki.org} zespół porównuje dwa różne podejścia lub dwa dostępne modele na zestawie 4 identycznych zadań technicznych (np. kwerenda SQL ze złączeniem \texttt{JOIN}, skrypt Bash/Linux, konfiguracja sieci, wykrywanie podatności XSS/SQLi). Wyniki zestawiacie w tabeli pomiarowej (poprawność, halucynacje, jakość wyjaśnień) oraz eksportujecie jako czysty poradnik w formacie \textbf{Markdown (\texttt{README.md})}.
+\end{enumerate}
+
+\section{2. Harmonogram Pracy (Blok 2h + Demo Day)}
+
+\begin{itemize}
+    \item \textbf{Lekcja 1 (blok 90 min) -- Laboratorium na \texttt{ai.zarnecki.org} i w Colabie:}\\
+    Wybór ścieżki (T1/T2/T3) $\rightarrow$ testy na \url{https://ai.zarnecki.org} oraz w Google Colab / konsoli $\rightarrow$ zebranie twardych dowodów (zrzuty ekranu payloadów, kod przed/po poprawkach, wykres lub tabela benchmarku) $\rightarrow$ szkielet prezentacji technicznej.
+    \item \textbf{Lekcja 2 (Demo Day) -- Obrona techniczna:}\\
+    Prezentacja wyników zespołu (\textbf{4--5 minut}) + krótka sesja pytań technicznych od klasy (\emph{Code/Security Review}).
+\end{itemize}
+
+\newpage
+
+\section{3. Obowiązkowa Struktura Prezentacji Technicznej (5--6 Slajdów)}
+
+Zasada inżynierska: \textbf{zero ściany tekstu!} Pokazujcie wyłącznie konkret: fragmenty kodu, zrzuty ekranu z \texttt{ai.zarnecki.org}, wykresy z Colaba lub tabele porównawcze.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{} c l X @{}}
+\toprule
+\textbf{Slajd} & \textbf{Sekcja} & \textbf{Co musi znaleźć się na slajdzie?} \\
+\midrule
+\textbf{1} & \textbf{Tytuł \& Zespół} & Nazwa projektu, wybrana ścieżka (\texttt{T1} / \texttt{T2} / \texttt{T3}), skład zespołu i użyty stos narzędzi. \\
+\midrule
+\textbf{2} & \textbf{Problem Inżynierski} & Jaki konkretny mechanizm lub zagrożenie badacie (np. OWASP LLM01, parsowanie logów, jakość kodu modeli)? \\
+\midrule
+\textbf{3} & \textbf{Eksperyment na \texttt{ai.zarnecki.org}} & \textbf{Zrzut ekranu} z portalu \texttt{ai.zarnecki.org} pokazujący zadany prompt / atak lub wygenerowaną odpowiedź modelu. \\
+\midrule
+\textbf{4} & \textbf{Audyt, Kod \& Dowody} & Konkretny dowód techniczny: wykryty błąd/halucynacja kodu + poprawka, udany payload łamiący bota albo tabela benchmarku. \\
+\midrule
+\textbf{5} & \textbf{Wniosek Inżynierski} & Krótka ocena: \emph{Gdzie AI przyspiesza pracę specjalisty IT, a gdzie stwarza realne ryzyko awarii lub wycieku?} \\
+\midrule
+\textbf{6} & \textbf{Artefakt (opcjonalnie)} & Link do notatnika Google Colab (\texttt{.ipynb}), repozytorium GitHub, pliku \texttt{README.md} albo utwardzonego System Promptu. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{4. Kryteria Sukcesu i Oceniania (NaCoBeZu)}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{} c X @{}}
+\toprule
+\textbf{Ocena} & \textbf{Wymagania na dany stopień} \\
+\midrule
+\textbf{3 (Dostateczny)} & Zespół zrealizował podstawowe testy na \texttt{ai.zarnecki.org} w wybranej ścieżce (T1/T2/T3) i przygotował prezentację (min. 4 slajdy). \\
+\midrule
+\textbf{4 (Dobry)} & Kompletna prezentacja (5 slajdów), zamieszczone zrzuty ekranu z \texttt{ai.zarnecki.org} oraz czytelny opis przeprowadzonego eksperymentu. \\
+\midrule
+\textbf{5 (Bardzo Dobry)} & Slajdy bez ściany tekstu + twarde dowody techniczne (działający kod Colab z wykresem, skuteczny atak/obrona Prompt Injection lub tabela benchmarku w Markdown). \\
+\midrule
+\textbf{6 (Celujący)} & Wymagania na ocenę 5 + głęboka analiza inżynierska: wykrycie i naprawienie błędu logicznego/bezpieczeństwa wygenerowanego przez AI (np. \emph{Slopsquatting}, obsługa wyjątków, tagi XML/DLP) oraz sprawna obrona przed pytaniami klasy. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{5. Oddanie Pracy w Google Classroom (Szablon)}
+
+Po zakończeniu prac jeden z członków zespołu wrzuca prezentację (link / PDF / PPTX) w Google Classroom i wkleja krótki raport inżynierski:
+
+\begin{tcolorbox}[colback=gray!6!white, colframe=gray!50!black, boxrule=0.6pt, arc=2pt]
+\ttfamily\small
+Zespół (Imiona i Nazwiska): [WPISZ TUTAJ]\\
+Ścieżka inżynierska: [T1 Red/Blue Team / T2 Colab Logi / T3 Benchmark \& Markdown]\\
+Kluczowe odkrycie techniczne (gdzie AI zawiodło lub jak je zabezpieczyliście?): [1--2 ZDANIA]\\
+Link do prezentacji + notatnika Colab / Markdown / pliku PDF: [WKLEJ LINKI]
+\end{tcolorbox}
+
+\end{document}

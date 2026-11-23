@@ -558,10 +558,10 @@
             </div>
 
             <div class="pt-4 border-t border-cyber-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 relative z-10">
-              <span class="text-[11px] font-mono text-slate-400">+75 XP &bull; 2 Nowe Odznaki &bull; Projekt LO z ai.zarnecki.org</span>
+              <span id="hub-card5-meta" class="text-[11px] font-mono text-slate-400">+75 XP &bull; 2 Nowe Odznaki &bull; Projekt z ai.zarnecki.org</span>
               <div class="flex flex-wrap items-center gap-2">
-                <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-3.5 py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-600 text-xs font-mono font-bold transition flex items-center gap-1.5">
-                  <span>📄</span> <span>Karta Projektu (PDF)</span>
+                <a id="hub-card5-pdf-link" href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-3.5 py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-600 text-xs font-mono font-bold transition flex items-center gap-1.5">
+                  <span>📄</span> <span id="hub-card5-pdf-label">Karta Projektu LO (PDF)</span>
                 </a>
                 <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-3.5 py-2.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-400/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
                   <span>🌐</span> <span>ai.zarnecki.org</span>
@@ -570,7 +570,7 @@
                   <span>📖</span> <span>Slajdy</span>
                 </button>
                 <button onclick="openLesson('mod-ai', 'lab')" class="px-5 py-2.5 rounded-lg bg-fuchsia-500/20 hover:bg-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/50 text-xs font-mono font-bold transition flex items-center gap-2 shadow-lg shadow-fuchsia-500/10">
-                  <span>🔭 Otwórz Projekt AI Radar (3 Ścieżki)</span>
+                  <span id="hub-card5-project-btn-label">🔭 Otwórz Projekt AI Radar (3 Ścieżki)</span>
                   <span>&rarr;</span>
                 </button>
               </div>
@@ -680,9 +680,9 @@
           <span class="text-2xl shrink-0">🔭</span>
           <div>
             <div class="flex items-center gap-2">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40 font-bold uppercase">PROJEKT POSZUKIWACZY • AI RADAR 2026</span>
+              <span id="ai-quickbar-badge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40 font-bold uppercase">PROJEKT POSZUKIWACZY • AI RADAR 2026</span>
             </div>
-            <p class="text-xs text-slate-300 mt-1">
+            <p id="ai-quickbar-desc" class="text-xs text-slate-300 mt-1">
               Szukasz instrukcji projektu z <strong class="text-sky-300">ai.zarnecki.org</strong>, schematu 5 slajdów lub 3 ścieżek? Wszystko jest w zakładce <strong class="text-fuchsia-300">„2. Projekty &amp; Laboratorium”</strong>!
             </p>
           </div>
@@ -691,11 +691,11 @@
           <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border border-sky-400/50 font-bold transition flex items-center gap-1.5">
             <span>🌐</span> <span>Otwórz ai.zarnecki.org</span>
           </a>
-          <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
-            <span>📄</span> <span>Pobierz PDF</span>
+          <a id="ai-quickbar-pdf-link" href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
+            <span>📄</span> <span id="ai-quickbar-pdf-label">Pobierz PDF</span>
           </a>
           <button onclick="switchLessonTab('lab')" class="px-3.5 py-2 rounded-lg bg-fuchsia-500/25 hover:bg-fuchsia-500/35 text-fuchsia-200 border border-fuchsia-400/50 font-bold transition flex items-center gap-1.5">
-            <span>🔭</span> <span>Wybierz Ścieżkę (1–3) &rarr;</span>
+            <span>🔭</span> <span>Wybierz Ścieżkę &rarr;</span>
           </button>
         </div>
       </div>
@@ -2532,39 +2532,39 @@
           "notes": "Ciekawostka: Zjawisko 'Slopsquatting' to nowy wektor ataku łańcucha dostaw – hakerzy badają, jakie nazwy nieistniejących paczek najczęściej wymyślają modele AI, a potem rejestrują te nazwy w PyPI/npm ze złośliwym kodem!"
         },
         {
-          "title": "3 Inżynierskie Scenariusze Projektowe dla Technikum",
+          "title": "Projekt Inżynierski Technikum: AI Tech Lab 2026 (ai.zarnecki.org)",
           "points": [
-            "Projekt T1 – 'Red Team vs Blue Team': Zaprojektuj podatnego bota firmowego z ukrytym sekretem, wymień się z drugim zespołem na testy penetracyjne, a potem wdróż Guardrails.",
-            "Projekt T2 – 'Syntetyczny Analityk Logów (Colab + AI)': Napisz z pomocą AI skrypt Pythona w Google Colab analizujący surowe logi serwera HTTP (kody 404/500, wykres IP) i udokumentuj naprawę błędów AI.",
-            "Projekt T3 – 'Architekt Bazy Wiedzy (Markdown & RAG)': Zbuduj w NotebookLM uziemioną bazę wiedzy z dokumentacji Linux/API i wygeneruj czysty cheatsheet w formacie Markdown.",
-            "Wybierz scenariusz w zakładce Laboratorium, przetestuj narzędzia i skopiuj kartę zadania do Google Classroom!"
+            "Ścieżka T1 – 'Red Team vs Blue Team': Przetestuj na ai.zarnecki.org (lub w prompcie systemowym) łamanie bota przez Prompt Injection, a następnie wdróż warstwę obrony (tagi XML, reguły DLP).",
+            "Ścieżka T2 – 'AI jako Junior Developer (Colab + Python)': Zleć na ai.zarnecki.org napisanie skryptu parsującego logi access.log, uruchom go w Google Colab, zrób Code Review i napraw błędy / Slopsquatting.",
+            "Ścieżka T3 – 'Benchmark Modeli & Docs-as-Code': Porównaj 2 modele na ai.zarnecki.org na 4 zadaniach (SQL/Bash/Sieci/XSS), zestaw wyniki w tabeli i wygeneruj czysty README.md.",
+            "Efekt: 5–6 slajdowa prezentacja techniczna (zero ściany tekstu – sam kod, wykresy i screenshoty z ai.zarnecki.org) + Karta Projektu PDF w zakładce obok!"
           ],
-          "notes": "Wskazówka do projektu: Wybierzcie w Laboratorium jeden z 3 projektów (T1 Red/Blue Team, T2 Analityk Logów w Google Colab lub T3 Architekt Bazy RAG) i skopiujcie gotową kartę projektu jednym kliknięciem."
+          "notes": "Wskazówka do projektu: W zakładce „2. Projekty & Laboratorium” pobierzecie dedykowaną Kartę Projektu Technikum (PDF), zobaczycie schemat 5 slajdów technicznych i skopiujecie gotowy raport inżynierski."
         }
       ],
       "classroom": {
-        "title": "Misja TECH-05: Projekt Inżynierski AI – Red Teaming LLM / Analityka w Google Colab",
-        "goal": "Potrafisz zidentyfikować podatności Prompt Injection (OWASP LLM01), wdrożyć mechanizmy obronne Guardrails w modelu R.K.F.O. oraz zrealizować w zespole jeden z 3 projektów inżynierskich (Red/Blue Team, Analityk Logów Python+AI lub Architekt Bazy RAG).",
+        "title": "Misja TECH-05: Projekt „AI Tech Lab 2026” – Audyt LLM / Python w Colab / Benchmark na ai.zarnecki.org",
+        "goal": "Potrafisz wykorzystać portal ai.zarnecki.org w zadaniach inżynierskich (Red Teaming OWASP LLM01, generowanie i debugowanie kodu Python w Colabie lub benchmark modeli), udokumentować błędy AI i obronić wyniki na 5-slajdowej prezentacji technicznej.",
         "steps": [
-          "Krok 1 (Wybór scenariusza): W zakładce '2. Laboratorium' wybierz z zespołem projekt T1 (Red Team vs Blue Team), T2 (Analityk Logów w Colab) lub T3 (Architekt Bazy RAG).",
-          "Krok 2 (Atak i Obrona LLM): W konsoli AI Red-Team zdobądź ukrytą flagę poprzez Prompt Injection, a następnie włącz i przetestuj warstwę obronną Guardrails.",
-          "Krok 3 (Konstrukcja R.K.F.O.): Zbuduj w Laboratorium prompt systemowy (100/100 pkt) z jawną separacją instrukcji i zakazami ujawniania danych.",
-          "Krok 4 (Raport inżynierski): Skopiuj formularz raportu poniżej, uzupełnij logami ataku / linkiem do Colaba / wnioskami bezpieczeństwa i prześlij do Classroom."
+          "Krok 1 (Ścieżka T1/T2/T3): W zakładce '2. Projekty & Laboratorium AI' wybierz z zespołem (2–3 os.) ścieżkę T1 (Red/Blue Team), T2 (Logi Python + Colab) lub T3 (Benchmark & Markdown).",
+          "Krok 2 (Eksperyment na ai.zarnecki.org): Otwórz https://ai.zarnecki.org, przeprowadź testy techniczne, zrób screenshoty oraz przetestuj atak/obronę w konsoli AI Red-Team.",
+          "Krok 3 (Dowody inżynierskie): Zbierz twarde dowody – działający notatnik Colab (.ipynb) z wykresem, skuteczny payload Prompt Injection + poprawiony System Prompt lub tabelę benchmarku.",
+          "Krok 4 (Prezentacja i Classroom): Przygotuj 5–6 slajdów bez ściany tekstu (kod, zrzuty z ai.zarnecki.org, wykresy) i prześlij linki + raport do Google Classroom."
         ],
         "rubric": {
-          "3": "Zdobycie flagi w konsoli AI Red-Team oraz zbudowanie poprawnego promptu w modelu R.K.F.O.",
-          "4": "Ocena 3 + zrealizowanie wybranego scenariusza projektowego (T1/T2/T3) wraz z udokumentowaniem testów.",
-          "5": "Ocena 4 + wdrożenie i opisanie technicznych mechanizmów obrony (Guardrails, tagi separujące XML, walidacja wyjścia DLP) lub pełna analiza logów w Pythonie.",
-          "6": "Wyzwanie z gwiazdką: Wzajemny audyt (Cross-Team Red Teaming) z innym zespołem na własnych promptach LUB wykrycie i opisanie realnego błędu bezpieczeństwa w kodzie wygenerowanym przez AI."
+          "3": "Wykonanie podstawowych testów na ai.zarnecki.org w wybranej ścieżce (T1/T2/T3) oraz przygotowanie prezentacji (min. 4 slajdy).",
+          "4": "Kompletna prezentacja (5 slajdów), zamieszczone zrzuty ekranu z ai.zarnecki.org oraz czytelny opis przeprowadzonego eksperymentu.",
+          "5": "Slajdy bez ściany tekstu + twarde dowody techniczne (działający kod Colab z wykresem, atak/obrona Prompt Injection lub tabela benchmarku w Markdown).",
+          "6": "Wyzwanie z gwiazdką: Wykrycie i naprawienie realnego błędu logicznego lub bezpieczeństwa wygenerowanego przez AI (np. Slopsquatting, try-except, tagi XML/DLP) oraz sprawna obrona przed pytaniami klasy."
         },
-        "teacher_copy": "PROJEKT INŻYNIERSKI (TECHNIKUM): Bezpieczeństwo LLM (Red Teaming) & AI w Pracy Programisty\n\nZespoły, rozwijamy warsztat z AI w stronę inżynierii i bezpieczeństwa:\n1. Otwórzcie Moduł 05 (AI Studio & Projekty -> Laboratorium) na stronie INFOTECH.\n2. Przejdźcie wyzwanie w konsoli AI Red-Team (zdobądźcie flagę i przetestujcie Guardrails) oraz Konstruktor R.K.F.O.\n3. Wybierzcie JEDEN projekt: T1 (Red Team vs Blue Team), T2 (Analityk Logów w Google Colab z Pythonem) lub T3 (Baza Wiedzy RAG/Markdown).\n4. Uzupełnijcie raport inżynierski i oddajcie w Google Classroom.",
-        "student_copy": "--- RAPORT INŻYNIERSKI AI (TECH-05) ---\nZespół (Imiona i Nazwiska): [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nWybrany projekt (T1 / T2 / T3): [WPISZ SYMBOL I NAZWĘ]\n1. Użyty wektor ataku Prompt Injection w konsoli Red-Team (jak udało się złamać bota?):\n[OPIS WEKTORA ATAKU]\n2. Zaprojektowany System Prompt w standardzie R.K.F.O. + reguły obronne (Guardrails / tagi separujące):\n[WKLEJ PROMPT SYSTEMOWY]\n3. Wynik realizacji projektu (raport z audytu drugiego zespołu / link do notatnika Google Colab .ipynb / dokumentacja Markdown):\n[WKLEJ LINK LUB WYNIKI]\n4. Krytyczna uwaga inżynierska (jaki błąd popełniło AI podczas pracy i jak go naprawiliście?):\n[ODPOWIEDŹ]\n---------------------------------------"
+        "teacher_copy": "PROJEKT INŻYNIERSKI (TECHNIKUM): AI Tech Lab 2026 – ai.zarnecki.org + Kod + Prezentacja\n\nZespoły (2–3 osoby), przechodzimy do projektu inżynierskiego:\n1. Otwórzcie Moduł 05 na stronie INFOTECH (2. Projekty & Laboratorium AI) i pobierzcie Kartę Projektu Technikum (PDF).\n2. Wybierzcie ścieżkę: T1 (Red vs Blue Team Prompt Injection), T2 (Analiza logów Python + Google Colab) lub T3 (Benchmark modeli + Markdown).\n3. Wykonajcie eksperymenty na https://ai.zarnecki.org, zbierzcie screenshoty/kod i przygotujcie 5–6 slajdów technicznych.\n4. Uzupełnijcie raport w Google Classroom.",
+        "student_copy": "--- RAPORT PROJEKTU INŻYNIERSKIEGO: AI TECH LAB 2026 (TECH-05) ---\nZespół (Imiona i Nazwiska): [WPISZ TUTAJ]\nKlasa: [WPISZ KLASĘ]\nWybrana ścieżka (T1 / T2 / T3): [WPISZ SYMBOL I TEMAT]\n1. Kluczowe odkrycie techniczne z ai.zarnecki.org (gdzie AI zawiodło lub jak je zabezpieczyliście?):\n[WPISZ 1-2 ZDANIA]\n2. Zastosowany System Prompt R.K.F.O. / payload atakujący / fragment kodu:\n[WKLEJ PROMPT LUB LINK DO KODU]\n3. Link do prezentacji (5–6 slajdów) + notatnika Google Colab (.ipynb) / pliku README.md:\n[WKLEJ LINKI]\n------------------------------------------------------------------"
       },
       "checklist": [
-        "Przeprowadź atak Prompt Injection w konsoli AI Red-Team i zdobądź flagę",
-        "Włącz przełącznik Guardrails i zweryfikuj blokadę wycieku sekretu",
-        "Skonstruuj zabezpieczony prompt systemowy (100/100 pkt) w modelu R.K.F.O.",
-        "Zrealizuj wybrany projekt (T1/T2/T3) i prześlij raport do Google Classroom"
+        "Otwórz portal ai.zarnecki.org i pobierz Kartę Projektu Technikum (PDF)",
+        "Przeprowadź atak Prompt Injection i przetestuj Guardrails w konsoli AI Red-Team",
+        "Zbuduj zabezpieczony prompt (100/100 pkt) w Konstruktorze R.K.F.O.",
+        "Przygotuj 5–6 slajdową prezentację techniczną i oddaj raport w Google Classroom"
       ],
       "checkpoint": [
         {
@@ -3084,14 +3084,23 @@
       const c5p1 = document.getElementById('hub-card5-p1');
       const c5p2 = document.getElementById('hub-card5-p2');
       const c5p3 = document.getElementById('hub-card5-p3');
+      const c5PdfLink = document.getElementById('hub-card5-pdf-link');
+      const c5PdfLabel = document.getElementById('hub-card5-pdf-label');
+      const c5ProjLabel = document.getElementById('hub-card5-project-btn-label');
       if (state.track === 'lo') {
         if (c5p1) c5p1.textContent = 'Projekt LO: AI Radar 2026 (ai.zarnecki.org + 5 slajdów)';
         if (c5p2) c5p2.textContent = '3 Ścieżki Śledztwa, Weryfikacja Faktów & Karta PDF';
         if (c5p3) c5p3.textContent = 'Laboratorium: Konstruktor R.K.F.O. & AI Red-Team';
+        if (c5PdfLink) c5PdfLink.href = 'materialy/Projekt_AI_Radar_LO.pdf';
+        if (c5PdfLabel) c5PdfLabel.textContent = 'Karta Projektu LO (PDF)';
+        if (c5ProjLabel) c5ProjLabel.textContent = '🔭 Otwórz Projekt AI Radar (3 Ścieżki)';
       } else {
-        if (c5p1) c5p1.textContent = '3 Projekty Tech: Red/Blue Team, Colab Logi & RAG';
-        if (c5p2) c5p2.textContent = 'Bezpieczeństwo LLM (OWASP LLM01) & Slopsquatting';
-        if (c5p3) c5p3.textContent = 'Laboratorium: Prompt Injection Console & R.K.F.O.';
+        if (c5p1) c5p1.textContent = 'Projekt Tech: AI Tech Lab 2026 (ai.zarnecki.org + Kod/Audyt)';
+        if (c5p2) c5p2.textContent = '3 Ścieżki: Red/Blue Team, Logi Python (Colab) & Benchmark';
+        if (c5p3) c5p3.textContent = 'Karta Inżynierska PDF + Konsola OWASP LLM01';
+        if (c5PdfLink) c5PdfLink.href = 'materialy/Projekt_AI_Tech_Lab.pdf';
+        if (c5PdfLabel) c5PdfLabel.textContent = 'Karta Projektu Tech (PDF)';
+        if (c5ProjLabel) c5ProjLabel.textContent = '⚙️ Otwórz Projekt AI Tech Lab (3 Ścieżki)';
       }
     }
 
@@ -3255,6 +3264,23 @@
       const aiQuickBar = document.getElementById('ai-module-quickbar');
       if (aiQuickBar) {
         aiQuickBar.classList.toggle('hidden', state.currentModule !== 'mod-ai');
+        if (state.currentModule === 'mod-ai') {
+          const qbBadge = document.getElementById('ai-quickbar-badge');
+          const qbDesc = document.getElementById('ai-quickbar-desc');
+          const qbPdfLink = document.getElementById('ai-quickbar-pdf-link');
+          const qbPdfLbl = document.getElementById('ai-quickbar-pdf-label');
+          if (state.track === 'tech') {
+            if (qbBadge) qbBadge.textContent = 'PROJEKT INŻYNIERSKI • AI TECH LAB 2026';
+            if (qbDesc) qbDesc.innerHTML = 'Szukasz instrukcji inżynierskiej z <strong class="text-sky-300">ai.zarnecki.org</strong> (Red/Blue Team, Python/Colab, Benchmark)? Otwórz <strong class="text-fuchsia-300">„2. Projekty &amp; Laboratorium AI”</strong>!';
+            if (qbPdfLink) qbPdfLink.href = 'materialy/Projekt_AI_Tech_Lab.pdf';
+            if (qbPdfLbl) qbPdfLbl.textContent = 'Pobierz PDF (Technikum)';
+          } else {
+            if (qbBadge) qbBadge.textContent = 'PROJEKT POSZUKIWACZY • AI RADAR 2026';
+            if (qbDesc) qbDesc.innerHTML = 'Szukasz instrukcji projektu z <strong class="text-sky-300">ai.zarnecki.org</strong>, schematu 5 slajdów lub 3 ścieżek? Wszystko jest w zakładce <strong class="text-fuchsia-300">„2. Projekty &amp; Laboratorium AI”</strong>!';
+            if (qbPdfLink) qbPdfLink.href = 'materialy/Projekt_AI_Radar_LO.pdf';
+            if (qbPdfLbl) qbPdfLbl.textContent = 'Pobierz PDF (Liceum)';
+          }
+        }
       }
       const labIcon = document.getElementById('ltab-btn-lab-icon');
       const labLabel = document.getElementById('ltab-btn-lab-label');
@@ -3347,16 +3373,19 @@
       const ctaBox = document.getElementById('slide-ai-cta');
       if (ctaBox) {
         if (state.currentModule === 'mod-ai' && state.currentSlide === slides.length - 1) {
+          const isTech = state.track === 'tech';
+          const pdfHref = isTech ? 'materialy/Projekt_AI_Tech_Lab.pdf' : 'materialy/Projekt_AI_Radar_LO.pdf';
+          const pdfText = isTech ? 'Pobierz Kartę Technikum (PDF)' : 'Pobierz Kartę Liceum (PDF)';
           ctaBox.classList.remove('hidden');
           ctaBox.innerHTML = `
             <button onclick="switchLessonTab('lab')" class="px-4 py-2.5 rounded-lg bg-fuchsia-500/25 hover:bg-fuchsia-500/35 text-fuchsia-200 border border-fuchsia-400/50 font-bold transition flex items-center gap-1.5 shadow">
-              <span>🔭</span> <span>Przejdź do Katalogu Ścieżek &amp; Schematu 5 Slajdów &rarr;</span>
+              <span>${isTech ? '⚙️' : '🔭'}</span> <span>Przejdź do Katalogu Ścieżek &amp; Schematu 5 Slajdów &rarr;</span>
             </button>
             <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border border-sky-400/50 font-bold transition flex items-center gap-1.5">
               <span>🌐</span> <span>Otwórz ai.zarnecki.org</span>
             </a>
-            <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
-              <span>📄</span> <span>Pobierz Kartę Projektu (PDF)</span>
+            <a href="${pdfHref}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
+              <span>📄</span> <span>${pdfText}</span>
             </a>
           `;
         } else {
@@ -3795,24 +3824,48 @@ print(hashlib.sha256(haslo.encode('utf-8')).hexdigest())</code></pre>
 
       else if (moduleId === 'mod-ai') {
         const isTech = state.track === 'tech';
+        const projBadge = isTech ? '⚙️ PROJEKT INŻYNIERSKI • TECHNIKUM' : '🔭 PROJEKT POSZUKIWACZY • LICEUM';
+        const projMeta = isTech ? '2–3 OSOBY • KOD / AUDYT • DEMO DAY' : '2–3 OSOBY • 5–6 SLAJDÓW • DEMO DAY';
+        const projTitle = isTech
+          ? 'Projekt „AI Tech Lab 2026” – Audyt, Kod &amp; Benchmark na <span class="text-sky-400">ai.zarnecki.org</span>'
+          : 'Projekt „AI Radar 2026” – Śledztwo z <span class="text-sky-400">ai.zarnecki.org</span> &amp; Prezentacja';
+        const projDesc = isTech
+          ? 'Wybierz ścieżkę inżynierską poniżej (T1 Red/Blue Team, T2 Logi Python + Colab lub T3 Benchmark &amp; Markdown), przetestuj granice modeli na <strong>ai.zarnecki.org</strong> i pokaż twarde dowody techniczne!'
+          : 'Wybierz jedną z 3 ścieżek poniżej, użyj szkolnego portalu <strong>ai.zarnecki.org</strong> jako asystenta badawczego, skonfrontuj odpowiedzi z prawdziwym Internetem (2025/2026) i przygotuj zwięzłą prezentację <strong>bez ściany tekstu</strong>!';
+        const projPdf = isTech ? 'materialy/Projekt_AI_Tech_Lab.pdf' : 'materialy/Projekt_AI_Radar_LO.pdf';
+        const projPdfLbl = isTech ? 'Pobierz Kartę Technikum (PDF)' : 'Pobierz Kartę Liceum (PDF)';
+        const slidesBlueprint = isTech ? [
+          { tag: 'SLAJD 1', color: 'text-sky-400', border: 'border-slate-800', title: 'Tytuł &amp; Stos IT', desc: 'Nazwa projektu, ścieżka (T1/T2/T3), skład zespołu i narzędzia.' },
+          { tag: 'SLAJD 2', color: 'text-sky-400', border: 'border-slate-800', title: 'Problem Inżynierski', desc: 'Co badacie? Np. OWASP LLM01, parsowanie logów lub test modeli.' },
+          { tag: 'SLAJD 3', color: 'text-fuchsia-300', border: 'border-fuchsia-500/30', title: 'Eksperyment ai.zarnecki.org', desc: 'Screenshot z portalu: atak, prompt R.K.F.O. lub wygenerowany kod.' },
+          { tag: 'SLAJD 4', color: 'text-emerald-300', border: 'border-emerald-500/30', title: 'Audyt, Kod &amp; Dowody', desc: 'Wykres z Colaba, poprawione błędy AI, payload lub tabela benchmarku.' },
+          { tag: 'SLAJD 5 (+6 opcj.)', color: 'text-amber-300', border: 'border-amber-500/30', title: 'Wniosek &amp; Artefakt', desc: 'Gdzie AI pomaga, a gdzie grozi awarią? (+link do Colaba / GitHub).' }
+        ] : [
+          { tag: 'SLAJD 1', color: 'text-sky-400', border: 'border-slate-800', title: 'Tytuł &amp; Zespół', desc: 'Chwytliwy tytuł śledztwa, numer ścieżki oraz imiona autorów.' },
+          { tag: 'SLAJD 2', color: 'text-sky-400', border: 'border-slate-800', title: 'Problem / Trend', desc: 'Dlaczego ten temat jest ważny teraz? 1 pytanie badawcze.' },
+          { tag: 'SLAJD 3', color: 'text-fuchsia-300', border: 'border-fuchsia-500/30', title: 'Co na to ai.zarnecki.org?', desc: 'Screenshot fragmentu rozmowy z AI + użyty prompt.' },
+          { tag: 'SLAJD 4', color: 'text-emerald-300', border: 'border-emerald-500/30', title: 'Weryfikacja w sieci', desc: 'Twarde fakty i linki z 2025/2026: co AI trafiło, a co było błędem.' },
+          { tag: 'SLAJD 5 (+6 opcj.)', color: 'text-amber-300', border: 'border-amber-500/30', title: 'Nasz Wniosek', desc: '1 zdanie: czy tu można ufać AI? (+opcjonalnie poprawiony prompt).' }
+        ];
+
         wrap.innerHTML = `
-          <!-- LAB AI 0: PROJEKT POSZUKIWACZY Z PORTALEM AI.ZARNECKI.ORG (LICEUM / UNIWERSALNY) -->
+          <!-- LAB AI 0: PROJEKT Z PORTALEM AI.ZARNECKI.ORG (DYNAMICZNY LO / TECHNIKUM) -->
           <div class="rounded-xl border border-sky-400/40 bg-gradient-to-br from-[#0b1326] via-cyber-card to-[#160b21] p-6 space-y-5 shadow-xl shadow-sky-500/10">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-4">
               <div class="space-y-1.5">
                 <div class="flex flex-wrap items-center gap-2">
                   <span class="text-[10px] font-mono px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40 font-bold uppercase tracking-wider">
-                    🔭 PROJEKT POSZUKIWACZY • LICEUM
+                    ${projBadge}
                   </span>
                   <span class="text-[10px] font-mono px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-bold">
-                    2–3 OSOBY • 5–6 SLAJDÓW • DEMO DAY
+                    ${projMeta}
                   </span>
                 </div>
                 <h3 class="text-lg sm:text-xl font-bold font-mono text-white">
-                  Projekt „AI Radar 2026” – Śledztwo z <span class="text-sky-400">ai.zarnecki.org</span> & Prezentacja
+                  ${projTitle}
                 </h3>
                 <p class="text-xs text-slate-300 max-w-3xl leading-relaxed">
-                  Wybierz jedną z 3 ścieżek poniżej, użyj szkolnego portalu <strong>ai.zarnecki.org</strong> jako asystenta badawczego, skonfrontuj odpowiedzi z prawdziwym Internetem (2025/2026) i przygotuj zwięzłą prezentację <strong>bez ściany tekstu</strong>!
+                  ${projDesc}
                 </p>
               </div>
 
@@ -3820,8 +3873,8 @@ print(hashlib.sha256(haslo.encode('utf-8')).hexdigest())</code></pre>
                 <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border border-sky-400/50 font-bold transition flex items-center gap-1.5 shadow">
                   <span>🌐</span> <span>Otwórz ai.zarnecki.org</span>
                 </a>
-                <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5 shadow">
-                  <span>📄</span> <span>Pobierz Instrukcję (PDF)</span>
+                <a href="${projPdf}" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5 shadow">
+                  <span>📄</span> <span>${projPdfLbl}</span>
                 </a>
                 <button onclick="copyCurrentStudentTemplate()" class="px-3.5 py-2.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-bold transition flex items-center gap-1.5">
                   <span>📋</span> <span>Kopiuj Formularz (Classroom)</span>
@@ -3833,34 +3886,16 @@ print(hashlib.sha256(haslo.encode('utf-8')).hexdigest())</code></pre>
             <div class="space-y-2.5">
               <div class="flex items-center justify-between text-xs font-mono">
                 <span class="text-sky-300 font-bold">🎞️ OBOWIĄZKOWY SCHEMAT PREZENTACJI (5–6 SLAJDÓW, ZERO ŚCIANY TEKSTU!):</span>
-                <span class="text-[11px] text-slate-400">Czas wystąpienia: 3–4 min + 1 pytanie od klasy</span>
+                <span class="text-[11px] text-slate-400">${isTech ? 'Czas wystąpienia: 4–5 min + Code/Security Review' : 'Czas wystąpienia: 3–4 min + 1 pytanie od klasy'}</span>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 text-xs font-sans">
-                <div class="p-3 rounded-lg bg-black/45 border border-slate-800 space-y-1">
-                  <span class="font-mono text-[10px] font-bold text-sky-400 block">SLAJD 1</span>
-                  <strong class="text-white block text-xs">Tytuł & Zespół</strong>
-                  <p class="text-[11px] text-slate-400">Chwytliwy tytuł śledztwa, numer ścieżki oraz imiona autorów.</p>
-                </div>
-                <div class="p-3 rounded-lg bg-black/45 border border-slate-800 space-y-1">
-                  <span class="font-mono text-[10px] font-bold text-sky-400 block">SLAJD 2</span>
-                  <strong class="text-white block text-xs">Problem / Trend</strong>
-                  <p class="text-[11px] text-slate-400">Dlaczego ten temat jest ważny teraz? 1 pytanie badawcze.</p>
-                </div>
-                <div class="p-3 rounded-lg bg-black/45 border border-fuchsia-500/30 space-y-1">
-                  <span class="font-mono text-[10px] font-bold text-fuchsia-300 block">SLAJD 3</span>
-                  <strong class="text-white block text-xs">Co na to ai.zarnecki.org?</strong>
-                  <p class="text-[11px] text-slate-400">Screenshot fragmentu rozmowy z AI + użyty prompt.</p>
-                </div>
-                <div class="p-3 rounded-lg bg-black/45 border border-emerald-500/30 space-y-1">
-                  <span class="font-mono text-[10px] font-bold text-emerald-300 block">SLAJD 4</span>
-                  <strong class="text-white block text-xs">Weryfikacja w sieci</strong>
-                  <p class="text-[11px] text-slate-400">Twarde fakty i linki z 2025/2026: co AI trafiło, a co było błędem.</p>
-                </div>
-                <div class="p-3 rounded-lg bg-black/45 border border-amber-500/30 space-y-1">
-                  <span class="font-mono text-[10px] font-bold text-amber-300 block">SLAJD 5 (+6 opcj.)</span>
-                  <strong class="text-white block text-xs">Nasz Wniosek</strong>
-                  <p class="text-[11px] text-slate-400">1 zdanie: czy tu można ufać AI? (+opcjonalnie poprawiony prompt).</p>
-                </div>
+                ${slidesBlueprint.map(sb => `
+                  <div class="p-3 rounded-lg bg-black/45 border ${sb.border} space-y-1">
+                    <span class="font-mono text-[10px] font-bold ${sb.color} block">${sb.tag}</span>
+                    <strong class="text-white block text-xs">${sb.title}</strong>
+                    <p class="text-[11px] text-slate-400">${sb.desc}</p>
+                  </div>
+                `).join('')}
               </div>
             </div>
           </div>
@@ -4408,55 +4443,55 @@ Wszystkie zaplanowane zakupy zostały zrealizowane zgodnie z założonym budżet
       ],
       tech: [
         {
-          code: 'T1',
+          code: 'Ścieżka T1',
           icon: '⚔️',
           badge: 'OWASP LLM01 • RED vs BLUE TEAM',
-          title: 'Red Teaming LLM: Atak Prompt Injection & Guardrails',
-          time: '90 min (2 zespoły naprzeciw siebie)',
-          goal: 'Przetestujcie w praktyce podatność modeli językowych na przejęcie kontroli (Prompt Injection) oraz zaprojektujcie odporne reguły obronne.',
-          roles: 'Blue Team (tworzy system prompt bota z sekretem i obroną) ↔ Red Team (przeprowadza audyt penetracyjny)',
-          tools: 'Konsola AI Red-Team + Konstruktor R.K.F.O. + Gemini / dowolny czat LLM',
+          title: 'Red Teaming LLM: Prompt Injection & Guardrails',
+          time: '90 min + Demo Day (2–3 os.)',
+          goal: 'Przetestujcie na ai.zarnecki.org oraz w konsoli Red-Team podatność modeli LLM na przejęcie kontroli (Prompt Injection) i zaprojektujcie warstwę obronną.',
+          roles: 'Blue Team (pisze System Prompt bota z sekretem i obroną) ↔ Red Team (przeprowadza testy penetracyjne)',
+          tools: 'https://ai.zarnecki.org + Konsola AI Red-Team + Konstruktor R.K.F.O.',
           steps: [
-            '1. Każdy zespół tworzy prompt bota korporacyjnego (np. HelpDesk lub Sklep), w którym ukrywa fikcyjny token (np. KOD_VIP_2026) z zakazem ujawniania.',
-            '2. Wymiana ról: Zespół sąsiedni dostaje dostęp do czatu i próbuje wyciągnąć token technikami Roleplay, Debug Mode, Base64 lub tłumaczeniem.',
-            '3. Po udanym ataku zespół broniący dopisuje warstwę ochronną (tagi separujące <user_input>, reguły odrzucania zmiany roli).',
-            '4. Dokumentujecie wektor ataku oraz wnioski, dlaczego w produkcji sam prompt nie zastępuje autoryzacji.'
+            '1. Zaprojektujcie na ai.zarnecki.org prompt bota firmowego (np. HelpDesk), w którym ukryjecie sekret (np. KOD_ADMIN_2026) z zakazem ujawniania.',
+            '2. Wymiana ról: drugi zespół próbuje wyciągnąć sekret technikami Roleplay, Debug Mode, Base64 lub zmianą kontekstu.',
+            '3. Zespół broniący dopisuje reguły ochronne (tagi separujące <user_input>, odrzucanie zmiany roli) i testuje ponownie.',
+            '4. Zróbcie zrzuty ekranu z ai.zarnecki.org i zaprezentujcie wektor ataku + poprawiony prompt (5–6 slajdów).'
           ],
-          deliverable: 'Raport Red/Blue Team: podatny prompt, skuteczny payload atakujący i wzmocniona wersja.'
+          deliverable: 'Prezentacja techniczna (5–6 slajdów) + podatny prompt, skuteczny payload i wersja utwardzona.'
         },
         {
-          code: 'T2',
+          code: 'Ścieżka T2',
           icon: '🐍',
           badge: 'PYTHON + GOOGLE COLAB + AI',
-          title: 'Syntetyczny Analityk Logów: Debugowanie Kodu AI',
-          time: '90 min (praca w parach)',
-          goal: 'Wykorzystaj AI jako "Junior Developera" do napisania skryptu parsującego logi serwera w Colabie, a sam przejmij rolę Code Reviewera.',
-          roles: 'Prompt Architect (specyfikuje skrypt) + Code Reviewer & Debugger (testuje i naprawia błędy w Colabie)',
-          tools: 'Google Colab (Python: pandas/matplotlib) + Google Gemini',
+          title: 'AI jako Junior Dev: Analiza Logów & Code Review',
+          time: '90 min + Demo Day (2–3 os.)',
+          goal: 'Wykorzystaj ai.zarnecki.org jako "Junior Developera" do napisania skryptu Pythona w Google Colab analizującego surowe logi serwera, a następnie wykonaj Code Review i debugging.',
+          roles: 'Prompt Architect (specyfikuje skrypt na ai.zarnecki.org) + Code Reviewer & Debugger (testuje i łata błędy w Colabie)',
+          tools: 'https://ai.zarnecki.org + Google Colab (Python: pandas/matplotlib)',
           steps: [
-            '1. Wygenerujcie w Colabie lub poproście AI o stworzenie przykładowego pliku access.log (min. 50 wpisów z kodami 200, 404, 500 i różnymi IP).',
-            '2. Poproście AI o napisanie skryptu Pythona, który policzy liczbę błędów 404/500 per adres IP i narysuje wykres słupkowy Top 5 podejrzanych IP.',
-            '3. Uruchomcie kod w Google Colab. Jeśli pojawi się błąd (Traceback) lub zmyślona funkcja biblioteki – przeanalizujcie go i poprawcie wspólnie z AI.',
-            '4. Sprawdźcie czy AI nie użyło nieistniejącej paczki (ryzyko Slopsquatting) i dodajcie komentarze do kodu.'
+            '1. Wygenerujcie próbkę logów serwera (access.log / CSV z kodami 200, 404, 500 i adresami IP).',
+            '2. Zlećcie na ai.zarnecki.org napisanie skryptu Pythona liczącego błędy per IP i rysującego wykres Top 5 podejrzanych IP.',
+            '3. Uruchomcie kod w Google Colab: naprawcie błędy (Traceback), dodajcie obsługę wyjątków (try-except) i sprawdźcie ryzyko Slopsquatting.',
+            '4. Przygotujcie 5–6 slajdów pokazujących zrzut z ai.zarnecki.org, kod przed/po poprawkach oraz wygenerowany wykres.'
           ],
-          deliverable: 'Link do notatnika Google Colab (.ipynb) + opis minimum 1 poprawki/usprawnienia kodu AI.'
+          deliverable: 'Link do notatnika Google Colab (.ipynb) + prezentacja (5–6 slajdów) z wykresem i opisem poprawek kodu AI.'
         },
         {
-          code: 'T3',
-          icon: '📚',
-          badge: 'DOCS-AS-CODE • NOTEBOOKLM RAG',
-          title: 'Architekt Bazy Wiedzy: Specyfikacja Markdown & RAG',
-          time: '90 min (zespół 2-3 os.)',
-          goal: 'Zbuduj uziemioną bazę wiedzy technicznej (np. Linux Networking lub Bezpieczeństwo SQL) w oparciu o oficjalną dokumentację i wygeneruj czysty README.md.',
-          roles: 'Kurator Źródeł (dobiera dokumentację do RAG) + Technical Writer (formatuje i audytuje Markdown)',
-          tools: 'Google NotebookLM + Edytor Markdown / GitHub',
+          code: 'Ścieżka T3',
+          icon: '⚡',
+          badge: 'BENCHMARK MODELI & MARKDOWN',
+          title: 'Benchmark Modeli & Baza Wiedzy (Docs-as-Code)',
+          time: '90 min + Demo Day (2–3 os.)',
+          goal: 'Porównaj na ai.zarnecki.org dwa różne modele (lub dwa podejścia promptowania) na 4 identycznych zadaniach inżynierskich (SQL, Bash, Sieci, XSS) i stwórz czysty README.md.',
+          roles: 'Tester Benchmarku (odpytuje modele na ai.zarnecki.org) + Audytor Techniczny (weryfikuje kod) + Technical Writer',
+          tools: 'https://ai.zarnecki.org + Edytor Markdown / GitHub + Prezentacje',
           steps: [
-            '1. Wgrajcie do Google NotebookLM 2–3 oficjalne źródła techniczne (np. dokumentację OWASP Cheat Sheet lub podręcznik komend Linux/curl).',
-            '2. Zlećcie AI wygenerowanie przejrzystego poradnika "Quickstart & Best Practices" w formacie Markdown (z blokami kodu i tabelą pułapek).',
-            '3. Zweryfikujcie wszystkie komendy z pomocą przypisów [1][2] w NotebookLM – wyeliminujcie zmyślone flagi konsolowe.',
-            '4. Dodajcie na dole notkę licencyjną (np. CC-BY lub MIT dla kodu) i oddajcie gotowy plik/link.'
+            '1. Przygotujcie 4 identyczne zadania (np. SQL JOIN, skrypt Bash, diagnostyka sieci curl/nmap, zabezpieczenie przed XSS).',
+            '2. Przetestujcie te same polecenia na 2 modelach / konfiguracjach na ai.zarnecki.org i zapiszcie zrzuty ekranu.',
+            '3. Zbudujcie tabelę pomiarową (poprawność kodu, halucynacje, jakość wyjaśnień) oraz wygenerujcie czysty poradnik README.md w Markdown.',
+            '4. Zaprezentujcie wyniki benchmarku na 5–6 slajdach (tabela + wnioski, który model lepiej radzi sobie z kodem).'
           ],
-          deliverable: 'Uziemiony cheatsheet techniczny w formacie Markdown (.md) + link do bazy źródeł.'
+          deliverable: 'Prezentacja (5–6 slajdów) z tabelą benchmarku + plik README.md w Markdown i zrzutami z ai.zarnecki.org.'
         }
       ]
     };

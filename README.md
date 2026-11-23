@@ -121,7 +121,8 @@ Wszystkie pliki źródłowe, rozkłady oraz zoperacjonalizowane karty zadań z k
 * [`LO_L01_Tutorial.md`](materialy/LO_L01_Tutorial.md) & [`LO_L01_Prezentacja.md`](materialy/LO_L01_Prezentacja.md) – Pierwsze kroki w chmurze Google Colab bez instalacji lokalnej.
 * [`LO_L07_Zadanie_Podsumowujace.md`](materialy/LO_L07_Zadanie_Podsumowujace.md) – Projekt integracyjny.
 
-### 🤖 6. Moduł 05 – AI Studio & Projekt Poszukiwawczy „AI Radar 2026” (Liceum):
-* [`Projekt_AI_Radar_LO.pdf`](materialy/Projekt_AI_Radar_LO.pdf) ([źródło LaTeX](materialy/Projekt_AI_Radar_LO.tex)) – Karta projektu zespołowego dla Liceum z wykorzystaniem portalu [`ai.zarnecki.org`](https://ai.zarnecki.org), weryfikacją faktów w sieci oraz 5–6 slajdową prezentacją bez ściany tekstu.
+### 🤖 6. Moduł 05 – AI Studio & Projekty Zespołowe (`ai.zarnecki.org`):
+* **Liceum:** [`Projekt_AI_Radar_LO.pdf`](materialy/Projekt_AI_Radar_LO.pdf) ([źródło LaTeX](materialy/Projekt_AI_Radar_LO.tex)) – Karta projektu poszukiwawczego „AI Radar 2026” z portalu [`ai.zarnecki.org`](https://ai.zarnecki.org), weryfikacją faktów w sieci oraz 5–6 slajdową prezentacją bez ściany tekstu.
+* **Technikum:** [`Projekt_AI_Tech_Lab.pdf`](materialy/Projekt_AI_Tech_Lab.pdf) ([źródło LaTeX](materialy/Projekt_AI_Tech_Lab.tex)) – Karta projektu inżynierskiego „AI Tech Lab 2026” (Red/Blue Team OWASP LLM01, analiza logów Python w Colab + debugging, benchmark modeli & Docs-as-Code na [`ai.zarnecki.org`](https://ai.zarnecki.org)).
 
 
