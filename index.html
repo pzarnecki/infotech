@@ -566,8 +566,11 @@
                 <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-3.5 py-2.5 rounded-lg bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-400/40 text-xs font-mono font-bold transition flex items-center gap-1.5">
                   <span>🌐</span> <span>ai.zarnecki.org</span>
                 </a>
-                <button onclick="openLesson('mod-ai')" class="px-5 py-2.5 rounded-lg bg-fuchsia-500/20 hover:bg-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/50 text-xs font-mono font-bold transition flex items-center gap-2 shadow-lg shadow-fuchsia-500/10">
-                  <span>🤖 Otwórz AI Studio & Projekty</span>
+                <button onclick="openLesson('mod-ai', 'slides')" class="px-3.5 py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-600 text-xs font-mono font-bold transition flex items-center gap-1.5">
+                  <span>📖</span> <span>Slajdy</span>
+                </button>
+                <button onclick="openLesson('mod-ai', 'lab')" class="px-5 py-2.5 rounded-lg bg-fuchsia-500/20 hover:bg-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/50 text-xs font-mono font-bold transition flex items-center gap-2 shadow-lg shadow-fuchsia-500/10">
+                  <span>🔭 Otwórz Projekt AI Radar (3 Ścieżki)</span>
                   <span>&rarr;</span>
                 </button>
               </div>
@@ -671,13 +674,39 @@
         </div>
       </div>
 
+      <!-- AI STUDIO QUICK ACTION BAR (Widoczny w Module 05 nad zakładkami) -->
+      <div id="ai-module-quickbar" class="hidden p-4 rounded-xl border border-sky-400/40 bg-gradient-to-r from-[#0b152a] via-[#130e24] to-[#0b1326] flex flex-col lg:flex-row lg:items-center justify-between gap-3 shadow-lg shadow-sky-500/10">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl shrink-0">🔭</span>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/40 font-bold uppercase">PROJEKT POSZUKIWACZY • AI RADAR 2026</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">
+              Szukasz instrukcji projektu z <strong class="text-sky-300">ai.zarnecki.org</strong>, schematu 5 slajdów lub 3 ścieżek? Wszystko jest w zakładce <strong class="text-fuchsia-300">„2. Projekty &amp; Laboratorium”</strong>!
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+          <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border border-sky-400/50 font-bold transition flex items-center gap-1.5">
+            <span>🌐</span> <span>Otwórz ai.zarnecki.org</span>
+          </a>
+          <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
+            <span>📄</span> <span>Pobierz PDF</span>
+          </a>
+          <button onclick="switchLessonTab('lab')" class="px-3.5 py-2 rounded-lg bg-fuchsia-500/25 hover:bg-fuchsia-500/35 text-fuchsia-200 border border-fuchsia-400/50 font-bold transition flex items-center gap-1.5">
+            <span>🔭</span> <span>Wybierz Ścieżkę (1–3) &rarr;</span>
+          </button>
+        </div>
+      </div>
+
       <!-- BASE TEMPLATE TABS (Identyczny układ we wszystkich modułach) -->
       <div class="border-b border-cyber-border/80 flex overflow-x-auto gap-2 text-xs font-mono pb-2">
         <button onclick="switchLessonTab('slides')" id="ltab-btn-slides" class="px-4 py-2 rounded-lg transition-all flex items-center gap-2 whitespace-nowrap bg-cyber-card text-white border border-cyber-border font-bold">
           <span>📖</span> <span>1. Teoria & Slajdy</span>
         </button>
         <button onclick="switchLessonTab('lab')" id="ltab-btn-lab" class="px-4 py-2 rounded-lg transition-all flex items-center gap-2 whitespace-nowrap text-slate-400 hover:text-white">
-          <span>🧪</span> <span>2. Laboratorium Live</span>
+          <span id="ltab-btn-lab-icon">🧪</span> <span id="ltab-btn-lab-label">2. Laboratorium Live</span>
         </button>
         <button onclick="switchLessonTab('classroom')" id="ltab-btn-classroom" class="px-4 py-2 rounded-lg transition-all flex items-center gap-2 whitespace-nowrap text-slate-400 hover:text-white">
           <span>📋</span> <span>3. Zadanie Classroom (1-klik)</span>
@@ -716,6 +745,9 @@
             </h2>
             <div id="slide-active-bullets" class="space-y-3.5 text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
               <!-- Injected by JS -->
+            </div>
+            <div id="slide-ai-cta" class="hidden pt-4 border-t border-slate-800/80 flex flex-wrap gap-2.5 font-mono text-xs">
+              <!-- Injected on AI project slide -->
             </div>
           </div>
 
@@ -3168,11 +3200,12 @@
     }
 
     /* ================= OPEN DEDICATED LESSON ================= */
-    function openLesson(moduleId) {
+    function openLesson(moduleId, initialTab = 'slides') {
       state.currentModule = moduleId;
       state.currentSlide = 0;
       switchView('lesson');
       renderActiveLesson();
+      switchLessonTab(initialTab);
       updateNavbarBrand(moduleId);
 
       // Highlight active module in secondary nav
@@ -3217,6 +3250,23 @@
       document.getElementById('lesson-title').textContent = mod.title;
       document.getElementById('lesson-subtitle').textContent = mod.subtitle;
       document.getElementById('lesson-quick-indicator').textContent = `${mod.num} / 0${moduleOrder.length}`;
+
+      // Show AI Studio quick action bar on mod-ai and update Tab 2 label
+      const aiQuickBar = document.getElementById('ai-module-quickbar');
+      if (aiQuickBar) {
+        aiQuickBar.classList.toggle('hidden', state.currentModule !== 'mod-ai');
+      }
+      const labIcon = document.getElementById('ltab-btn-lab-icon');
+      const labLabel = document.getElementById('ltab-btn-lab-label');
+      if (labIcon && labLabel) {
+        if (state.currentModule === 'mod-ai') {
+          labIcon.textContent = '🔭';
+          labLabel.textContent = '2. Projekty & Laboratorium AI';
+        } else {
+          labIcon.textContent = '🧪';
+          labLabel.textContent = '2. Laboratorium Live';
+        }
+      }
 
       // Show Word 1-click presets only on mod-docs
       const wordPresetsBar = document.getElementById('classroom-word-presets');
@@ -3293,6 +3343,27 @@
           </p>
         </div>
       `).join('');
+
+      const ctaBox = document.getElementById('slide-ai-cta');
+      if (ctaBox) {
+        if (state.currentModule === 'mod-ai' && state.currentSlide === slides.length - 1) {
+          ctaBox.classList.remove('hidden');
+          ctaBox.innerHTML = `
+            <button onclick="switchLessonTab('lab')" class="px-4 py-2.5 rounded-lg bg-fuchsia-500/25 hover:bg-fuchsia-500/35 text-fuchsia-200 border border-fuchsia-400/50 font-bold transition flex items-center gap-1.5 shadow">
+              <span>🔭</span> <span>Przejdź do Katalogu Ścieżek &amp; Schematu 5 Slajdów &rarr;</span>
+            </button>
+            <a href="https://ai.zarnecki.org" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border border-sky-400/50 font-bold transition flex items-center gap-1.5">
+              <span>🌐</span> <span>Otwórz ai.zarnecki.org</span>
+            </a>
+            <a href="materialy/Projekt_AI_Radar_LO.pdf" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/40 font-bold transition flex items-center gap-1.5">
+              <span>📄</span> <span>Pobierz Kartę Projektu (PDF)</span>
+            </a>
+          `;
+        } else {
+          ctaBox.classList.add('hidden');
+          ctaBox.innerHTML = '';
+        }
+      }
 
       document.getElementById('slide-teacher-note-text').textContent = slide.notes || "Brak dodatkowych uwag do tego slajdu.";
 
